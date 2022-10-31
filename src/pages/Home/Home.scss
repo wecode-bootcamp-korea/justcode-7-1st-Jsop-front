@@ -1,0 +1,6 @@
+.mainContent {
+  width: 100%;
+  display: grid;
+  gap: 4%;
+  grid-template-rows: repeat(6, 500px);
+}

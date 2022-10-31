@@ -1,9 +1,24 @@
 import React from 'react';
-
-import css from './Home.module.scss';
+import './Home.scss';
+import MainProduct from './MainProduct';
+import Carousel from '../../components/Carousel/Carousel';
+import AsideContent from './AsideContent';
+import AsideLocator from './AsideLocator';
 
 function Home() {
-  return <div className={css.container}></div>;
+  return (
+    <div className="mainWrap">
+      {/* nav 자리 */}
+      <div className="mainContent">
+        <MainProduct />
+        <Carousel />
+        <AsideContent />
+        <Carousel />
+        <AsideLocator />
+      </div>
+      {/* footer 자리  */}
+    </div>
+  );
 }
 
 export default Home;

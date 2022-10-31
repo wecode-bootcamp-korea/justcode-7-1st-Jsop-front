@@ -1,7 +1,7 @@
 import React from 'react';
-
+import Header from '../src/components/Header/Header';
 function App() {
-  return <div>router 를 연결해주세요.</div>;
+  return <Header />;
 }
 
 export default App;

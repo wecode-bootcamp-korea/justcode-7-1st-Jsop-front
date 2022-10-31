@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import SideBar from '../sideBar/SideBar';
 import css from './InfoBar.module.scss';
 
-function InfoBar({ content, type, url, func }) {
+function InfoBar({ content, type, url }) {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(prevStatus => (prevStatus ? false : true));
+  };
+
   if (type === 'page') {
     return (
       <div className={css.pageContainer}>
@@ -11,10 +18,11 @@ function InfoBar({ content, type, url, func }) {
   } else if (type === 'slide') {
     return (
       <div className={css.slideContainer}>
-        <button>
+        <button onClick={handleOpen}>
           <p>{content}</p>
           <img src="./images/plus.png" alt="plus" />
         </button>
+        {open ? <SideBar /> : null}
       </div>
     );
   }

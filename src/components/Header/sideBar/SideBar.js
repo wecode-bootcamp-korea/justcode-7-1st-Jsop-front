@@ -3,6 +3,7 @@ import css from './SideBar.module.scss';
 function SideBar() {
   const [side, setSide] = useState([]);
   const [open, setOpen] = useState(true);
+
   useEffect(() => {
     fetch('/data/sidebar.json')
       .then(res => res.json())

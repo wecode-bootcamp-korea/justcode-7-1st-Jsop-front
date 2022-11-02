@@ -52,6 +52,10 @@
 }
 
 .container__reversed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
   font-size: 14px;
   height: 81px;
   background-color: #fffef2;

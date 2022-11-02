@@ -1,13 +1,13 @@
 import React from 'react';
 import css from './CategoryPage.module.scss';
 
-function CategoryPage({ img, content }) {
+function CategoryPage({ img }) {
   return (
     <div className={css.container}>
-      <h1>
-        <p>{content}</p>
-        <img src={img} alt="사진" width="500px" />
-      </h1>
+      <div className={css.upBox}></div>
+      <div className={css.downBox}>
+        <img src={img} alt="pic" />
+      </div>
     </div>
   );
 }

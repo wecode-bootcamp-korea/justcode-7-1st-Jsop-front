@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
-function NavBar() {
+function NavBar({ setIsClick, isClick }) {
   const [category, setCategory] = useState([]);
   const [content, setContent] = useState('');
 
@@ -13,11 +13,18 @@ function NavBar() {
 
   const handleClickButton = content => {
     setContent(content);
+    setIsClick(true);
   };
 
+  const handleCloseBtn = content => {
+    setIsClick(false);
+    setContent(content);
+  };
   return (
     <div>
-      <div className={`${css.container} ${content ? css.floatNav : css.none}`}>
+      <div
+        className={isClick ? `${css.container__reversed}` : `${css.container}`}
+      >
         <ul className={css.left}>
           {category.map(e => (
             <li key={e.id}>
@@ -42,9 +49,28 @@ function NavBar() {
               onClick={e => handleClickButton(e.target.parentNode.value)}
               value="검색"
             >
-              <img src="images/search.png" alt="glass" />
+              {isClick ? (
+                <img src="images/search-b.png" alt="glass" />
+              ) : (
+                <img src="images/search-w.png" alt="glass" />
+              )}
             </button>
           </li>
+          {isClick ? (
+            <li>
+              <button
+                onClick={e => handleCloseBtn(e.target.value)}
+                value="닫기"
+              >
+                닫기
+                <img
+                  className={css.cancel}
+                  src="images/cancel.png"
+                  alt="cancel"
+                />
+              </button>
+            </li>
+          ) : null}
         </ul>
         <ul className={css.right}>
           <li>

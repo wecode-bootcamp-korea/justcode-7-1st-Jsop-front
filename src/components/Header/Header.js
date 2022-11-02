@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import css from './Header.module.scss';
 import InfoBar from './infoBar/InfoBar';
 import NavBar from './navBar/NavBar';
@@ -19,17 +19,20 @@ const data = [
 ];
 
 function Header() {
+  const [isClick, setIsClick] = useState(false);
+
   return (
     <div className={css.container}>
-      {data.map(data => (
-        <InfoBar
-          key={data.id}
-          content={data.content}
-          type={data.type}
-          url={data.url}
-        />
-      ))}
-      <NavBar />
+      {!isClick &&
+        data.map(data => (
+          <InfoBar
+            key={data.id}
+            content={data.content}
+            type={data.type}
+            url={data.url}
+          />
+        ))}
+      <NavBar isClick={isClick} setIsClick={setIsClick} />
     </div>
   );
 }

@@ -6,7 +6,7 @@ function InfoBar({ content, type, url }) {
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
-    setOpen(prevStatus => (prevStatus ? false : true));
+    setOpen(true);
   };
 
   if (type === 'page') {
@@ -22,7 +22,7 @@ function InfoBar({ content, type, url }) {
           <p>{content}</p>
           <img src="./images/plus.png" alt="plus" />
         </button>
-        {open ? <SideBar /> : null}
+        {open && <SideBar open={open} setOpen={setOpen} />}
       </div>
     );
   }

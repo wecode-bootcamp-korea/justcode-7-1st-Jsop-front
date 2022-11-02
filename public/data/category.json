@@ -2,39 +2,43 @@
   "data": [
     {
       "id": 1,
-      "content": "스킨 케어"
+      "content": "스킨 케어",
+      "img": "https://www.aesop.com/u1nb1km7t5q7/6Va39pw5RZBeMeQ9fdy2Zi/cdc6a081e7c8a3c361226cc5f86bb2cb/Aesop_Homepage_Navigation_Category_Skin_Desktop_1700x2400px.jpg"
     },
     {
       "id": 2,
-      "content": "바디 & 핸드"
+      "content": "바디 & 핸드",
+      "img": "https://www.aesop.com/u1nb1km7t5q7/11tFhBHEqkvZwHOiZMqGXo/0e2830ab4f36be98df48da3c57da1d5d/Aesop_Homepage_Navigation_Category_Body_Hand_Desktop_1700x2400px.jpg"
     },
     {
       "id": 3,
-      "content": "헤어"
+      "content": "헤어",
+      "img": "https://www.aesop.com/u1nb1km7t5q7/1fi7x3gxHOba7MFtIctntt/9e47c7b14c67f3ed28df74c416090251/Aesop_Homepage_Navigation_Category_Hair_Desktop_1700x2400px.jpg"
     },
     {
       "id": 4,
-      "content": "향수"
+      "content": "향수",
+      "img": "https://www.aesop.com/u1nb1km7t5q7/6hAuVvwJ8jj5GYOVhsCAqB/82bcf2e821b13258afad2c64406f8e29/Aesop_Homepage_Navigation_Category_Fragrance_Desktop_1700x2400px.jpg"
     },
     {
       "id": 5,
-      "content": "홈"
+      "content": "홈",
+      "img": "https://www.aesop.com/u1nb1km7t5q7/77aCUDuy6O9Ob1JCf5ha3O/129c870eaba681d351ed68d6328f6601/Aesop_Homepage_Navigation_Category_Home_Desktop_1700x2400px.jpg"
     },
     {
       "id": 6,
-      "content": "키트 & 여행 제품"
+      "content": "키트 & 여행 제품",
+      "img": "https://www.aesop.com/u1nb1km7t5q7/1p1s2CjhO0qsMzkz3BtKlM/765643980fd5d48b625e76596f4ee431/Aesop_Homepage_Navigation_Category_Travel_Desktop_1700x2400px.jpg"
     },
     {
       "id": 7,
-      "content": "기프트 가이드"
+      "content": "기프트 가이드",
+      "img": "https://www.aesop.com/u1nb1km7t5q7/62ttkdTsftqoYNvP5mYtBA/66da35d44f176bd963d1e6d0d0b62a99/Aesop_Homepage_Navigation_Category_Gifts_Desktop_1700x2400px.jpg"
     },
     {
       "id": 8,
-      "content": "읽기"
-    },
-    {
-      "id": 9,
-      "content": "스토어"
+      "content": "읽기",
+      "img": "https://www.aesop.com/u1nb1km7t5q7/7lgyYeoOTdtDSrCbP5F9UX/b637c230f744fb4e4f03ee899d89f677/Aesop_Homepage_Navigation_Category_Read_Desktop_1700x2400px.jpg"
     }
   ]
 }

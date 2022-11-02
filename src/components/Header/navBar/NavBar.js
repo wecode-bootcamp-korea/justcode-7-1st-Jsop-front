@@ -5,21 +5,6 @@ function NavBar() {
   const [category, setCategory] = useState([]);
   const [content, setContent] = useState('');
 
-  const selectComponent = {
-    '스킨 케어': <CategoryPage content="스킨 케어" />,
-    '바디 & 핸드': <CategoryPage content="바디 & 핸드" />,
-    헤어: <CategoryPage content="헤어" />,
-    향수: <CategoryPage content="향수" />,
-    홈: <CategoryPage content="홈" />,
-    '키트 & 여행 제품': <CategoryPage content="키트 & 여행 제품" />,
-    '기프트 가이드': <CategoryPage content="기프트 가이드" />,
-    읽기: <CategoryPage content="읽기" />,
-    스토어: <CategoryPage content="스토어" />,
-    검색: <CategoryPage content="검색" />,
-    로그인: <CategoryPage content="로그인" />,
-    카트: <CategoryPage content="카트" />,
-  };
-
   useEffect(() => {
     fetch('/data/category.json')
       .then(res => res.json())
@@ -44,6 +29,14 @@ function NavBar() {
               </button>
             </li>
           ))}
+          <li>
+            <button
+              onClick={e => handleClickButton(e.target.value)}
+              value="스토어"
+            >
+              스토어
+            </button>
+          </li>
           <li>
             <button
               onClick={e => handleClickButton(e.target.parentNode.value)}
@@ -72,9 +65,12 @@ function NavBar() {
           </li>
         </ul>
       </div>
-      {content && <div className="content">{selectComponent[content]}</div>}
+      {category.map(e =>
+        content && e.content === content ? (
+          <CategoryPage key={e.id} content={e.content} img={e.img} />
+        ) : null
+      )}
     </div>
   );
 }
-
 export default NavBar;

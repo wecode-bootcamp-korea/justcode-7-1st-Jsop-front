@@ -7,7 +7,6 @@
   h2 {
     height: 100%;
   }
-
   button {
     outline: 0;
     border: 0;
@@ -36,18 +35,22 @@
   width: 200px;
   text-align: right;
   float: right;
-  margin: 0 0 !important;
+
+  margin: 0 auto 0 auto !important;
   li {
     margin-left: 17px;
   }
 }
 
 .left {
-  margin-left: auto;
   margin: 0 0 !important;
   text-align: left;
   display: inline-flex;
   width: 750.64px;
   align-items: center;
   float: left;
+}
+
+.floatNav {
+  z-index: 10;
 }

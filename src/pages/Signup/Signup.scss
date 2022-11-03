@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.signupModal {
+  padding: 50px 0px;
+
+  .signupWrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #fffef2;
+    margin: 0 225px;
+    min-width: 150px;
+    max-width: 500px;
+    height: 100%;
+    padding: 50px;
+    margin: 0 auto;
+
+    button {
+      border: none;
+      background-color: #fffef2;
+      cursor: pointer;
+    }
+    input {
+      border: none;
+      background-color: #fffef2;
+    }
+
+    .buttonWrapper {
+      display: flex;
+      justify-content: space-between;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    .loginForm {
+      display: flex;
+      flex-direction: column;
+      margin: 40px 0px 0px;
+      min-width: 150px;
+      max-width: 500px;
+
+      input {
+        outline: none;
+      }
+      .signupName {
+        font-size: 30px;
+        color: #333333;
+      }
+
+      .signupInfo {
+        font-size: 15px;
+        color: #666666;
+        margin: 10px 0px 30px 0px;
+      }
+
+      .nameInputWrapper {
+        display: flex;
+
+        .lastNameInput {
+          margin: 0px 20px 35px 0px;
+          padding: 25px 0px 0px;
+          width: 240px;
+          border-bottom: 1px solid #cccccc;
+          font-size: 24px;
+        }
+        .firstNameInput {
+          margin: 0px 0px 35px;
+          padding: 25px 0px 0px;
+          width: 240px;
+          border-bottom: 1px solid #cccccc;
+          font-size: 24px;
+        }
+      }
+      .emailInput {
+        margin: 0px 0px 35px;
+        padding: 25px 0px 0px;
+        border-bottom: 1px solid #cccccc;
+        font-size: 24px;
+      }
+
+      .passwordInputWrapper {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #cccccc;
+        padding: 25px 0px 0px;
+        margin: 0px 0px 35px;
+
+        .passwordInput {
+          width: 400px;
+          font-size: 24px;
+        }
+        .passwordView {
+          background-color: #fffef2;
+          font-size: 16px;
+          color: #666666;
+        }
+      }
+
+      .signupButton {
+        margin: 30px 0px 0px;
+        padding: 19px 23px;
+        height: 60px;
+        background-color: #333333;
+        color: #f6f5e8;
+        font-size: 14px;
+        &:hover {
+          background-color: #000000;
+        }
+      }
+      .haveIdButton {
+        margin: 15px 0px 0px;
+        color: #666666;
+        font-size: 14px;
+        &:hover {
+          color: #333333;
+        }
+      }
+    }
+  }
+}

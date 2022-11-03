@@ -1,15 +1,32 @@
 import React from 'react';
 import css from './CategoryPage.module.scss';
-
-function CategoryPage({ img }) {
-  return (
-    <div className={css.container}>
-      <div className={css.upBox}></div>
-      <div className={css.downBox}>
-        <img src={img} alt="pic" />
+import SearchPage from '../searchPage/SearchPage';
+function CategoryPage({ content, img, color, subCategory }) {
+  if (content === '검색') {
+    return <SearchPage />;
+  } else {
+    return (
+      <div className={css.container} style={{ backgroundColor: color }}>
+        <div className={css.upBox}> </div>
+        <div className={css.downBox}>
+          <div className={css.logo}>
+            <img src="logo-black.png" alt="logo" />
+          </div>
+          <div className={css.content}>
+            <ul>
+              <p>카테고리</p>
+              {subCategory.map(e => (
+                <li key={e.id}>
+                  <button>{e.content} </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <img src={img} alt="pic" />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default CategoryPage;

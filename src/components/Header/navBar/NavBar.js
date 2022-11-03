@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
+import SearchPage from '../searchPage/SearchPage';
+
 function NavBar({ setIsClick, isClick }) {
   const [category, setCategory] = useState([]);
   const [content, setContent] = useState('');
@@ -20,6 +22,7 @@ function NavBar({ setIsClick, isClick }) {
     setIsClick(false);
     setContent(content);
   };
+
   return (
     <div>
       <div
@@ -49,11 +52,7 @@ function NavBar({ setIsClick, isClick }) {
               onClick={e => handleClickButton(e.target.parentNode.value)}
               value="검색"
             >
-              {isClick ? (
-                <img src="images/search-b.png" alt="glass" />
-              ) : (
-                <img src="images/search-w.png" alt="glass" />
-              )}
+              <img src="images/search-b.png" alt="glass" />
             </button>
           </li>
           {isClick ? (
@@ -93,9 +92,17 @@ function NavBar({ setIsClick, isClick }) {
       </div>
       {category.map(e =>
         content && e.content === content ? (
-          <CategoryPage key={e.id} content={e.content} img={e.img} />
+          <CategoryPage
+            key={e.id}
+            content={e.content}
+            img={e.img}
+            color={e.color}
+            subCategory={e.subCategory}
+          />
         ) : null
       )}
+      {content === '검색' ? <SearchPage /> : null}
+      {content === '스토어' ? <storeSearch /> : null}
     </div>
   );
 }

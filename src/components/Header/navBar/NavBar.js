@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
-import SearchPage from '../searchPage/SearchPage';
+import SearchPage from '../../../pages/Search/SearchPage';
 
 function NavBar({ setIsClick, isClick }) {
   const [category, setCategory] = useState([]);

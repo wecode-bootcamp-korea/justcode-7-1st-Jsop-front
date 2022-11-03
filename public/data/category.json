@@ -3,42 +3,258 @@
     {
       "id": 1,
       "content": "스킨 케어",
-      "img": "https://www.aesop.com/u1nb1km7t5q7/6Va39pw5RZBeMeQ9fdy2Zi/cdc6a081e7c8a3c361226cc5f86bb2cb/Aesop_Homepage_Navigation_Category_Skin_Desktop_1700x2400px.jpg"
+      "img": "https://www.aesop.com/u1nb1km7t5q7/6Va39pw5RZBeMeQ9fdy2Zi/cdc6a081e7c8a3c361226cc5f86bb2cb/Aesop_Homepage_Navigation_Category_Skin_Desktop_1700x2400px.jpg",
+      "color": "#F0EFDF",
+      "subCategory": [
+        {
+          "id": 1,
+          "content": "스킨 케어 모두 보기"
+        },
+        {
+          "id": 2,
+          "content": "클렌저"
+        },
+        {
+          "id": 3,
+          "content": "각질제거"
+        },
+        {
+          "id": 4,
+          "content": "트리트먼트 & 마스크"
+        },
+        {
+          "id": 5,
+          "content": "토너"
+        },
+        {
+          "id": 6,
+          "content": "하이드레이터"
+        },
+        {
+          "id": 7,
+          "content": "립 & 아이"
+        },
+        {
+          "id": 8,
+          "content": "쉐이빙"
+        },
+        {
+          "id": 9,
+          "content": "선 케어"
+        },
+        {
+          "id": 10,
+          "content": "키트"
+        },
+        {
+          "id": 11,
+          "content": "스킨 케어 세트 추천"
+        },
+        {
+          "id": 12,
+          "content": "스킨 케어 기프트"
+        }
+      ]
     },
     {
       "id": 2,
       "content": "바디 & 핸드",
-      "img": "https://www.aesop.com/u1nb1km7t5q7/11tFhBHEqkvZwHOiZMqGXo/0e2830ab4f36be98df48da3c57da1d5d/Aesop_Homepage_Navigation_Category_Body_Hand_Desktop_1700x2400px.jpg"
+      "img": "https://www.aesop.com/u1nb1km7t5q7/11tFhBHEqkvZwHOiZMqGXo/0e2830ab4f36be98df48da3c57da1d5d/Aesop_Homepage_Navigation_Category_Body_Hand_Desktop_1700x2400px.jpg",
+      "color": "#EBE3D3",
+      "subCategory": [
+        {
+          "id": 1,
+          "content": "바디 & 핸드 모두 보기"
+        },
+        {
+          "id": 2,
+          "content": "핸드"
+        },
+        {
+          "id": 3,
+          "content": "바디"
+        },
+        {
+          "id": 4,
+          "content": "퍼스널 케어"
+        },
+        {
+          "id": 5,
+          "content": "번들"
+        },
+        {
+          "id": 6,
+          "content": "핸드 및 바디 케어 기프트"
+        }
+      ]
     },
     {
       "id": 3,
       "content": "헤어",
-      "img": "https://www.aesop.com/u1nb1km7t5q7/1fi7x3gxHOba7MFtIctntt/9e47c7b14c67f3ed28df74c416090251/Aesop_Homepage_Navigation_Category_Hair_Desktop_1700x2400px.jpg"
+      "img": "https://www.aesop.com/u1nb1km7t5q7/1fi7x3gxHOba7MFtIctntt/9e47c7b14c67f3ed28df74c416090251/Aesop_Homepage_Navigation_Category_Hair_Desktop_1700x2400px.jpg",
+      "color": "#DED8D3",
+      "subCategory": [
+        {
+          "id": 1,
+          "content": "헤어 모두 보기"
+        },
+        {
+          "id": 2,
+          "content": "샴푸"
+        },
+        {
+          "id": 3,
+          "content": "컨디셔너"
+        },
+        {
+          "id": 4,
+          "content": "트리트먼트"
+        },
+        {
+          "id": 5,
+          "content": "그루밍"
+        }
+      ]
     },
     {
       "id": 4,
       "content": "향수",
-      "img": "https://www.aesop.com/u1nb1km7t5q7/6hAuVvwJ8jj5GYOVhsCAqB/82bcf2e821b13258afad2c64406f8e29/Aesop_Homepage_Navigation_Category_Fragrance_Desktop_1700x2400px.jpg"
+      "img": "https://www.aesop.com/u1nb1km7t5q7/6hAuVvwJ8jj5GYOVhsCAqB/82bcf2e821b13258afad2c64406f8e29/Aesop_Homepage_Navigation_Category_Fragrance_Desktop_1700x2400px.jpg",
+      "color": "#F4ECE4",
+      "subCategory": [
+        {
+          "id": 1,
+          "content": "향수 모두 보기"
+        },
+        {
+          "id": 2,
+          "content": "이더시스"
+        },
+        {
+          "id": 3,
+          "content": "미라세티"
+        },
+        {
+          "id": 4,
+          "content": "카르스트"
+        },
+        {
+          "id": 5,
+          "content": "에레미아"
+        },
+        {
+          "id": 6,
+          "content": "로즈"
+        },
+        {
+          "id": 7,
+          "content": "휠"
+        },
+        {
+          "id": 8,
+          "content": "마라케시"
+        },
+        {
+          "id": 9,
+          "content": "테싯"
+        }
+      ]
     },
     {
       "id": 5,
       "content": "홈",
-      "img": "https://www.aesop.com/u1nb1km7t5q7/77aCUDuy6O9Ob1JCf5ha3O/129c870eaba681d351ed68d6328f6601/Aesop_Homepage_Navigation_Category_Home_Desktop_1700x2400px.jpg"
+      "img": "https://www.aesop.com/u1nb1km7t5q7/77aCUDuy6O9Ob1JCf5ha3O/129c870eaba681d351ed68d6328f6601/Aesop_Homepage_Navigation_Category_Home_Desktop_1700x2400px.jpg",
+      "color": "#F7F1EC",
+      "subCategory": [
+        {
+          "id": 1,
+          "content": "홈 모두 보기"
+        },
+        {
+          "id": 2,
+          "content": "홈"
+        },
+        {
+          "id": 3,
+          "content": "문학"
+        },
+        {
+          "id": 4,
+          "content": "홈 케어 기프트"
+        }
+      ]
     },
     {
       "id": 6,
       "content": "키트 & 여행 제품",
-      "img": "https://www.aesop.com/u1nb1km7t5q7/1p1s2CjhO0qsMzkz3BtKlM/765643980fd5d48b625e76596f4ee431/Aesop_Homepage_Navigation_Category_Travel_Desktop_1700x2400px.jpg"
+      "img": "https://www.aesop.com/u1nb1km7t5q7/1p1s2CjhO0qsMzkz3BtKlM/765643980fd5d48b625e76596f4ee431/Aesop_Homepage_Navigation_Category_Travel_Desktop_1700x2400px.jpg",
+      "color": "#E8F0E3",
+      "subCategory": [
+        {
+          "id": 1,
+          "content": "키트 & 여행 모두 보기"
+        },
+        {
+          "id": 2,
+          "content": "시즈널 기프트 키트"
+        },
+        {
+          "id": 3,
+          "content": "스킨케어 키트"
+        },
+        {
+          "id": 4,
+          "content": "바디 & 핸드 케어 키트"
+        },
+        {
+          "id": 5,
+          "content": "여행"
+        }
+      ]
     },
     {
       "id": 7,
       "content": "기프트 가이드",
-      "img": "https://www.aesop.com/u1nb1km7t5q7/62ttkdTsftqoYNvP5mYtBA/66da35d44f176bd963d1e6d0d0b62a99/Aesop_Homepage_Navigation_Category_Gifts_Desktop_1700x2400px.jpg"
-    },
-    {
-      "id": 8,
-      "content": "읽기",
-      "img": "https://www.aesop.com/u1nb1km7t5q7/7lgyYeoOTdtDSrCbP5F9UX/b637c230f744fb4e4f03ee899d89f677/Aesop_Homepage_Navigation_Category_Read_Desktop_1700x2400px.jpg"
+      "img": "https://www.aesop.com/u1nb1km7t5q7/62ttkdTsftqoYNvP5mYtBA/66da35d44f176bd963d1e6d0d0b62a99/Aesop_Homepage_Navigation_Category_Gifts_Desktop_1700x2400px.jpg",
+      "color": "#EBEADF",
+      "subCategory": [
+        {
+          "id": 1,
+          "content": "전체 기프트"
+        },
+        {
+          "id": 2,
+          "content": "시즌 기프트 키트"
+        },
+        {
+          "id": 3,
+          "content": "제이솝에서 사랑받는 제품들"
+        },
+        {
+          "id": 4,
+          "content": "작은 제스처"
+        },
+        {
+          "id": 5,
+          "content": "관대한 선물"
+        },
+        {
+          "id": 6,
+          "content": "나를 위한 선물"
+        },
+        {
+          "id": 7,
+          "content": "트래블 기프트"
+        },
+        {
+          "id": 8,
+          "content": "홈 케어 기프트"
+        },
+        {
+          "id": 9,
+          "content": "기프트 번들"
+        }
+      ]
     }
   ]
 }

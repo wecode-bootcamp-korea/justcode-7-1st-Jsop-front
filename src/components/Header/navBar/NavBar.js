@@ -74,7 +74,7 @@ function NavBar({ setIsClick, isClick }) {
         <ul className={css.right}>
           <li>
             <button
-              onClick={e => handleClickButton(e.target.value)}
+              // onClick={e => handleClickButton(e.target.value)}
               value="로그인"
             >
               로그인

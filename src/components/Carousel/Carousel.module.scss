@@ -1,7 +1,129 @@
-.carouselWrap {
-  height: 500px;
+@keyframes prevCarousel {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
-  p {
-    margin-top: 0px;
+@keyframes nextCarousel {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.mainCarousel {
+  position: relative;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 10vh;
+
+  .carouselArea {
+    display: flex;
+    width: auto;
+    text-align: center;
+    overflow: hidden;
+
+    .carouselWrap {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: flex-end;
+      transform: translate(0);
+      transition: all 420ms linear;
+
+      .carouselContainer {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        padding: 10px 10px 35px 10px;
+        height: 100%;
+        margin-right: 20px;
+
+        &:hover {
+          .carouselProductName {
+            text-decoration: underline;
+          }
+        }
+
+        .imageContainer {
+          width: auto;
+          height: 100%;
+
+          .carouselImage {
+            width: 26vw;
+            height: auto;
+            margin-left: 2vw;
+            margin-right: 2vw;
+          }
+        }
+
+        .carouselProductName {
+          font-size: 14.5px;
+        }
+        .carouselProductType {
+          margin: 15px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+
+  .prevButton {
+    position: absolute;
+    display: flex;
+    top: 20%;
+    left: 0;
+    width: 70px;
+    height: 70px;
+    background-color: #373737;
+    color: white;
+    font-size: 25px;
+    font-weight: lighter;
+    justify-content: center;
+    align-items: center;
+    animation: 0.3s ease-out prevCarousel;
+  }
+
+  .nextButton {
+    position: absolute;
+    display: flex;
+    width: 70px;
+    height: 70px;
+    top: 20%;
+    right: 0;
+    color: white;
+    background-color: #373737;
+    font-weight: lighter;
+    font-size: 25px;
+    align-items: center;
+    justify-content: center;
+    animation: 0.3s ease-out nextCarousel;
+  }
+
+  .pageContainer {
+    position: relative;
+    display: flex;
+    width: 89vw;
+    height: 2.2px;
+    background-color: #bcbcbc;
+    margin-left: 5.5vw;
+    justify-content: center;
+    align-items: center;
+
+    .page {
+      position: absolute;
+      width: 23vw;
+      height: 2.2px;
+      left: 0;
+      background-color: #575757;
+      transition: all 400ms linear;
+      transform: translateX(0);
+    }
   }
 }

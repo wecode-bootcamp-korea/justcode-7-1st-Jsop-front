@@ -1,12 +1,17 @@
 import React from 'react';
-import Aside from '../../components/Aside/Aside';
+import AsideLocator from '../../components/Aside/AsideLocator';
+import Locator from '../../components/Carousel/CarouselLocator';
 import css from './AsideLocator.module.scss';
 
 function AsideContent() {
   return (
     <div className={css.Container}>
-      <Aside />
-      <img src="/images/perfume.png" alt="향수 이미지" />
+      <div className={css.aside}>
+        <AsideLocator />
+      </div>
+      <div className={css.locator}>
+        <Locator />
+      </div>
     </div>
   );
 }

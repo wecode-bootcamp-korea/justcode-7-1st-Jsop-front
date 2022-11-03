@@ -4,7 +4,7 @@ import css from './AsideContent.module.scss';
 
 function AsideContent() {
   return (
-    <>
+    <div className={css.containerWrap}>
       <div className={css.leftContainer}>
         <Aside />
         <video autoPlay muted loop>
@@ -15,7 +15,7 @@ function AsideContent() {
         <img src="/images/perfume.png" alt="향수 이미지" />
         <Aside />
       </div>
-    </>
+    </div>
   );
 }
 export default AsideContent;

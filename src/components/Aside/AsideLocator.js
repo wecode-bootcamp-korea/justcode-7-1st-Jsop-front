@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import css from './MainAside.module.scss';
+import css from './Aside.module.scss';
 
-function MainAside() {
+function Aside() {
   const [item, setItems] = useState([]);
 
   useEffect(() => {
-    fetch('/data/mainProduct.json')
+    fetch('/data/locatorAside.json')
       .then(res => res.json())
       .then(data => {
         setItems(data.mainAside);
@@ -14,9 +14,8 @@ function MainAside() {
 
   return (
     <div className={css.asideWrap}>
-      {item.map(({ id, topic, title, body }) => (
+      {item.map(({ id, title, body }) => (
         <div key={id}>
-          <p className={css.topic}>{topic}</p>
           <p className={css.title}>{title}</p>
           <p className={css.body}>{body}</p>
           <button className={css.asideBtn}>
@@ -28,4 +27,4 @@ function MainAside() {
     </div>
   );
 }
-export default MainAside;
+export default Aside;

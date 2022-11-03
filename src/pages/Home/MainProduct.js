@@ -1,19 +1,16 @@
 import React from 'react';
 import css from './MainProduct.module.scss';
-import Aside from '../../components/Aside/MainAside';
+import MainAside from '../../components/Aside/MainAside';
 
 function MainProduct() {
   return (
     <div className={css.wrap}>
-      <img src="/images/main.jpg" alt="" />
+      <img className={css.MainPageImage} src="/images/mountain.jpeg" alt="" />
       <div className={css.product}>
-        <div className={css.logo}>Jsop</div>
+        <img className={css.logo} src="/images/logo-white.png" alt="" />
         <div className={css.aside}>
-          <Aside />
+          <MainAside />
         </div>
-      </div>
-      <div className={css.MainProduct}>
-        <img src="/images/mainProduct.png" alt="" />
       </div>
     </div>
   );

@@ -1,0 +1,36 @@
+.cardWrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin: 9vw 5.5vw 12vw 5.5vw;
+
+  p {
+    padding-top: 2vh;
+  }
+
+  .cardContainer {
+    .imageContainer {
+      display: flex;
+      justify-content: center;
+
+      img {
+        width: 43vw;
+        height: 25vw;
+        padding-bottom: 2vh;
+      }
+    }
+    &:hover {
+      .title {
+        text-decoration: underline;
+      }
+    }
+
+    .title {
+      font-size: 16.5px;
+    }
+    .body {
+      font-size: 14.5px;
+      line-height: 2.5vh;
+    }
+  }
+}

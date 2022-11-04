@@ -1,0 +1,40 @@
+{
+  "itemData": [
+    {
+      "itemId": 1,
+      "itemImage": "https://images.ctfassets.net/u1nb1km7t5q7/3SCXvldc9HEEWCzyg44wPK/993a270f9be982665519dfd794f638ef/Aesop_Fragrance_Eidesis_Eau_de_Parfum_50mL_Web_Large_684x668px.png",
+      "itemName": "이더시스 오 드 퍼퓸",
+      "itemType": "시트러스를 함유한 제품 3종"
+    },
+    {
+      "itemId": 2,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/1HJpIFP45gfGprqgIUGFoa/b8f8fbfb33852472b8024b7c3c089a00/Aesop_Fragrance_Rozu_Eau_de_Parfum_50mL_Web_Large_1000x977px.png",
+      "itemName": "로즈 오 드 퍼퓸",
+      "itemType": "상쾌한 바디 케어 듀오"
+    },
+    {
+      "itemId": 3,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/2ct0ouUr0ao2RJ6ZJS4uJn/951049b3301a0c82f4f1260e6951f8fb/Aesop_Fragrance_Hwyl_Eau_de_Parfum_50mL_Web_Large_1000x977px.png",
+      "itemName": "휠 오 드 퍼퓸",
+      "itemType": "인기 많은 핸드와 바디케어 필수품"
+    },
+    {
+      "itemId": 4,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/YfKPiRyqXVuhgnmFUiXCr/a6aa01cefd748da784557d1c385560bb/Aesop_Fragrance_Marrakech_Eau_de_Parfum_50mL_Web_Large_1000x977px.png",
+      "itemName": "마라케시 오 드 퍼퓸",
+      "itemType": "대부분의 피부 타입, 특히 도시 거주자에게 적합1"
+    },
+    {
+      "itemId": 5,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/qzQJp9yc2X8yXTzF5XkIw/134896cdc592495f19b50fd15b74d185/Aesop_Fragrance_Tacit_Eau_de_Parfum_50mL_Web_Large_1000x977px.png",
+      "itemName": "테싯 오 드 퍼퓸",
+      "itemType": "시트러스를 함유한 제품 3종"
+    },
+    {
+      "itemId": 6,
+      "itemImage": "https://images.ctfassets.net/u1nb1km7t5q7/3GGxqNtcnVfyzLw5OETc7z/b8c4b400861ede1d9cd8ad2d3b9191ce/Aesop_Fragrance_Eremia_Eau_de_Parfum_50mL_Web_Large_684x668px.png",
+      "itemName": "에레미아 오 드 퍼퓸",
+      "itemType": "상쾌한 바디 케어 듀오"
+    }
+  ]
+}

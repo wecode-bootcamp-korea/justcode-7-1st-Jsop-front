@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Router from './pages/Router';
 import Header from '../src/components/Header/Header';
 function App() {

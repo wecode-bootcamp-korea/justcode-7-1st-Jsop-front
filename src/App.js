@@ -1,6 +1,7 @@
 import React from 'react';
-import Router from './pages/Router';
+
 import Header from '../src/components/Header/Header';
+import Router from './pages/Router';
 function App() {
   return (
     <div>

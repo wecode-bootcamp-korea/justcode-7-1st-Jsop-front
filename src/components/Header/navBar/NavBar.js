@@ -4,7 +4,6 @@ import CategoryPage from '../categoryPage/CategoryPage';
 import SearchPage from '../../../pages/Search/SearchPage';
 import Login from '../../../pages/Login/Login';
 
-
 function NavBar({ setIsClick, isClick }) {
   const [category, setCategory] = useState([]);
   const [content, setContent] = useState('');

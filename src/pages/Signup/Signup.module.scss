@@ -51,6 +51,7 @@
       .signupName {
         font-size: 30px;
         color: #333333;
+        text-align: left;
       }
 
       .signupInfo {
@@ -122,5 +123,8 @@
         }
       }
     }
+  }
+  .checkBoxModule {
+    text-align: left;
   }
 }

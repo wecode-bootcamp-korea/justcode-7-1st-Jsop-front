@@ -1,14 +1,14 @@
 import React from 'react';
-import './Info.scss';
+import css from './Info.module.scss';
 
 const Info = ({ title, content }) => {
   return (
-    <div>
-      <div className="checkBoxModule">
+    <div className={css.container}>
+      <div className={css.checkBoxModule}>
         <input type="checkbox" />
         <span>{title}</span>
       </div>
-      <div className="privacyInfo">
+      <div className={css.privacyInfo}>
         <p>{content}</p>
       </div>
     </div>

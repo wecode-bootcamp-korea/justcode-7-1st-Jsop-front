@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
 import SearchPage from '../searchPage/SearchPage';
+import Login from '../../../pages/Login/Login';
 
 function NavBar({ setIsClick, isClick }) {
   const [category, setCategory] = useState([]);
   const [content, setContent] = useState('');
+  const [loginModal, setLoginModal] = useState(false);
 
   useEffect(() => {
     fetch('/data/category.json')
@@ -21,6 +23,14 @@ function NavBar({ setIsClick, isClick }) {
   const handleCloseBtn = content => {
     setIsClick(false);
     setContent(content);
+  };
+
+  const openLogin = () => {
+    setLoginModal(!loginModal);
+  };
+
+  const closeBtn = () => {
+    setLoginModal(false);
   };
 
   return (
@@ -74,11 +84,14 @@ function NavBar({ setIsClick, isClick }) {
         <ul className={css.right}>
           <li>
             <button
-              // onClick={e => handleClickButton(e.target.value)}
+              onClick={() => {
+                openLogin();
+              }}
               value="로그인"
             >
               로그인
             </button>
+            {loginModal ? <Login closeBtn={closeBtn} /> : null}
           </li>
           <li>
             <button

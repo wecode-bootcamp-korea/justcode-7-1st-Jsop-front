@@ -1,8 +1,7 @@
 import React from 'react';
-import Router from './pages/Router';
 
 function App() {
-  return <Router />;
+  return <div>router 를 연결해주세요.</div>;
 }
 
 export default App;

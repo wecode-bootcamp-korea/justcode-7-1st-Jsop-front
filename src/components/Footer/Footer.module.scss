@@ -1,35 +1,42 @@
-* {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  list-style: none;
-  text-decoration: none;
-  color: #fffef2;
-  font-size: 14px;
-  line-height: 2.5;
-}
 .footer {
   background-color: #252525;
   color: #fffef2;
   display: grid;
   grid-column-gap: 40px;
   grid-template-columns: repeat(5, 1fr);
+  text-decoration: none;
   grid-template-rows: auto 1fr;
   padding: 50px 40px;
-}
-.borderline {
-  border-bottom: 1px solid #fffef2;
-  margin: 16px 0;
-}
-.sustain {
-  grid-column: 2 span;
-}
-.sustain .more {
-  text-decoration: underline;
-}
-.position button {
-  background-color: transparent;
-}
-.position .more {
-  text-decoration: underline;
+  line-height: 2.5;
+  list-style: none;
+  font-size: 14px;
+  text-decoration: none;
+
+  .listContainer,
+  .listName,
+  .more {
+    text-decoration: none;
+    color: white;
+  }
+  .borderline {
+    border-bottom: 1px solid #fffef2;
+    margin: 16px 0;
+    color: #fffef2;
+  }
+  .sustain {
+    color: #fffef2;
+    grid-column: 2 span;
+  }
+  .sustain .more {
+    text-decoration: underline;
+    color: #fffef2;
+  }
+  .position button {
+    background-color: transparent;
+    color: #fffef2;
+  }
+  .position .more {
+    text-decoration: underline;
+    color: #fffef2;
+  }
 }

@@ -50,7 +50,10 @@ function SearchPage() {
     let searchStr = itemInput;
     searchStr = searchStr.replace(regex, '');
     if (searchStr !== '') {
-      return itemList.description.replace(regex, '').includes(searchStr);
+      return (
+        itemList.description.replace(regex, '').includes(searchStr) ||
+        itemList.title.replace(regex, '').includes(searchStr)
+      );
     }
   });
 
@@ -65,12 +68,18 @@ function SearchPage() {
           <button>
             <img src="./next.png" alt="arrow" />
           </button>
-          {/* <p>인기 검색어</p>
-          <h1>클렌저</h1>
-          <h1>페뷸러스</h1>
-          <h1>파슬리</h1>
-          <h1>향수</h1> */}
+          {itemInput && true ? null : (
+            <div>
+              <p>인기 검색어</p>
+              <h1>클렌저</h1>
+              <h1>페뷸러스</h1>
+              <h1>파슬리</h1>
+              <h1>향수</h1>
+            </div>
+          )}
         </div>
+      </div>
+      <div className={css.secondBox}>
         {itemInput && <Result searchItem={filtered} />}
       </div>
     </div>

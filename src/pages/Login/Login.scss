@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.loginModal {
+  padding: 50px 0px;
+}
+.loginWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 50px;
+  min-width: 150px;
+  max-width: 500px;
+  height: 544.19px;
+  background-color: #fffef2;
+  margin: 0 auto;
+
+  button {
+    border: none;
+    cursor: pointer;
+  }
+
+  .exitButton {
+    background-color: #fffef2;
+    color: #40303d;
+    display: flex;
+    margin-left: auto;
+    img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  .loginModule {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+
+    .loginName {
+      height: 42px;
+      font-size: 30px;
+      font-weight: 400;
+      color: #333333;
+    }
+
+    .loginForm {
+      display: flex;
+      flex-direction: column;
+      margin: 30px 0px 35px;
+      min-width: 150px;
+      max-width: 500px;
+
+      .passwordInputWrapper {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #cccccc;
+        padding: 60px 0px 0px;
+
+        .passwordInput {
+          height: 37px;
+        }
+      }
+
+      input {
+        background-color: #fffef2;
+        border: none;
+        font-size: 24px;
+        color: #434342;
+        height: 63px;
+        outline: none;
+      }
+
+      .emailInput {
+        height: 37px;
+        border-bottom: 1px solid #cccccc;
+        font-size: 24px;
+        color: #434342;
+        padding: 25px 0px 0px;
+      }
+
+      .passwordView {
+        background-color: #fffef2;
+        font-size: 16px;
+        color: #666666;
+      }
+      .passwordReset {
+        background-color: #fffef2;
+        margin: 10px 0px 0px auto;
+        color: #666666;
+        font-size: 14px;
+      }
+      .loginButton {
+        background-color: #333333;
+        color: #fffef2;
+        height: 60px;
+        margin: 35px 0px 0px;
+        padding: 19px 23px;
+        &:hover {
+          background-color: #000000;
+        }
+      }
+    }
+    .memberComment {
+      font-size: 24px;
+      color: #333333;
+    }
+    .signupButton {
+      margin: 20px 0px 0px;
+      padding: 19px 23px;
+      font-size: 14px;
+      color: #333333;
+      background-color: #fffef2;
+      border: 1px solid #cccccc;
+      &:hover {
+        background-color: #333333;
+        color: #fffef2;
+      }
+    }
+  }
+}

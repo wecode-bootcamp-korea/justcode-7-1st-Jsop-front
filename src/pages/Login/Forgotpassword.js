@@ -32,7 +32,11 @@ const Forgotpassword = ({ closeBtn }) => {
             <span className={css.content}>
               새 패스워드를 만들기 위한 링크를 전송해드립니다.
             </span>
-            <input type="text" placeholder="이메일 주소" />
+            <input
+              className={css.emailUrl}
+              type="text"
+              placeholder="이메일 주소"
+            />
             <button>보내기</button>
           </div>
         </div>

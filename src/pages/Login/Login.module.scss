@@ -13,7 +13,7 @@
     padding: 50px;
     min-width: 150px;
     width: 500px;
-    height: 700px;
+    height: 650px;
     background-color: #fffef2;
     margin: 0 auto;
     button {
@@ -48,7 +48,6 @@
       .loginForm {
         display: flex;
         flex-direction: column;
-        margin: 30px 0px 35px;
         min-width: 150px;
         max-width: 500px;
 
@@ -56,26 +55,25 @@
           display: flex;
           justify-content: space-between;
           border-bottom: 1px solid #cccccc;
-          padding: 60px 0px 0px;
+          padding: 30px 0px 0px;
 
           .passwordInput {
-            height: 37px;
+            background-color: #fffef2;
+            border: none;
+            font-size: 22px;
+            color: #434342;
+            height: 63px;
+            outline: none;
           }
         }
 
-        input {
+        .emailInput {
           background-color: #fffef2;
           border: none;
-          font-size: 24px;
-          color: #434342;
           height: 63px;
           outline: none;
-        }
-
-        .emailInput {
-          height: 37px;
           border-bottom: 1px solid #cccccc;
-          font-size: 24px;
+          font-size: 22px;
           color: #434342;
           padding: 25px 0px 0px;
         }
@@ -90,7 +88,7 @@
           color: #666666;
           font-size: 14px;
           display: flex;
-          height: 100%;
+          height: 80px;
           align-items: flex-start;
           justify-content: flex-end;
           padding-top: 10px;
@@ -98,12 +96,12 @@
         .loginButton {
           background-color: #333333 !important;
           color: #fffef2;
-          margin: 35px 0px 0px;
+          height: 63px;
           display: flex;
+          width: 100%;
           align-items: center;
           font-size: 17px;
           justify-content: center;
-          height: 75px;
           text-align: center;
           &:hover {
             background-color: #000000 !important;
@@ -111,7 +109,8 @@
         }
       }
       .memberComment {
-        font-size: 24px;
+        margin-top: 30px;
+        font-size: 22px;
         color: #333333;
         text-align: left;
       }
@@ -124,7 +123,7 @@
         align-items: center;
         font-size: 17px;
         justify-content: center;
-        height: 75px;
+        height: 63px;
         text-align: center;
         &:hover {
           background-color: #333333 !important;

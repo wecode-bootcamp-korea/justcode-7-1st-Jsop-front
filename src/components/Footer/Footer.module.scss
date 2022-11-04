@@ -1,25 +1,2 @@
-.footer {
-  background-color: #252525;
-  color: #fffef2;
-  display: grid;
-  grid-column-gap: 40px;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto 1fr;
-  padding: 50px 40px;
-}
-.borderline {
-  border-bottom: 1px solid #fffef2;
-  margin: 16px 0;
-}
-.sustain {
-  grid-column: 2 span;
-}
-.sustain .more {
-  text-decoration: underline;
-}
-.position button {
-  background-color: transparent;
-}
-.position .more {
-  text-decoration: underline;
+.container {
 }

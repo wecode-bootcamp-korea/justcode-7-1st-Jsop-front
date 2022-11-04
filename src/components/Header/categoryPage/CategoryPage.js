@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './CategoryPage.module.scss';
-import SearchPage from '../searchPage/SearchPage';
+import SearchPage from '../../../pages/Search/SearchPage';
 function CategoryPage({ content, img, color, subCategory }) {
   if (content === '검색') {
     return <SearchPage />;

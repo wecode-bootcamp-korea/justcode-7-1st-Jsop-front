@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 .container {
+  font-family: 'Noto Sans KR', sans-serif;
   display: flex;
   background-color: #fffef2 !important;
   width: 100%;
@@ -51,6 +53,7 @@
         font-size: 14px;
       }
       h1 {
+        font-family: 'Noto Sans KR', sans-serif;
         color: #606060;
         text-align: left;
         font-size: 24px;

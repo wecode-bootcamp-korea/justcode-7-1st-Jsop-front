@@ -1,17 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
-* {
-  box-sizing: border-box;
-  font-family: 'Noto Sans KR', sans-serif;
-  color: #fffef2;
-  font-size: 13.49px;
-  text-align: center;
-}
 .pageContainer {
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
   height: 41px;
   background-color: #a6672b;
+  text-align: center;
+  font-size: 13.49px;
 
   padding: 10px 20px;
   a {
+    color: #fffef2;
     margin-left: 10px;
     text-decoration: none;
     &:hover {
@@ -20,14 +18,20 @@
   }
 }
 .slideContainer {
+  font-family: 'Noto Sans KR', sans-serif;
+  box-sizing: border-box;
+  text-align: center;
   height: 41px;
   background-color: #252525;
   padding: 8px 20px 8px;
   button {
+    font-size: 13.49px;
+
     background-color: transparent;
     border: 0px;
     padding-left: 0px;
     cursor: pointer;
+    color: #fffef2;
     transition: 0.3s;
     &:hover {
       border-bottom: 1.2px solid white;
@@ -41,5 +45,4 @@
       margin-left: 23px;
     }
   }
-
 }

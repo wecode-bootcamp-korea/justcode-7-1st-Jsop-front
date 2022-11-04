@@ -1,7 +1,7 @@
-* {
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 .container {
+  box-sizing: border-box;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 14px;
   height: 81px;
   background-color: #fffef2;
@@ -47,7 +47,7 @@
 }
 
 .left {
-  margin: 0 0 !important;
+  margin: 0 40px !important;
   text-align: left;
   display: inline-flex;
   width: 750.64px;
@@ -56,6 +56,7 @@
 }
 
 .container__reversed {
+  font-family: 'Noto Sans KR', sans-serif;
   position: fixed;
   top: 0;
   right: 0;
@@ -115,7 +116,7 @@
     margin-left: 5px;
   }
   .left {
-    margin: 0 10px !important;
+    margin: 0 40px !important;
     text-align: left;
     display: inline-flex;
     width: 880.64px;

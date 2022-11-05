@@ -1,50 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './SearchPage.module.scss';
 import Result from './Result/Result';
 function SearchPage() {
-  const data = [
-    {
-      id: 1,
-      title: '레저렉션 아로마틱 핸드 밤',
-      img_url: 'test.png',
-      description:
-        '지친 손과 큐티클에 풍부한 수분을 공급해주는 향긋한 보태니컬 핸드 밤',
-      price: [
-        ['75 mL', 10000],
-        ['120 mL', 13000],
-        ['500 mL', 40000],
-      ],
-      category: {
-        level_1_category: '바디 & 핸드',
-        level_2_category: '핸드',
-      },
-      properties: [
-        { type: '사용감', values: ['부드러운', '유분기 없는'] },
-        { type: '향', values: ['시트러스', '우드', '허브'] },
-      ],
-    },
-    {
-      id: 2,
-      title: '레저렉션 아로마틱 립 밤',
-      img_url: 'test.png',
-      description:
-        '지친 손과 큐티클에 풍부한 수분을 공급해주는 향긋한 보태니컬 립 밤',
-      price: [
-        ['75 mL', 10000],
-        ['120 mL', 13000],
-        ['500 mL', 40000],
-      ],
-      category: {
-        level_1_category: '바디 & 핸드',
-        level_2_category: '핸드',
-      },
-      properties: [
-        { type: '사용감', values: ['부드러운', '유분기 없는'] },
-        { type: '향', values: ['시트러스', '우드', '허브'] },
-      ],
-    },
-  ];
+  const [data, setData] = useState([]);
   const [itemInput, setItemInput] = useState('');
+
+  useEffect(() => {
+    fetch('/data/item_list.json')
+      .then(res => res.json())
+      .then(res => setData(res));
+  }, []);
+
   const filtered = data.filter(itemList => {
     let regex = / /gi;
     let searchStr = itemInput;

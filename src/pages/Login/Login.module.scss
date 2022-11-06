@@ -1,21 +1,24 @@
 .container {
   padding: 50px 0px;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
   z-index: 10;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
+
   .loginModal {
     display: flex;
     flex-direction: column;
     padding: 50px;
     min-width: 150px;
     width: 500px;
-    height: 650px;
+    height: 580px;
     background-color: #fffef2;
     margin: 0 auto;
+
     button {
       border: none;
       cursor: pointer;
@@ -26,14 +29,11 @@
       color: #40303d;
       display: flex;
       margin-left: auto;
+      width: 20px;
       height: 20px;
-      img {
-        width: 20px;
-        height: 20px;
-      }
     }
     .loginModule {
-      margin-top: 40px;
+      margin-top: 30px;
       display: flex;
       flex-direction: column;
 
@@ -43,6 +43,7 @@
         font-weight: 400;
         color: #333333;
         text-align: left;
+        margin: 0px;
       }
 
       .loginForm {
@@ -50,32 +51,70 @@
         flex-direction: column;
         min-width: 150px;
         max-width: 500px;
+        .label {
+          margin-bottom: 15px;
+          position: relative;
+          border: none;
+        }
+        .label:focus-within > .inputSpan,
+        .emailInput:not(:placeholder-shown) + .inputSpan {
+          color: #666666;
+          transform: translateY(5px);
+          font-size: 0.8em;
+        }
+        .emailInput::placeholder {
+          opacity: 0;
+        }
+        .passwordInput:not(:placeholder-shown) + .inputSpan {
+          color: #666666;
+          transform: translateY(5px);
+          font-size: 0.8em;
+        }
+        .passwordInput::placeholder {
+          opacity: 0;
+        }
+        .inputSpan {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translateY(20px);
+          font-size: 1.8em;
+          transition-duration: 300ms;
+          color: #666666;
+        }
+        .emailInputWrapper {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #cccccc;
+          padding: 30px 0px 0px;
+        }
 
         .passwordInputWrapper {
           display: flex;
           justify-content: space-between;
           border-bottom: 1px solid #cccccc;
           padding: 30px 0px 0px;
-
+          height: 65px;
           .passwordInput {
             background-color: #fffef2;
             border: none;
             font-size: 22px;
             color: #434342;
-            height: 63px;
+            height: 40px;
             outline: none;
+            margin-top: 20px;
           }
         }
 
         .emailInput {
           background-color: #fffef2;
           border: none;
-          height: 63px;
+          height: 20px;
           outline: none;
-          border-bottom: 1px solid #cccccc;
           font-size: 22px;
           color: #434342;
           padding: 25px 0px 0px;
+          margin-top: 12px;
         }
 
         .passwordView {
@@ -96,13 +135,14 @@
         .loginButton {
           background-color: #333333 !important;
           color: #fffef2;
-          height: 63px;
+          height: 60px;
           display: flex;
           width: 100%;
           align-items: center;
           font-size: 17px;
           justify-content: center;
           text-align: center;
+
           &:hover {
             background-color: #000000 !important;
           }
@@ -123,7 +163,7 @@
         align-items: center;
         font-size: 17px;
         justify-content: center;
-        height: 63px;
+        height: 60px;
         text-align: center;
         &:hover {
           background-color: #333333 !important;

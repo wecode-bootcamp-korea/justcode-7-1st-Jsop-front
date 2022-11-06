@@ -1,14 +1,14 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import Header from '../src/components/Header/Header';
 import Footer from '../src/components/Footer/Footer';
 import Router from './pages/Router';
 function App() {
+  const [pageOpen, setPageOpen] = useState(true);
   return (
     <div>
-      <Header />
-      <Router />
-      <Footer />
+      <Header setPageOpen={setPageOpen} />
+      {pageOpen && <Router />}
+      {pageOpen && <Footer />}
     </div>
   );
 }

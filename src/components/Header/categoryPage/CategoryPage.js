@@ -13,7 +13,12 @@ function CategoryPage({ content, img, color, subCategory }) {
         <div className={css.upBox}> </div>
         <div className={css.downBox}>
           <div className={css.boxWrap}>
-            <div className={css.logo}>
+            <div
+              className={css.logo}
+              onClick={() => {
+                navigate('/');
+              }}
+            >
               <img src="logo-black.png" alt="logo" />
             </div>
             <div className={css.content}>

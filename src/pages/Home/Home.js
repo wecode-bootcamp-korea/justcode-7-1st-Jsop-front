@@ -12,7 +12,7 @@ function Home() {
   const [pageOpen, setPageOpen] = useState(true);
   return (
     <div className="mainWrap">
-      <Header pageOpen={pageOpen} setPageOpen={setPageOpen} />
+      <Header setPageOpen={setPageOpen} />
       {pageOpen && (
         <div className={css.mainContent}>
           <MainProduct />

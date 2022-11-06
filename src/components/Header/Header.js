@@ -18,7 +18,7 @@ const data = [
   },
 ];
 
-function Header({ pageOpen, setPageOpen }) {
+function Header({ setPageOpen }) {
   const [isClick, setIsClick] = useState(false);
 
   return (
@@ -36,7 +36,6 @@ function Header({ pageOpen, setPageOpen }) {
         isClick={isClick}
         setPageOpen={setPageOpen}
         setIsClick={setIsClick}
-        pageOpen={pageOpen}
       />
     </div>
   );

@@ -1,2 +1,148 @@
+@keyframes loginPopup {
+  0% {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .container {
+  padding: 50px 0px;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  .loginModal {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    min-width: 150px;
+    width: 500px;
+    height: 650px;
+    background-color: #fffef2;
+    margin: 0 auto;
+    animation: 0.25s ease-in-out loginPopup;
+    button {
+      border: none;
+      cursor: pointer;
+    }
+
+    .exitButton {
+      background-color: #fffef2;
+      color: #40303d;
+      display: flex;
+      margin-left: auto;
+      height: 20px;
+      img {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    .loginModule {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+
+      .loginName {
+        height: 42px;
+        font-size: 30px;
+        font-weight: 400;
+        color: #333333;
+        text-align: left;
+      }
+
+      .loginForm {
+        display: flex;
+        flex-direction: column;
+        min-width: 150px;
+        max-width: 500px;
+
+        .passwordInputWrapper {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: 1px solid #cccccc;
+          padding: 30px 0px 0px;
+
+          .passwordInput {
+            background-color: #fffef2;
+            border: none;
+            font-size: 22px;
+            color: #434342;
+            height: 63px;
+            outline: none;
+          }
+        }
+
+        .emailInput {
+          background-color: #fffef2;
+          border: none;
+          height: 63px;
+          outline: none;
+          border-bottom: 1px solid #cccccc;
+          font-size: 22px;
+          color: #434342;
+          padding: 25px 0px 0px;
+        }
+
+        .passwordView {
+          background-color: #fffef2;
+          font-size: 16px;
+          color: #666666;
+        }
+        .passwordReset {
+          background-color: #fffef2;
+          color: #666666;
+          font-size: 14px;
+          display: flex;
+          height: 80px;
+          align-items: flex-start;
+          justify-content: flex-end;
+          padding-top: 10px;
+        }
+        .loginButton {
+          background-color: #333333 !important;
+          color: #fffef2;
+          height: 63px;
+          display: flex;
+          width: 100%;
+          align-items: center;
+          font-size: 17px;
+          justify-content: center;
+          text-align: center;
+          &:hover {
+            background-color: #000000 !important;
+          }
+        }
+      }
+      .memberComment {
+        margin-top: 30px;
+        font-size: 22px;
+        color: #333333;
+        text-align: left;
+      }
+      .signupButton {
+        margin: 20px 0px 0px;
+        color: #333333;
+        background-color: #fffef2;
+        border: 1px solid #cccccc;
+        display: flex;
+        align-items: center;
+        font-size: 17px;
+        justify-content: center;
+        height: 63px;
+        text-align: center;
+        &:hover {
+          background-color: #333333 !important;
+          color: #fffef2;
+        }
+      }
+    }
+  }
 }

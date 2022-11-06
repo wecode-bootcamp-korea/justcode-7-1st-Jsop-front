@@ -1,0 +1,14 @@
+.containerWrap {
+  padding: 10vh 0 10vh 0;
+
+  .leftContainer {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 5%;
+    margin-left: 5%;
+
+    img {
+      width: 100%;
+    }
+  }
+}

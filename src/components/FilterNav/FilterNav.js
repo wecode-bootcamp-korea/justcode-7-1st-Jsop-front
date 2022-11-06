@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import css from './FilterNav.module.scss';
 import Filter from '../../components/FilterNav/Filter';
-
+import { useNavigate } from 'react-router-dom';
 function FilterNav() {
   const [item, setItems] = useState([]);
   const [visible, setVisible] = useState(false);
   const [title, setTitle] = useState('');
-
+  const navigate = useNavigate();
   const titleChange = e => {
     setTitle(e.target.value);
   };
@@ -22,7 +22,12 @@ function FilterNav() {
   return (
     <div className={css.filterNavWrap}>
       <div className={css.filterNav}>
-        <div className={css.logoContainer}>
+        <div
+          className={css.logoContainer}
+          onClick={() => {
+            navigate('/');
+          }}
+        >
           <img src="logo-black.png" alt="로고이미지" />
         </div>
         <div className={css.subCategoryContainer}>

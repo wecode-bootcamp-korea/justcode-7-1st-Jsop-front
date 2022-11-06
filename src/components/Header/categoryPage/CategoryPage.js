@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import css from './CategoryPage.module.scss';
 import SearchPage from '../../../pages/Search/SearchPage';
 function CategoryPage({ content, img, color, subCategory }) {
+  const navigate = useNavigate();
+
   if (content === '검색') {
     return <SearchPage />;
   } else {
@@ -18,7 +21,13 @@ function CategoryPage({ content, img, color, subCategory }) {
                 <p>카테고리</p>
                 {subCategory.map(e => (
                   <li key={e.id}>
-                    <button>{e.content} </button>
+                    <button
+                      onClick={() => {
+                        navigate('/product');
+                      }}
+                    >
+                      {e.content}
+                    </button>
                   </li>
                 ))}
               </ul>

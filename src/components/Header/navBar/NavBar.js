@@ -5,7 +5,7 @@ import SearchPage from '../../../pages/Search/SearchPage';
 import Login from '../../../pages/Login/Login';
 import StoreSearch from '../storeSearch/StoreSearch';
 
-function NavBar({ setIsClick, isClick, setPageOpen }) {
+function NavBar({ setIsClick, isClick, setPageOpen, pageOpen }) {
   const [category, setCategory] = useState([]);
   const [content, setContent] = useState('');
   const [loginModal, setLoginModal] = useState(false);
@@ -17,9 +17,9 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
   }, []);
 
   const handleClickButton = content => {
-    setPageOpen(false);
     setContent(content);
     setIsClick(true);
+    setPageOpen(false);
   };
 
   const handleCloseBtn = content => {

@@ -4,9 +4,11 @@ function Result({ searchItem }) {
   if (searchItem.length > 0) {
     return (
       <div className={css.container}>
-        {searchItem.map(eachItem => (
-          <h1 key={eachItem.id}>{eachItem.title}</h1>
-        ))}
+        <div className={css.result}>
+          {searchItem.map(eachItem => (
+            <h1 key={eachItem.id}>{eachItem.title}</h1>
+          ))}
+        </div>
       </div>
     );
   } else {

@@ -1,0 +1,110 @@
+@keyframes filter {
+  0% {
+    transform: translateY(-10%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.filterNavWrap {
+  width: 100vw;
+  .logoContainer {
+    height: 17vh;
+    display: flex;
+    align-items: flex-end;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    img {
+      width: 8.5vw;
+      min-width: 100px;
+      max-width: 130px;
+      height: auto;
+    }
+  }
+  .subCategoryName {
+    height: 8vh;
+    display: flex;
+    align-items: center;
+    margin-left: 40px;
+
+    span {
+      font-size: 22px;
+      font-weight: 900;
+    }
+  }
+  .subCategoryNav {
+    background-color: #eeeee1;
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 25px;
+    padding-right: 40px;
+
+    .allItem {
+      font-size: 13.5px;
+      color: #373737;
+      display: flex;
+    }
+
+    .subCategory {
+      display: flex;
+      width: 950px;
+      font-size: 13.5px;
+      color: #373737;
+
+      li {
+        padding-left: 15px;
+
+        &:hover {
+          text-decoration: underline;
+          text-underline-position: under;
+        }
+      }
+    }
+  }
+  .filterBtn {
+    width: 80px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    justify-content: space-between;
+    border: 1px solid #c7c7c7;
+
+    span {
+      margin-left: 14px;
+      font-size: 13.5px;
+    }
+    img {
+      width: 11px;
+      height: 11px;
+      margin-right: 15px;
+    }
+    &:hover {
+      background-color: #373737;
+      color: white;
+      transition: 0.3s ease-in;
+      img {
+        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(8deg)
+          brightness(108%) contrast(108%);
+      }
+    }
+  }
+  .cancelBtn {
+    padding-right: 10px;
+
+    img {
+      width: 11px;
+      height: 11px;
+    }
+  }
+
+  .filterContainer {
+    background-color: #eeeee1;
+    animation: 0.3s ease-out filter;
+    width: 100vw;
+    height: auto;
+  }
+}

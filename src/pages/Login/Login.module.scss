@@ -1,3 +1,14 @@
+@keyframes loginPopup {
+  0% {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .container {
   padding: 50px 0px;
   width: 100vw;
@@ -18,7 +29,7 @@
     height: 580px;
     background-color: #fffef2;
     margin: 0 auto;
-
+    animation: 0.25s ease-in-out loginPopup;
     button {
       border: none;
       cursor: pointer;

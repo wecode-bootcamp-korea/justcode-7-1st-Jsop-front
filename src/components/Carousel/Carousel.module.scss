@@ -77,13 +77,13 @@
   .prevButton {
     position: absolute;
     display: flex;
-    top: 20%;
+    top: 30%;
     left: 0;
     width: 70px;
     height: 70px;
     background-color: #373737;
     color: white;
-    font-size: 25px;
+    font-size: 12px;
     font-weight: lighter;
     justify-content: center;
     align-items: center;
@@ -95,12 +95,12 @@
     display: flex;
     width: 70px;
     height: 70px;
-    top: 20%;
+    top: 30%;
     right: 0;
     color: white;
     background-color: #373737;
     font-weight: lighter;
-    font-size: 25px;
+    font-size: 12px;
     align-items: center;
     justify-content: center;
     animation: 0.3s ease-out nextCarousel;

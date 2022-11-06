@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './Login.module.scss';
 import Forgotpassword from './Forgotpassword';
 import Signup from '../Signup/Signup';
@@ -22,9 +22,17 @@ const Login = ({ closeBtn }) => {
   const openPw = () => {
     setPwModal(!pwModal);
   };
+
   const openSignup = () => {
     setSignUpModal(!signUpModal);
   };
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, []);
 
   return (
     <div className={css.container}>
@@ -38,17 +46,25 @@ const Login = ({ closeBtn }) => {
         <div className={css.loginModule}>
           <h1 className={css.loginName}>로그인</h1>
           <div className={css.loginForm}>
-            <input
-              className={css.emailInput}
-              type="text"
-              placeholder="이메일 주소"
-            />
+            <div className={css.emailInputWrapper}>
+              <label className={css.label} for={css.emailInput}>
+                <input
+                  className={css.emailInput}
+                  type="text"
+                  placeholder="이메일 주소"
+                />
+                <span className={css.inputSpan}>이메일 주소</span>
+              </label>
+            </div>
             <div className={css.passwordInputWrapper}>
-              <input
-                className={css.passwordInput}
-                type={pwShow.type}
-                placeholder="비밀번호"
-              />
+              <label className={css.label} for={css.passwordInput}>
+                <input
+                  className={css.passwordInput}
+                  type={pwShow.type}
+                  placeholder="비밀번호"
+                />
+                <span className={css.inputSpan}>비밀번호</span>
+              </label>
               <button className={css.passwordView} onClick={pwShowBtn}>
                 {pwShow.text}
               </button>

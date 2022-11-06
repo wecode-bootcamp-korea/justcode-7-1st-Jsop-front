@@ -9,18 +9,20 @@ function CategoryPage({ content, img, color, subCategory }) {
       <div className={css.container} style={{ backgroundColor: color }}>
         <div className={css.upBox}> </div>
         <div className={css.downBox}>
-          <div className={css.logo}>
-            <img src="logo-black.png" alt="logo" />
-          </div>
-          <div className={css.content}>
-            <ul>
-              <p>카테고리</p>
-              {subCategory.map(e => (
-                <li key={e.id}>
-                  <button>{e.content} </button>
-                </li>
-              ))}
-            </ul>
+          <div className={css.boxWrap}>
+            <div className={css.logo}>
+              <img src="logo-black.png" alt="logo" />
+            </div>
+            <div className={css.content}>
+              <ul>
+                <p>카테고리</p>
+                {subCategory.map(e => (
+                  <li key={e.id}>
+                    <button>{e.content} </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           <img src={img} alt="pic" />
         </div>

@@ -64,7 +64,10 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
               onClick={e => handleClickButton(e.target.parentNode.value)}
               value="검색"
             >
-              <img src="images/search-b.png" alt="glass" />
+              <img
+                src={process.env.PUBLIC_URL + '/images/search-b.png'}
+                alt="glass"
+              />
             </button>
           </li>
           {isClick ? (
@@ -76,7 +79,7 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
                 닫기
                 <img
                   className={css.cancel}
-                  src="images/cancel.png"
+                  src={process.env.PUBLIC_URL + '/images/cancel.png'}
                   alt="cancel"
                 />
               </button>

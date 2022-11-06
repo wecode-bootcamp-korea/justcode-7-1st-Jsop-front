@@ -1,9 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
 import SearchPage from '../../../pages/Search/SearchPage';
 import Login from '../../../pages/Login/Login';
-import StoreSearch from '../storeSearch/StoreSearch';
 
 function NavBar({ setIsClick, isClick, setPageOpen }) {
   const [category, setCategory] = useState([]);
@@ -87,8 +86,8 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
         <ul className={css.right}>
           <li>
             <button
-              onClick={e => {
-                openLogin(e.target.value);
+              onClick={() => {
+                openLogin();
               }}
               value="로그인"
             >
@@ -118,7 +117,7 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
         ) : null
       )}
       {content === '검색' ? <SearchPage /> : null}
-      {content === '스토어' ? <StoreSearch /> : null}
+      {content === '스토어' ? <storeSearch /> : null}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
 import SearchPage from '../../../pages/Search/SearchPage';
 import Login from '../../../pages/Login/Login';
-
+import StoreSearch from '../storeSearch/StoreSearch';
 function NavBar({ setIsClick, isClick, setPageOpen }) {
   const [category, setCategory] = useState([]);
   const [content, setContent] = useState('');
@@ -117,7 +117,7 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
         ) : null
       )}
       {content === '검색' ? <SearchPage /> : null}
-      {content === '스토어' ? <storeSearch /> : null}
+      {content === '스토어' ? <StoreSearch /> : null}
     </div>
   );
 }

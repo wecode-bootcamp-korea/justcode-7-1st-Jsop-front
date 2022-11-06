@@ -3,8 +3,9 @@ import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
 import SearchPage from '../../../pages/Search/SearchPage';
 import Login from '../../../pages/Login/Login';
+import StoreSearch from '../storeSearch/StoreSearch';
 
-function NavBar({ setIsClick, isClick }) {
+function NavBar({ setIsClick, isClick, setPageOpen }) {
   const [category, setCategory] = useState([]);
   const [content, setContent] = useState('');
   const [loginModal, setLoginModal] = useState(false);
@@ -16,11 +17,13 @@ function NavBar({ setIsClick, isClick }) {
   }, []);
 
   const handleClickButton = content => {
+    setPageOpen(false);
     setContent(content);
     setIsClick(true);
   };
 
   const handleCloseBtn = content => {
+    setPageOpen(true);
     setIsClick(false);
     setContent(content);
   };
@@ -115,7 +118,7 @@ function NavBar({ setIsClick, isClick }) {
         ) : null
       )}
       {content === '검색' ? <SearchPage /> : null}
-      {content === '스토어' ? <storeSearch /> : null}
+      {content === '스토어' ? <StoreSearch /> : null}
     </div>
   );
 }

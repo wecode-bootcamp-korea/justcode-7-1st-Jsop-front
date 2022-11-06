@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
 .container {
   font-family: 'Noto Sans KR', sans-serif;
+  height: 90%;
+  overflow-y: scroll;
   h1 {
     //color: black !important;
     text-align: left;
-    padding-left: 50px;
-    font-size: 23px;
+    padding-left: 30px;
+    font-size: 18px;
     color: #404040 !important;
     padding-top: 7px;
   }
-  padding-top: 270px;
+  padding-top: 200px;
   border-left: #d6d5cb solid 1px;
   height: 100%;
 }
@@ -26,4 +28,9 @@
   }
   padding-top: 20px;
   color: #404040 !important;
+}
+.result {
+  width: 70%;
+  height: 80%;
+  overflow-y: scroll;
 }

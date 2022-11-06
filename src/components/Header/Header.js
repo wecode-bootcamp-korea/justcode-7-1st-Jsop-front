@@ -18,7 +18,7 @@ const data = [
   },
 ];
 
-function Header() {
+function Header({ setPageOpen }) {
   const [isClick, setIsClick] = useState(false);
 
   return (
@@ -32,7 +32,11 @@ function Header() {
             url={data.url}
           />
         ))}
-      <NavBar isClick={isClick} setIsClick={setIsClick} />
+      <NavBar
+        isClick={isClick}
+        setPageOpen={setPageOpen}
+        setIsClick={setIsClick}
+      />
     </div>
   );
 }

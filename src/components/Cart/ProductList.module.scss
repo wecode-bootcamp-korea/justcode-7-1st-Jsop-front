@@ -1,0 +1,35 @@
+.productList {
+  .cartProductsList {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 254, 242, 0.1);
+    font-size: 16px;
+    flex-basis: 0;
+
+    .productName {
+      width: 400px;
+    }
+    .productCount {
+      width: 70px;
+      height: 40px;
+      border: 1px solid rgba(255, 254, 242, 0.1);
+      text-align: center;
+      background-color: inherit;
+      font-size: 18px;
+      color: #bcbbb4;
+      cursor: pointer;
+    }
+    .deleteButton {
+      color: #252525;
+      cursor: pointer;
+      &:hover {
+        color: #bcbbb4;
+      }
+    }
+    .productPrice {
+      margin-right: 10px;
+    }
+  }
+}

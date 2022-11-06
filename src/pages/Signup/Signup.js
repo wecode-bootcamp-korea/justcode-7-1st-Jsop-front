@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
 import css from './Signup.module.scss';
 import Info from './Info';
 
 const Signup = ({ closeBtn }) => {
-  // const navigate = useNavigate();
   const [infoData, setInfoData] = useState([]);
   const [pwShow, setPwShow] = useState({ type: 'password', text: '보기' });
   const pwShowBtn = e => {
@@ -25,11 +23,18 @@ const Signup = ({ closeBtn }) => {
       .then(data => setInfoData(data.info));
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = 'visible';
+    };
+  }, []);
+
   return (
     <div className={css.container}>
       <div className={css.signupModal}>
         <div className={css.buttonWrapper}>
-          <button className={css.backButton}>
+          <button className={css.backButton} onClick={closeBtn}>
             <img
               src="https://cdn-icons-png.flaticon.com/512/6813/6813862.png"
               alt="backSpaceBtn"
@@ -49,31 +54,48 @@ const Signup = ({ closeBtn }) => {
             있습니다.
           </span>
           <div className={css.nameInputWrapper}>
-            <input className={css.lastNameInput} type="text" placeholder="성" />
-            <input
-              className={css.firstNameInput}
-              type="text"
-              placeholder="이름"
-            />
+            <label className={css.label} for={css.lastNameInput}>
+              <input
+                className={css.lastNameInput}
+                type="text"
+                placeholder="성"
+              />
+              <span className={css.inputSpan}>성</span>
+            </label>
+            <label className={css.label} for={css.firstNameInput}>
+              <input
+                className={css.firstNameInput}
+                type="text"
+                placeholder="이름"
+              />
+              <span className={css.inputSpan}>이름</span>
+            </label>
           </div>
-          <input
-            className={css.emailInput}
-            type="text"
-            placeholder="이메일 주소"
-          />
-          <div className={css.passwordInputWrapper}>
+          <label className={css.label} for={css.emailInput}>
             <input
-              className={css.passwordInput}
-              placeholder="비밀번호"
-              type={pwShow.type}
+              className={css.emailInput}
+              type="text"
+              placeholder="이메일 주소"
             />
+            <span className={css.inputSpan}>이메일 주소</span>
+          </label>
+
+          <div className={css.passwordInputWrapper}>
+            <label className={css.label} for={css.passwordInput}>
+              <input
+                className={css.passwordInput}
+                placeholder="비밀번호"
+                type={pwShow.type}
+              />
+              <span className={css.inputSpan}>비밀번호</span>
+            </label>
             <button className={css.passwordView} onClick={pwShowBtn}>
               {pwShow.text}
             </button>
           </div>
           <div className={css.checkBoxModule}>
-            <input type="checkbox" />
-            <span> 본인은 만 14세 이상입니다 (필수)</span>
+            <input className={css.checkBox} type="checkbox" />
+            <span className={css.myInfo}>본인은 만 14세 이상입니다 (필수)</span>
           </div>
           {infoData.map(info => {
             return (

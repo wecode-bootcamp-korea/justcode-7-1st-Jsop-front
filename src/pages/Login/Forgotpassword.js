@@ -1,20 +1,13 @@
 import React from 'react';
-// import { useNavigate } from 'react-router-dom';
 import css from './Forgotpassword.module.scss';
 
 const Forgotpassword = ({ closeBtn }) => {
-  // const navigate = useNavigate();
-
-  // const goBackPage = () => {
-  //   navigate('/login');
-  // };
-
   return (
     <div className={css.container}>
       <div className={css.forgotpwModal}>
         <div className={css.forgotpwWrapper}>
           <div className={css.buttonWrapper}>
-            <button className={css.backButton}>
+            <button className={css.backButton} onClick={closeBtn}>
               <img
                 src="https://cdn-icons-png.flaticon.com/512/6813/6813862.png"
                 alt="backSpaceBtn"
@@ -32,11 +25,16 @@ const Forgotpassword = ({ closeBtn }) => {
             <span className={css.content}>
               새 패스워드를 만들기 위한 링크를 전송해드립니다.
             </span>
-            <input
-              className={css.emailUrl}
-              type="text"
-              placeholder="이메일 주소"
-            />
+            <div className={css.inputlabel}>
+              <label className={css.label} for={css.emailUrl}>
+                <input
+                  className={css.emailUrl}
+                  type="text"
+                  placeholder="이메일 주소"
+                />
+                <span className={css.inputSpan}>이메일 주소</span>
+              </label>
+            </div>
             <button>보내기</button>
           </div>
         </div>

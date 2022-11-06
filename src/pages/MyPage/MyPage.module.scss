@@ -1,0 +1,54 @@
+.logoContainer {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  background-color: #f1f1df;
+  height: 180px;
+  width: 100%;
+  align-items: flex-end;
+  padding-bottom: 30px;
+  img {
+    display: flex;
+    padding: 30px;
+    width: 8vw;
+    margin-left: 30px;
+  }
+  .welcome {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: flex-end;
+    padding-bottom: 40px;
+    span {
+      font-size: 30px;
+      margin-right: 60px;
+      font-weight: bold;
+    }
+  }
+}
+
+.myPageContent {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+
+  .leftNav {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 30px;
+    li {
+      padding: 10px;
+      &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+        text-underline-position: under;
+      }
+    }
+  }
+  .rightContent {
+    display: flex;
+    margin-top: 50px;
+    display: flex;
+
+    .private {
+    }
+  }
+}

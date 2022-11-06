@@ -1,0 +1,101 @@
+.ProductContentWrapper {
+  display: flex;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #fffef2;
+  .ProductLeftImage {
+    width: calc(100% * 8 / 12);
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    .ImageWrapper {
+      img {
+        height: auto;
+        width: 440px;
+      }
+    }
+  }
+  .ProductRightDescription {
+    margin: 30px 50px 30px 30px;
+    width: calc(100% * 4 / 12);
+    .ProductRightDescriptionWrapper {
+      width: 470px;
+      .ProductDetailCategory {
+        margin-bottom: 15px;
+        font-size: 14px;
+        color: #333;
+        ul li {
+          display: inline-block;
+        }
+      }
+    }
+    .ProductName {
+      margin-bottom: 15px;
+      border-bottom: 2px solid #4a4a4a;
+      .ProductTitle {
+        font-weight: 400;
+        font-size: 30px;
+        margin-bottom: 15px;
+        line-height: 1.33;
+      }
+      .ProductDescription {
+        margin-bottom: 15px;
+        font-size: 14px;
+      }
+    }
+    .ProductDetailWrapper {
+      font-size: 14px;
+      div {
+        margin-bottom: 15px;
+        border-bottom: 1px solid #d5d4c9;
+        h2 {
+          margin-bottom: 15px;
+          color: #333;
+          font-size: 14px;
+        }
+        p {
+          margin-bottom: 15px;
+          color: #666;
+        }
+      }
+      // .ingredient {
+      //   position: relative;
+      //   font-size: 14px;
+      //   .ingredientPlusButton {
+      //     position: absolute;
+      //     top: 15px;
+      //     right: 0;
+      //   }
+      //   .faCirclePlus {
+      //     font-size: 20px;
+      //   }
+      // }
+    }
+    .ProductSizeSelect {
+      h2 {
+        margin-bottom: 15px;
+        font-size: 14px;
+      }
+      ul li {
+        display: inline-block;
+        margin-right: 30px;
+        .RadioInput {
+          margin: 0 10px 0 0;
+        }
+      }
+    }
+    .AddToCartButton {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+      height: 60px;
+      width: 470px;
+      margin-top: 15px;
+      span {
+        background-color: transparent;
+        color: #fffef2;
+      }
+    }
+  }
+}

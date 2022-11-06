@@ -10,7 +10,6 @@ import AsideLocator from './AsideLocator';
 function Home() {
   return (
     <div className="mainWrap">
-      {/* nav 자리 */}
       <div className={css.mainContent}>
         <MainProduct />
         <Carousel />
@@ -20,7 +19,6 @@ function Home() {
         <AsideContent />
         <AsideLocator />
       </div>
-      {/* footer 자리  */}
     </div>
   );
 }

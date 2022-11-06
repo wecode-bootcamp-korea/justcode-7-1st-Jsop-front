@@ -1,4 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap');
+
+@keyframes downBox {
+  0% {
+    transform: translateY(0%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .container {
   font-family: 'Noto Sans KR', sans-serif;
   width: 100%;
@@ -17,6 +29,7 @@
 }
 
 .downBox {
+  animation: 1s ease-out downBox;
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import css from './CheckOut.module.scss';
 
 const CheckOut = () => {
@@ -30,7 +30,7 @@ const CheckOut = () => {
         <h2>다음 페이지</h2>
         <button>편집</button>
         <div className={css.summary}>
-          <h3>카드결제</h3>
+          <h3>예정</h3>
         </div>
       </div>
     </div>

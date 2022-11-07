@@ -6,7 +6,7 @@
   .ProductLeftImage {
     width: calc(100% * 8 / 12);
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     align-items: flex-end;
     .ImageWrapper {
       img {
@@ -58,18 +58,6 @@
           color: #666;
         }
       }
-      // .ingredient {
-      //   position: relative;
-      //   font-size: 14px;
-      //   .ingredientPlusButton {
-      //     position: absolute;
-      //     top: 15px;
-      //     right: 0;
-      //   }
-      //   .faCirclePlus {
-      //     font-size: 20px;
-      //   }
-      // }
     }
     .ProductSizeSelect {
       h2 {

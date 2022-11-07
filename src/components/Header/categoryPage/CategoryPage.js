@@ -19,7 +19,10 @@ function CategoryPage({ content, img, color, subCategory }) {
                 navigate('/');
               }}
             >
-              <img src="logo-black.png" alt="logo" />
+              <img
+                src={process.env.PUBLIC_URL + '/logo-black.png'}
+                alt="logo"
+              />
             </div>
             <div className={css.content}>
               <ul>

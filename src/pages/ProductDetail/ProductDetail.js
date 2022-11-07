@@ -1,14 +1,16 @@
-// 카드 1개 보여지는 껍데기 페이지 원래는 버튼도 있었는데 내가 없애버림
 import React, { useEffect, useState } from 'react';
-import { json, useParams } from 'react-router-dom';
-// import CategoryProduct from "../../components/CategoryProduct/CategoryProduct"; //카드 1개 컴포넌트 가져오기
-import CategoryProductDetail from '../../components/CategoryProductDetail/CategoryProductDetail'; //카드 1개 컴포넌트 가져오기
+import { useParams } from 'react-router-dom';
+import CategoryProductDetail from '../../components/CategoryProductDetail/CategoryProductDetail';
 import css from './ProductDetail.module.scss';
-
+import Footer from '../../components/Footer/Footer';
+import Carousel from '../../components/Carousel/Carousel';
+import Header from '../../components/Header/Header';
 function ProductDetail() {
   const [product, setProduct] = useState({});
+  const [page, setPageOpen] = useState(true);
   const { id } = useParams();
 
+  //setfunc 안에 product 의미
   useEffect(() => {
     window.scrollTo(0, 0);
     fetch('/data/CategoryProduct.json')
@@ -18,10 +20,11 @@ function ProductDetail() {
           return json.content.find(content => content.id === Number(id));
         });
       });
-  }, []);
+  }, [id]);
 
   return (
     <div className={css.container}>
+      <Header page={page} setPageOpen={setPageOpen} />
       {product.size && (
         <CategoryProductDetail
           id={product.id}
@@ -80,6 +83,8 @@ function ProductDetail() {
           </div>
         </div>
       </div>
+      <Carousel />
+      <Footer />
     </div>
   );
 }

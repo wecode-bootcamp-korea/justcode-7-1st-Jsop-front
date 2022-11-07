@@ -7,7 +7,7 @@ function ProductList() {
   const [detail, setDetails] = useState([]);
 
   useEffect(() => {
-    const response = fetch('/data/CategoryProduct.json')
+    fetch('/data/CategoryProduct.json')
       .then(res => res.json())
       .then(res => {
         setDetails(detail => (detail = res.content));

@@ -12,15 +12,15 @@ function FilterNav() {
     setTitle(e.target.value);
   };
 
-  useEffect(() => {
-    fetch(
-      'https://02ff9480-a7a4-4376-b578-279c9ba10257.mock.pstmn.io/categories'
-    )
-      .then(res => res.json())
-      .then(data => {
-        setItems(data);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(
+  //     'https://02ff9480-a7a4-4376-b578-279c9ba10257.mock.pstmn.io/categories'
+  //   )
+  //     .then(res => res.json())
+  //     .then(data => {
+  //       setItems(data);
+  //     });
+  // }, []);
 
   return (
     <div className={css.filterNavWrap}>
@@ -44,7 +44,7 @@ function FilterNav() {
               </li>
               <li>|</li>
               <li>
-                {item.map(({ id, content }) => (
+                {/* {item.map(({ id, content }) => (
                   <li key={id}>
                     <button value={content} onClick={titleChange}>
                       {content}
@@ -53,7 +53,7 @@ function FilterNav() {
                   // <div key={id}>
                   //   <SubCategory key={id} category={category} />
                   // </div>
-                ))}
+                ))} */}
               </li>
             </ul>
             <div

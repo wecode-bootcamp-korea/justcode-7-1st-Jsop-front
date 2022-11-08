@@ -1,12 +1,20 @@
 import css from './Result.module.scss';
 function Result({ searchItem }) {
-  console.log(searchItem);
+  function getItem(e) {
+    const filtered = searchItem.filter(itemList => {
+      return itemList.title.includes(e.target.innerHTML);
+    });
+    let id = filtered[0].id;
+    console.log(id);
+  }
   if (searchItem.length > 0) {
     return (
       <div className={css.container}>
         <div className={css.result}>
           {searchItem.map(eachItem => (
-            <h1 key={eachItem.id}>{eachItem.title}</h1>
+            <h1 onClick={e => getItem(e)} key={eachItem.id}>
+              {eachItem.title}
+            </h1>
           ))}
         </div>
       </div>

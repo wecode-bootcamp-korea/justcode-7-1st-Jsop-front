@@ -1,0 +1,45 @@
+.container {
+  justify-content: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 850px;
+  span {
+    width: 670px;
+    padding-top: 20px;
+    font-size: 13px;
+    color: #666666;
+  }
+  input {
+    width: 450px;
+    height: 35px;
+    outline: 0;
+    border: 0px;
+    font-size: 25px;
+    color: #666666;
+    border-bottom: solid 0.5px #333333;
+    background-color: #fffded;
+  }
+
+  .NameinputSpan {
+    width: 40%;
+    display: inline;
+  }
+  .lastInput {
+    width: 40%;
+    display: inline;
+  }
+  .firstInput {
+    width: 40%;
+    display: inline;
+  }
+
+  button {
+    width: 240px;
+    height: 60px;
+    background-color: #333333;
+    color: white;
+    margin-top: 40px;
+    text-align: center;
+  }
+}

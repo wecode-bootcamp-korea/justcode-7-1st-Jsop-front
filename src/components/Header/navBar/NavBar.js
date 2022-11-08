@@ -3,11 +3,14 @@ import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
 import SearchPage from '../../../pages/Search/SearchPage';
 import Login from '../../../pages/Login/Login';
+import Cart from '../../Cart/Cart';
 
 function NavBar({ setIsClick, isClick, setPageOpen }) {
   const [category, setCategory] = useState([]);
   const [content, setContent] = useState('');
   const [loginModal, setLoginModal] = useState(false);
+  const [cartModal, setCartModal] = useState(false);
+  const [userFirstName, setUserFirstName] = useState();
 
   useEffect(() => {
     fetch('/data/category.json')
@@ -34,6 +37,22 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
   const closeBtn = () => {
     setLoginModal(false);
   };
+
+  const openCart = () => {
+    setCartModal(true);
+  };
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:8000/getme', {
+      method: 'GET',
+      headers: {
+        authorization: token,
+      },
+    })
+      .then(response => response.json())
+      .then(result => setUserFirstName(result.userInfo.first_name));
+  }, []);
 
   return (
     <div>
@@ -84,22 +103,29 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
           ) : null}
         </ul>
         <ul className={css.right}>
+          {userFirstName ? (
+            <span className={css.userFirstName}>{userFirstName}님</span>
+          ) : (
+            <li>
+              <button
+                onClick={() => {
+                  openLogin();
+                }}
+                value="로그인"
+              >
+                로그인
+              </button>
+              {loginModal ? <Login closeBtn={closeBtn} /> : null}
+            </li>
+          )}
           <li>
             <button
               onClick={() => {
-                openLogin();
+                openCart();
               }}
-              value="로그인"
-            >
-              로그인
-            </button>
-            {loginModal ? <Login closeBtn={closeBtn} /> : null}
-          </li>
-          <li>
-            <button
-              onClick={e => handleClickButton(e.target.value)}
               value="카트"
             >
+              {cartModal ? <Cart openCart={openCart} /> : null}
               카트
             </button>
           </li>

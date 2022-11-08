@@ -2,20 +2,48 @@ import React, { useState, useEffect } from 'react';
 import css from './FilterNav.module.scss';
 import Filter from '../../components/FilterNav/Filter';
 import { useNavigate } from 'react-router-dom';
-import SubCategory from './SubCategory';
+
 function FilterNav() {
   const [item, setItems] = useState([]);
   const [visible, setVisible] = useState(false);
-  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [detail, setDetails] = useState([]);
+  const [filterItem, setFilterItem] = useState([]);
+
   const navigate = useNavigate();
-  const titleChange = e => {
-    setTitle(e.target.value);
+
+  const contentChange = e => {
+    e.preventDefault();
+    setContent(e.target.value);
+    fetch('http://localhost:8000/products')
+      .then(res => res.json())
+      .then(res => {
+        setDetails(detail => (detail = res));
+
+        const filterItems = res.filter(detail => {
+          return detail.category.level_2_category === e.target.value;
+        });
+        setFilterItem(filterItems);
+      });
+  };
+
+  const allSkinCare = e => {
+    e.preventDefault();
+    setContent(e.target.value);
+    fetch('http://localhost:8000/products')
+      .then(res => res.json())
+      .then(res => {
+        setDetails(detail => (detail = res));
+
+        const filterItems = res.filter(detail => {
+          return detail.category.level_1_category === '스킨 케어';
+        });
+        setFilterItem(filterItems);
+      });
   };
 
   useEffect(() => {
-    fetch(
-      'https://02ff9480-a7a4-4376-b578-279c9ba10257.mock.pstmn.io/categories'
-    )
+    fetch('http://localhost:8000/categories')
       .then(res => res.json())
       .then(data => {
         setItems(data);
@@ -35,27 +63,29 @@ function FilterNav() {
         </div>
         <div className={css.subCategoryContainer}>
           <div className={css.subCategoryName}>
-            <span>{title}</span>
+            <span>{content}</span>
           </div>
           <div className={css.subCategoryNav}>
             <ul className={css.subCategory}>
-              <li>
-                <button className={css.allItem}>모든 스킨</button>
-              </li>
-              <li>|</li>
-              <li>
-                {/* err 나고 있음 
-                {item.map(({ id, content }) => (
-                  <li key={id}>
-                    <button value={content} onClick={titleChange}>
-                      {content}
-                    </button>
-                  </li>
-                  // <div key={id}>
-                  //   <SubCategory key={id} category={category} />
-                  // </div>
-                ))} */}
-              </li>
+              <div className={css.allSkin}>
+                <li>
+                  <button onClick={allSkinCare}>모든 스킨</button>
+                </li>
+                <li>|</li>
+              </div>
+              {item
+                .filter(props => props.content === '스킨 케어')
+                .map(({ id, content, sub_category }) => (
+                  <div key={id} className={css.subItem}>
+                    {sub_category.map(({ id, content }) => (
+                      <li key={id}>
+                        <button value={content} onClick={contentChange}>
+                          {content}
+                        </button>
+                      </li>
+                    ))}
+                  </div>
+                ))}
             </ul>
             <div
               onClick={() => {
@@ -81,6 +111,51 @@ function FilterNav() {
           <Filter />
         </div>
       )}
+
+      <div className={css.details}>
+        {filterItem.map(({ id, title, img_url, price, properties }) => (
+          <div
+            className={css.container}
+            key={id}
+            onClick={() => navigate(`/detail/${id}`)}
+          >
+            <div className={css.containerWrapper}>
+              <div className={css.mainContainer}>
+                <img alt="상품이미지" src={img_url} />
+                <div className={css.productName}>
+                  <h4>{title}</h4>
+                  <div className={css.price}>
+                    <p className={css.productSize}>{price[0][0]}</p>
+                    <p className={css.productSize}>/</p>
+                    <p className={css.productSize}>{price[0][1]}</p>
+                  </div>
+                  <div className={css.productWrap}>
+                    {properties
+                      .filter(props => props.types === '피부 타입')
+                      .map(({ types, values }) => (
+                        <div className={css.productType} key={types}>
+                          <h2>{types}</h2>
+                          <p className={css.typeValue}>{values}</p>
+                        </div>
+                      ))}
+                    {properties
+                      .filter(props => props.types === '사용감')
+                      .map(({ types, values }) => (
+                        <div className={css.productUse} key={types}>
+                          <h2>{types}</h2>
+                          <p className={css.typeValue}>{values}</p>
+                        </div>
+                      ))}
+                  </div>
+                </div>
+              </div>
+              <button className={css.addCartButton}>
+                <span className={css.addCart}>카트에 추가하기 — ₩47,000</span>
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

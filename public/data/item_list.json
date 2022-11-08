@@ -6,8 +6,8 @@
     "description": "눈 주위의 민감한 피부를 달래고 진정시켜주는 마트리카리아가 포함된 부드러운 오일 제형의 아이 메이크업 리무브",
     "price": [["60 mL", 27000, 1]],
     "category": {
-      "1_level_category": "스킨 케어",
-      "2_level_category": "클렌저"
+      "level_1_category": "스킨 케어",
+      "level_2_category": "클렌저"
     },
     "properties": [
       {
@@ -35,7 +35,7 @@
     "description": "진한 메이크업도 부드럽고 깨끗하게 닦아주는 오일 타입의 클렌저",
     "price": [["200 mL", 65000, 2]],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "클렌저"
     },
     "properties": [
@@ -60,7 +60,7 @@
     "description": "가벼운 메이크업을 지워주고, 피부에 남은 잔여물을 말끔하게 씻어내어 피부를 부드럽고 촉촉하게 가꿔 주는 크림 클렌저",
     "price": [["100 mL", 40000, 3]],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "클렌저"
     },
     "properties": [
@@ -88,7 +88,7 @@
       ["100 mL", 35000, 5]
     ],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "클렌저"
     },
     "properties": [
@@ -116,7 +116,7 @@
       ["200 mL", 69000, 7]
     ],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "클렌저"
     },
     "properties": [
@@ -148,7 +148,7 @@
       ["200 mL", 55000, 9]
     ],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "클렌저"
     },
     "properties": [
@@ -173,7 +173,7 @@
     "description": "각질을 관리해주면서 피부를 매끄럽게 클렌징 해주는 크림 베이스 클렌저",
     "price": [["75 mL", 62000, 10]],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "각질 제거"
     },
     "properties": [
@@ -204,7 +204,7 @@
     "description": "티 트리 리프, 너트 쉘, 클레이를 함유한 파우더 타입의 각질 관리제",
     "price": [["30 mL", 43000, 11]],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "각질 제거"
     },
     "properties": [
@@ -229,7 +229,7 @@
     "description": "파슬리 씨드와 로즈힙 열매오일 추출물이 함유된 클레이 베이스의 딥 클렌징 마스크로 피부의 잔여물을 효과적으로 세정하며 피부의 수분감을 유지시켜줍니다.",
     "price": [["60 mL", 55000, 12]],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "트리트먼트 & 마스크"
     },
     "properties": [
@@ -261,7 +261,7 @@
       ["120 mL", 65000, 14]
     ],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "트리트먼트 & 마스크"
     },
     "properties": [
@@ -290,7 +290,7 @@
     "description": "문제성 피부를 효과적으로 진정시켜주는 순한 스팟 트리트먼트",
     "price": [["9 mL", 27000, 15]],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "트리트먼트 & 마스크"
     },
     "properties": [
@@ -319,7 +319,7 @@
     "description": "건조함 없이 모공까지 깨끗하게 세정해주며, 자극이 적고 효과적으로 피부를 진정시켜주어 문제성 피부 관리에도 적합한 딥 클렌징 마스크",
     "price": [["60 mL", 53000, 16]],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "트리트먼트 & 마스크"
     },
     "properties": [
@@ -344,7 +344,7 @@
     "description": "정화 작용의 식물 추출물이 들어있어 혼잡한 피부를 정리하고 밸런스를 잡아주는 페이셜 오일",
     "price": [["25 mL", 67000, 17]],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "트리트먼트 & 마스크"
     },
     "properties": [
@@ -372,7 +372,7 @@
       ["100 mL", 47000, 19]
     ],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "토너"
     },
     "properties": [
@@ -400,7 +400,7 @@
       ["100 mL", 39000, 21]
     ],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "토너"
     },
     "properties": [
@@ -428,7 +428,7 @@
       ["200 mL", 63000, 23]
     ],
     "category": {
-      "1_level_category": "스킨 케어",
+      "level_1_category": "스킨 케어",
       "2_level_category": "토너"
     },
     "properties": [
@@ -456,7 +456,7 @@
       ["500 mL (펌프 포함)", 47000, 25]
     ],
     "category": {
-      "1_level_category": "바디 & 핸드",
+      "level_1_category": "바디 & 핸드",
       "2_level_category": "핸드"
     },
     "properties": [
@@ -484,7 +484,7 @@
       ["500 mL (펌프 미포함)", 46000, 27]
     ],
     "category": {
-      "1_level_category": "바디 & 핸드",
+      "level_1_category": "바디 & 핸드",
       "2_level_category": "핸드"
     },
     "properties": [
@@ -517,7 +517,7 @@
       ["500 mL", 120000, 30]
     ],
     "category": {
-      "1_level_category": "바디 & 핸드",
+      "level_1_category": "바디 & 핸드",
       "2_level_category": "핸드"
     },
     "properties": [
@@ -546,7 +546,7 @@
       ["500mL (펌프 미포함)", 55000, 33]
     ],
     "category": {
-      "1_level_category": "바디 & 핸드",
+      "level_1_category": "바디 & 핸드",
       "2_level_category": "바디"
     },
     "properties": [
@@ -571,7 +571,7 @@
     "description": "부드러움과 영양을 공급하는 넛트 오일 추출물과 풍부한 비타민 E성분을 함유한 바디 오일",
     "price": [["100 mL", 39000, 34]],
     "category": {
-      "1_level_category": "바디 & 핸드",
+      "level_1_category": "바디 & 핸드",
       "2_level_category": "바디"
     },
     "properties": [
@@ -600,7 +600,7 @@
       ["500mL (펌프 미포함)", 55000, 37]
     ],
     "category": {
-      "1_level_category": "바디 & 핸드",
+      "level_1_category": "바디 & 핸드",
       "2_level_category": "바디"
     },
     "properties": [
@@ -628,7 +628,7 @@
       ["500 mL", 120000, 39]
     ],
     "category": {
-      "1_level_category": "바디 & 핸드",
+      "level_1_category": "바디 & 핸드",
       "2_level_category": "바디"
     },
     "properties": [
@@ -653,7 +653,7 @@
     "description": "징크리시놀리에이트 및 상쾌한 에센셜 오일 블렌드가 함유된 스프레이 타입의 남녀 공용 데오도란트",
     "price": [["50 mL", 37000, 40]],
     "category": {
-      "1_level_category": "바디 & 핸드",
+      "level_1_category": "바디 & 핸드",
       "2_level_category": "퍼스널 케어"
     },
     "properties": [
@@ -678,7 +678,7 @@
     "description": "징크리시놀리에이트와 피부를 편안하게 해주는 에센셜 오일이 함유된 스프레이 타입의 데오도란트",
     "price": [["50 mL", 37000, 41]],
     "category": {
-      "1_level_category": "바디 & 핸드",
+      "level_1_category": "바디 & 핸드",
       "2_level_category": "퍼스널 케어"
     },
     "properties": [
@@ -707,7 +707,7 @@
       ["100 mL", 20000, 44]
     ],
     "category": {
-      "1_level_category": "헤어",
+      "level_1_category": "헤어",
       "2_level_category": "샴푸"
     },
     "properties": [
@@ -732,7 +732,7 @@
     "description": "폴리쿼터늄-67이 모근 사이의 모발을 분리해 모발이 힘있고 풍성해지도록 도와주는 볼륨 샴푸",
     "price": [["500 mL", 55000, 45]],
     "category": {
-      "1_level_category": "헤어",
+      "level_1_category": "헤어",
       "2_level_category": "샴푸"
     },
     "properties": [
@@ -761,7 +761,7 @@
       ["100 mL", 20000, 48]
     ],
     "category": {
-      "1_level_category": "헤어",
+      "level_1_category": "헤어",
       "2_level_category": "컨디셔너"
     },
     "properties": [
@@ -790,7 +790,7 @@
     "description": "보태니컬 오일과 수분을 공급해주는 식물 추출물이 함유하고 있어 두피를 보호하고 진정시켜주는 오일 트리트먼트",
     "price": [["25 mL", 41000, 49]],
     "category": {
-      "1_level_category": "헤어",
+      "level_1_category": "헤어",
       "2_level_category": "트리트먼트"
     },
     "properties": [
@@ -815,7 +815,7 @@
     "description": "밝은 오프닝 노트로 시작해 깊은 스파이스, 풍부한 흙내음, 건조한 우디 노트로 이어지는 묘한 매력의 향수",
     "price": [["50 mL", 210000, 50]],
     "category": {
-      "1_level_category": "향수",
+      "level_1_category": "향수",
       "2_level_category": "이더시스"
     },
     "properties": [
@@ -840,7 +840,7 @@
     "description": "따뜻한 유향 노트의 향수로 바다 내음과 머스크 향이 떠오르는 우디한 흙내음이 페퍼와 허브 노트를 받쳐줍니다",
     "price": [["50 mL", 210000, 51]],
     "category": {
-      "1_level_category": "향수",
+      "level_1_category": "향수",
       "2_level_category": "미라세티"
     },
     "properties": [
@@ -865,7 +865,7 @@
     "description": "무디하면서 상쾌한 향수로, 미네랄의 탑 노트와 폭풍우의 메탈릭한 베이스 노트가 어우러져 절벽에서 자란 식물과 해안을 연상시킵니다",
     "price": [["50 mL", 210000, 52]],
     "category": {
-      "1_level_category": "향수",
+      "level_1_category": "향수",
       "2_level_category": "카르스트"
     },
     "properties": [
@@ -890,7 +890,7 @@
     "description": "밝은 시트러스 노트로 시작해 밀랍의 플로럴, 파우더리 머스크, 비 내린 뒤 콘크리트 내음으로 이어지는 활기차고 상쾌한 향수입니다.",
     "price": [["50 mL", 210000, 53]],
     "category": {
-      "1_level_category": "향수",
+      "level_1_category": "향수",
       "2_level_category": "에레미아"
     },
     "properties": [
@@ -915,7 +915,7 @@
     "description": "시더, 사이프러스 그리고 베티버 노트가 어우러져 고대 숲을 연상시키는 아로마 향초. (*안전기준 적합확인 신고번호: CB20-26-1353 / 제품에 표기되어 있는 사용방법과 사용상 주의사항을 준수해 주시기 바랍니다.",
     "price": [["300g", 130000, 54]],
     "category": {
-      "1_level_category": "홈",
+      "level_1_category": "홈",
       "2_level_category": "홈"
     },
     "properties": [
@@ -940,7 +940,7 @@
     "description": "카다멈과 미모사 그리고 은은한 토바코가 어우러져 탕헤르 분위기를 떠오르게 하는 아로마 향초. (*안전기준 적합확인 신고번호: CB20-26-1355 / 제품에 표기되어 있는 사용방법과 사용상 주의사항을 준수해 주시기 바랍니다.",
     "price": [["300g", 130000, 55]],
     "category": {
-      "1_level_category": "홈",
+      "level_1_category": "홈",
       "2_level_category": "홈"
     },
     "properties": [
@@ -965,7 +965,7 @@
     "description": "프랑킨센스, 과이악우드, 상쾌한 시소 노트가 어우러져 제례 의식을 떠올리는 아로마 향초. (*안전기준 적합확인 신고번호: CB20-26-1354 / 제품에 표기되어 있는 사용방법과 사용상 주의사항을 준수해 주시기 바랍니다.)",
     "price": [["300g", 130000, 56]],
     "category": {
-      "1_level_category": "홈",
+      "level_1_category": "홈",
       "2_level_category": "홈"
     },
     "properties": [
@@ -990,7 +990,7 @@
     "description": "336 페이지에 달하는 우리의 첫 번째 도서가 린넨 양장본으로 리졸리 뉴욕 출판사에서 출간됩니다. 제품 제조에서 공간 디자인, 초창기부터 현재에 이르는 이솝의 지난 30여년간을 담은 연대기가 뛰어난 사진과 아카이브 이미지와 함께 기록되었습니다.",
     "price": [["2.180 kg", 50000, 57]],
     "category": {
-      "1_level_category": "홈",
+      "level_1_category": "홈",
       "2_level_category": "문학"
     },
     "properties": [

@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import css from './SearchPage.module.scss';
 import Result from './Result/Result';
+
 function SearchPage() {
   const [data, setData] = useState([]);
   const [itemInput, setItemInput] = useState('');
 
   useEffect(() => {
-    fetch('/data/item_list.json')
+    fetch('http://localhost:8000/products')
       .then(res => res.json())
       .then(res => setData(res));
   }, []);
@@ -27,12 +28,12 @@ function SearchPage() {
     <div className={css.container}>
       <div className={css.firstBox}>
         <div className={css.imgBox}>
-          <img src="./logo-black.png" alt="logo" />
+          <img src={process.env.PUBLIC_URL + '/logo-black.png'} alt="logo" />
         </div>
         <div className={css.inputBox}>
           <input type="text" onChange={e => setItemInput(e.target.value)} />
           <button>
-            <img src="./next.png" alt="arrow" />
+            <img src={process.env.PUBLIC_URL + '/next.png'} alt="arrow" />
           </button>
           {itemInput && true ? null : (
             <div>

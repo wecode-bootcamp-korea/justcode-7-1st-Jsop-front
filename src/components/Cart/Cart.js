@@ -4,7 +4,6 @@ import ProductList from './ProductList';
 
 const Cart = ({ openCart }) => {
   const [cartItem, setCartItem] = useState([]);
-  const [products, setProducts] = useState();
 
   useEffect(() => {
     fetch('./data/CartData.json')
@@ -27,13 +26,13 @@ const Cart = ({ openCart }) => {
     return total + product.quantity * product.price;
   }, 0);
 
-  const handleAdd = productId => {
-    const addQty = products.map(product => {
-      if (productId === productId.id && product.quantity < 6) {
-        return { ...product, quantity: product.quantity + 1 };
-      } else return product;
+  const handleAdd = (id, quantity) => {
+    setCartItem(items => {
+      return items.map(item => {
+        if (item.id === id) item.quantity = quantity;
+        return item;
+      });
     });
-    setProducts(addQty);
   };
 
   return (
@@ -56,7 +55,7 @@ const Cart = ({ openCart }) => {
               <ProductList
                 key={product.id}
                 id={product.id}
-                name={product.name}
+                title={product.title}
                 size={product.size}
                 quantity={product.quantity}
                 price={product.price}
@@ -76,7 +75,13 @@ const Cart = ({ openCart }) => {
         </div>
         <div className={css.cartPrice}>
           <span>소계(세금 포함)</span>
-          <span className={css.totalPrice}>₩ {totalPrice}</span>
+          <span className={css.totalPrice}>
+            {' '}
+            ₩{' '}
+            {totalPrice
+              .toString()
+              .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
+          </span>
         </div>
         <div className={css.payModule}>
           <button className={css.payButton}>결제하기</button>

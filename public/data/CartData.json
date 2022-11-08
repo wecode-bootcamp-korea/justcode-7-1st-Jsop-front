@@ -2,24 +2,24 @@
   "cart": [
     {
       "id": 1,
-      "name": "콘그루어스",
+      "title": "콘그루어스",
       "size": "100ml",
       "quantity": 1,
-      "price": "123,000"
+      "price": 123000
     },
     {
       "id": 2,
-      "name": "레저렉션 아로마틱 핸드 밤",
+      "title": "레저렉션 아로마틱 핸드 밤",
       "size": "75ml",
       "quantity": 1,
-      "price": "31,000"
+      "price": 31000
     },
     {
       "id": 3,
-      "name": "레저렉션 아로마틱 핸드 밤",
-      "size": "100ml",
+      "title": "레저렉션 아로마틱 핸드 밤",
+      "size": "100  ml",
       "quantity": 1,
-      "price": "31,000"
+      "price": 31000
     }
   ]
 }

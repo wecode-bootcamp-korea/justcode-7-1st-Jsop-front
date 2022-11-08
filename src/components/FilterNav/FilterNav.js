@@ -15,7 +15,9 @@ function FilterNav() {
   const contentChange = e => {
     e.preventDefault();
     setContent(e.target.value);
-    fetch('http://localhost:8000/products')
+    fetch(
+      'http://localhost:8000/products?level-1-cate=%EC%8A%A4%ED%82%A8%20%EC%BC%80%EC%96%B4&level-2-cate='
+    )
       .then(res => res.json())
       .then(res => {
         setDetails(detail => (detail = res));
@@ -30,15 +32,12 @@ function FilterNav() {
   const allSkinCare = e => {
     e.preventDefault();
     setContent(e.target.value);
-    fetch('http://localhost:8000/products')
+    fetch(
+      'http://localhost:8000/products?level-1-cate=%EC%8A%A4%ED%82%A8%20%EC%BC%80%EC%96%B4&level-2-cate='
+    )
       .then(res => res.json())
-      .then(res => {
-        setDetails(detail => (detail = res));
-
-        const filterItems = res.filter(detail => {
-          return detail.category.level_1_category === '스킨 케어';
-        });
-        setFilterItem(filterItems);
+      .then(data => {
+        setFilterItem(data);
       });
   };
 
@@ -53,13 +52,14 @@ function FilterNav() {
   return (
     <div className={css.filterNavWrap}>
       <div className={css.filterNav}>
-        <div
-          className={css.logoContainer}
-          onClick={() => {
-            navigate('/');
-          }}
-        >
-          <img src="logo-black.png" alt="로고이미지" />
+        <div className={css.logoContainer}>
+          <img
+            src="logo-black.png"
+            alt="로고이미지"
+            onClick={() => {
+              navigate('/');
+            }}
+          />
         </div>
         <div className={css.subCategoryContainer}>
           <div className={css.subCategoryName}>
@@ -75,7 +75,7 @@ function FilterNav() {
               </div>
               {item
                 .filter(props => props.content === '스킨 케어')
-                .map(({ id, content, sub_category }) => (
+                .map(({ id, sub_category }) => (
                   <div key={id} className={css.subItem}>
                     {sub_category.map(({ id, content }) => (
                       <li key={id}>

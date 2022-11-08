@@ -81,7 +81,9 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
           </li>
           <li>
             <button
-              onClick={e => handleClickButton(e.target.parentNode.value)}
+              onClick={e => {
+                handleClickButton(e.target.parentNode.value);
+              }}
               value="검색"
             >
               <img

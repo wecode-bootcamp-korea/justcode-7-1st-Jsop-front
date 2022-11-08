@@ -9,15 +9,16 @@ const Shipping = ({
   subAddress,
   zip,
   open,
-  email,
   firstName,
   lastName,
 }) => {
   const postInfo = () => {
+    const token = localStorage.getItem('token');
     fetch('http://localhost:8000/orders/contract', {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
+        authorization: token,
       },
       body: JSON.stringify({
         zipcode: zip,

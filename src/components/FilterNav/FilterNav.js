@@ -112,49 +112,51 @@ function FilterNav() {
         </div>
       )}
 
-      <div className={css.details}>
-        {filterItem.map(({ id, title, img_url, price, properties }) => (
-          <div
-            className={css.container}
-            key={id}
-            onClick={() => navigate(`/detail/${id}`)}
-          >
-            <div className={css.containerWrapper}>
-              <div className={css.mainContainer}>
-                <img alt="상품이미지" src={img_url} />
-                <div className={css.productName}>
-                  <h4>{title}</h4>
-                  <div className={css.price}>
-                    <p className={css.productSize}>{price[0][0]}</p>
-                    <p className={css.productSize}>/</p>
-                    <p className={css.productSize}>{price[0][1]}</p>
+      <div className={css.productPage}>
+        <div className={css.details}>
+          {filterItem.map(({ id, title, img_url, price, properties }) => (
+            <div
+              className={css.container}
+              key={id}
+              onClick={() => navigate(`/detail/${id}`)}
+            >
+              <div className={css.containerWrapper}>
+                <div className={css.mainContainer}>
+                  <div className={css.imgContent}>
+                    <img alt="상품이미지" src={img_url} />
                   </div>
-                  <div className={css.productWrap}>
-                    {properties
-                      .filter(props => props.types === '피부 타입')
-                      .map(({ types, values }) => (
-                        <div className={css.productType} key={types}>
-                          <h2>{types}</h2>
-                          <p className={css.typeValue}>{values}</p>
-                        </div>
-                      ))}
-                    {properties
-                      .filter(props => props.types === '사용감')
-                      .map(({ types, values }) => (
-                        <div className={css.productUse} key={types}>
-                          <h2>{types}</h2>
-                          <p className={css.typeValue}>{values}</p>
-                        </div>
-                      ))}
+                  <div className={css.productName}>
+                    <h4>{title}</h4>
+                    <div className={css.price}>
+                      <p className={css.productSize}>{price[0][0]}</p>
+                      <p className={css.productSize}>/</p>
+                      <p className={css.productSize}>{price[0][1]}</p>
+                    </div>
                   </div>
+                  {properties
+                    .filter(props => props.types === '피부 타입')
+                    .map(({ types, values }) => (
+                      <div className={css.productType} key={types}>
+                        <h2>{types}</h2>
+                        <p className={css.typeValue}>{values}</p>
+                      </div>
+                    ))}
+                  {properties
+                    .filter(props => props.types === '사용감')
+                    .map(({ types, values }) => (
+                      <div className={css.productUse} key={types}>
+                        <h2>{types}</h2>
+                        <p className={css.typeValue}>{values}</p>
+                      </div>
+                    ))}
                 </div>
+                <button className={css.addCartButton}>
+                  <span className={css.addCart}>카트에 추가하기 — ₩47,000</span>
+                </button>
               </div>
-              <button className={css.addCartButton}>
-                <span className={css.addCart}>카트에 추가하기 — ₩47,000</span>
-              </button>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

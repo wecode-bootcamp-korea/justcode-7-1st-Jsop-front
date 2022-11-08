@@ -3,6 +3,18 @@
   padding-top: 30px;
   padding-bottom: 100px;
   background-color: #fffef2;
+
+  h2 {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 14px;
+  }
+
+  p {
+    margin-bottom: 15px;
+    color: #666;
+  }
+
   .logoContainer {
     height: 10vh;
     display: flex;
@@ -20,8 +32,9 @@
   .ProductLeftImage {
     width: calc(100% * 8 / 12);
     display: flex;
+    padding-top: 80px;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     .ImageWrapper {
       img {
         height: auto;
@@ -38,9 +51,6 @@
         margin-bottom: 15px;
         font-size: 14px;
         color: #333;
-        ul li {
-          display: inline-block;
-        }
       }
     }
     .ProductName {
@@ -61,28 +71,6 @@
       font-size: 14px;
       div {
         border-bottom: 0.5px solid #d5d4c9;
-        h2 {
-          margin-bottom: 5px;
-          color: #333;
-          font-size: 14px;
-        }
-        p {
-          margin-bottom: 15px;
-          color: #666;
-        }
-      }
-    }
-    .ProductSizeSelect {
-      h2 {
-        margin-bottom: 15px;
-        font-size: 14px;
-      }
-      ul li {
-        display: inline-block;
-        margin-right: 30px;
-        .RadioInput {
-          margin: 0 10px 0 0;
-        }
       }
     }
     .AddToCartButton {
@@ -93,10 +81,15 @@
       height: 60px;
       width: 400px;
       margin-top: 30px;
+      cursor: pointer;
       span {
         background-color: transparent;
         color: #fffef2;
         font-size: 14px;
+      }
+
+      &:hover {
+        background-color: black;
       }
     }
   }

@@ -60,12 +60,10 @@ function CategoryProductDetail(props) {
             </div>
             <div className={css.ProductSizeSelect}>
               <h2>사이즈</h2>
-              <ul>
-                <li>{price[0][0]}</li>
-              </ul>
+              <p>{price[0][0]}</p>
               <button className={css.AddToCartButton} type="button">
                 <span className={css.AddToCartPrice}>
-                  카트에 추가하기 - ₩ {price[0][1]}
+                  카트에 추가하기 − ₩ {price[0][1]}
                 </span>
               </button>
             </div>

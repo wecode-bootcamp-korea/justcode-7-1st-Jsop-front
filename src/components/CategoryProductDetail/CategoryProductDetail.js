@@ -1,14 +1,13 @@
 import css from './CategoryProductDetail.module.scss';
 
-function CategoryProductDetail(props) {
-  const { id, title, description, type, use, ingredient, size, image_path } =
-    props;
+function CategoryProductDetail({ props }) {
+  const { id, title, img_url, description, price, properties } = props;
   return (
     <div>
       <div className={css.ProductContentWrapper} key={id}>
         <div className={css.ProductLeftImage}>
           <picture className={css.ImageWrapper}>
-            <img alt="상품이미지" src={image_path} />
+            <img alt="상품이미지" src={img_url} />
           </picture>
         </div>
         <div className={css.ProductRightDescription}>
@@ -29,16 +28,34 @@ function CategoryProductDetail(props) {
             </header>
             <div className={css.ProductDetailWrapper}>
               <div className={css.type}>
-                <h2>피부 타입</h2>
-                <p>{type}</p>
+                {properties
+                  .filter(props => props.types === '피부 타입')
+                  .map(({ types, values }) => (
+                    <div className={css.productUse} key={types}>
+                      <h2>{types}</h2>
+                      <p className={css.typeValue}>{values}</p>
+                    </div>
+                  ))}
               </div>
               <div className={css.use}>
-                <h2>사용감</h2>
-                <p>{use}</p>
+                {properties
+                  .filter(props => props.types === '사용감')
+                  .map(({ types, values }) => (
+                    <div className={css.productUse} key={types}>
+                      <h2>{types}</h2>
+                      <p className={css.typeValue}>{values}</p>
+                    </div>
+                  ))}
               </div>
               <div className={css.ingredient}>
-                <h2>주요 성분</h2>
-                <p>{ingredient}</p>
+                {properties
+                  .filter(props => props.types === '주요 성분')
+                  .map(({ types, values }) => (
+                    <div className={css.productUse} key={types}>
+                      <h2>{types}</h2>
+                      <p className={css.typeValue}>{values}</p>
+                    </div>
+                  ))}
                 {/* <div className={css.ingredientPlusButton}>
                       <i className={css.faCirclePlus} />
                     </div> */}
@@ -54,7 +71,7 @@ function CategoryProductDetail(props) {
                       name="size"
                       type="radio"
                     />
-                    <span className={css.RadioContent}>{size[0]}ml</span>
+                    <span className={css.RadioContent}>{price[0]}ml</span>
                   </label>
                 </li>
                 <li>
@@ -64,7 +81,7 @@ function CategoryProductDetail(props) {
                       name="size"
                       type="radio"
                     />
-                    <span className={css.RadioContent}>{size[1]}ml</span>
+                    <span className={css.RadioContent}>{price[1]}ml</span>
                   </label>
                 </li>
               </ul>

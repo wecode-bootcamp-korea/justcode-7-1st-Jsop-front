@@ -6,21 +6,19 @@ import Footer from '../../components/Footer/Footer';
 import Carousel from '../../components/Carousel/Carousel';
 import Header from '../../components/Header/Header';
 function ProductDetail() {
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState([]);
   const [page, setPageOpen] = useState(true);
-  const { id } = useParams();
+  let { id } = useParams();
 
   //setfunc 안에 product 의미
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch('/data/CategoryProduct.json')
-      .then(response => response.json())
-      .then(json => {
-        setProduct(product => {
-          return json.content.find(content => content.id === Number(id));
-        });
-      });
+    fetch('http://localhost:8000/products')
+      .then(res => res.json())
+      .then(res => setProduct(res));
   }, [id]);
+
+  console.log(product);
 
   return (
     <div className={css.container}>
@@ -30,11 +28,9 @@ function ProductDetail() {
           id={product.id}
           title={product.title}
           description={product.description}
-          type={product.type}
-          use={product.use}
-          ingredient={product.ingredient}
-          size={product.size}
-          image_path={product.image_path}
+          price={product.price}
+          properties={product.properties}
+          img_url={product.img_url}
         />
       )}
 

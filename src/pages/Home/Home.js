@@ -19,7 +19,6 @@ function Home() {
           <Carousel />
           <Card />
           <Carousel />
-          <Card />
           <AsideContent />
           <AsideLocator />
         </div>

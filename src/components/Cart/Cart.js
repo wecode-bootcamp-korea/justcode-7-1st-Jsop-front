@@ -27,8 +27,6 @@ const Cart = ({ openCart }) => {
     return total + product.quantity * product.price;
   }, 0);
 
-  console.log(totalPrice);
-
   const handleAdd = productId => {
     const addQty = products.map(product => {
       if (productId === productId.id && product.quantity < 6) {

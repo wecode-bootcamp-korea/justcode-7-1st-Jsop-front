@@ -74,6 +74,10 @@
           display: flex;
           margin-left: 10px;
           margin-right: 10px;
+          &:hover {
+            text-decoration: underline;
+            text-underline-position: under;
+          }
         }
       }
 
@@ -90,15 +94,6 @@
           }
         }
       }
-
-      // li {
-      //   padding-left: 15px;
-
-      //   &:hover {
-      //     text-decoration: underline;
-      //     text-underline-position: under;
-      //   }
-      // }
     }
   }
   .filterBtn {
@@ -165,7 +160,7 @@
 
           .mainContainer {
             display: grid;
-            grid-template-rows: 400px 100px 80px 80px;
+            grid-template-rows: 400px 100px 60px 60px;
 
             .imgContent {
               display: flex;
@@ -175,7 +170,7 @@
               position: relative;
               img {
                 cursor: pointer;
-                width: 80%;
+                width: 368px;
                 object-fit: contain;
               }
             }

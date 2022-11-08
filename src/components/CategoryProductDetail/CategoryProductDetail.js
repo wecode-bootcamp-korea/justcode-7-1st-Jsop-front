@@ -1,10 +1,20 @@
 import css from './CategoryProductDetail.module.scss';
-
-function CategoryProductDetail({ props }) {
+import { useNavigate } from 'react-router-dom';
+function CategoryProductDetail(props) {
   const { id, title, img_url, description, price, properties } = props;
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className={css.ProductContentWrapper} key={id}>
+        <div
+          className={css.logoContainer}
+          onClick={() => {
+            navigate('/');
+          }}
+        >
+          <img src="/logo-black.png" alt="로고이미지" />
+        </div>
         <div className={css.ProductLeftImage}>
           <picture className={css.ImageWrapper}>
             <img alt="상품이미지" src={img_url} />
@@ -12,16 +22,6 @@ function CategoryProductDetail({ props }) {
         </div>
         <div className={css.ProductRightDescription}>
           <div className={css.ProductRightDescriptionWrapper}>
-            <nav className={css.ProductDetailCategory}>
-              <ul>
-                <li className={css.ProductDetailFirstCategory}>
-                  <span>스킨 </span>
-                </li>
-                <li className={css.ProductDetailSecondCategory}>
-                  <span>토너</span>
-                </li>
-              </ul>
-            </nav>
             <header className={css.ProductName}>
               <h1 className={css.ProductTitle}>{title}</h1>
               <p className={css.ProductDescription}>{description}</p>
@@ -56,38 +56,16 @@ function CategoryProductDetail({ props }) {
                       <p className={css.typeValue}>{values}</p>
                     </div>
                   ))}
-                {/* <div className={css.ingredientPlusButton}>
-                      <i className={css.faCirclePlus} />
-                    </div> */}
               </div>
             </div>
             <div className={css.ProductSizeSelect}>
               <h2>사이즈</h2>
               <ul>
-                <li>
-                  <label className={css.RadioButton}>
-                    <input
-                      className={css.RadioInput}
-                      name="size"
-                      type="radio"
-                    />
-                    <span className={css.RadioContent}>{price[0]}ml</span>
-                  </label>
-                </li>
-                <li>
-                  <label className={css.RadioButton}>
-                    <input
-                      className={css.RadioInput}
-                      name="size"
-                      type="radio"
-                    />
-                    <span className={css.RadioContent}>{price[1]}ml</span>
-                  </label>
-                </li>
+                <li>{price[0][0]}</li>
               </ul>
               <button className={css.AddToCartButton} type="button">
                 <span className={css.AddToCartPrice}>
-                  카트에 추가하기 — ₩47,000
+                  카트에 추가하기 - ₩ {price[0][1]}
                 </span>
               </button>
             </div>

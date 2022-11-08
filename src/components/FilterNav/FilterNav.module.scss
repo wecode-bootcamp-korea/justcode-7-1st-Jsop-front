@@ -151,6 +151,7 @@
     .details {
       display: grid;
       width: 100%;
+      gap: 30px;
       grid-template-columns: repeat(3, 1fr);
       .container {
         display: flex;
@@ -158,13 +159,13 @@
         .containerWrapper {
           display: grid;
           width: 100%;
-          padding-top: 120px;
+          padding-top: 50px;
           flex-direction: column;
           animation: 0.8s ease-out addCartBtn;
 
           .mainContainer {
             display: grid;
-            grid-template-rows: 450px 100px 80px 80px;
+            grid-template-rows: 400px 100px 80px 80px;
 
             .imgContent {
               display: flex;

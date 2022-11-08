@@ -52,13 +52,14 @@ function FilterNav() {
   return (
     <div className={css.filterNavWrap}>
       <div className={css.filterNav}>
-        <div
-          className={css.logoContainer}
-          onClick={() => {
-            navigate('/');
-          }}
-        >
-          <img src="logo-black.png" alt="로고이미지" />
+        <div className={css.logoContainer}>
+          <img
+            src="logo-black.png"
+            alt="로고이미지"
+            onClick={() => {
+              navigate('/');
+            }}
+          />
         </div>
         <div className={css.subCategoryContainer}>
           <div className={css.subCategoryName}>

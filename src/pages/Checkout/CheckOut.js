@@ -11,16 +11,21 @@ const CheckOut = () => {
   const [open, setOpen] = useState(false);
   const [payOpen, setPayOpen] = useState(false);
   //유저 정보 fatch 해오기
-
   useEffect(() => {
-    fetch('/data/userInfo.json')
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:8000/getme', {
+      method: 'GET',
+      headers: {
+        authorization: token,
+      },
+    })
       .then(response => response.json())
-      .then(data => setData(data));
+      .then(result => setData(result.userInfo));
   }, []);
 
   var email = data.email;
-  var lastName = data.lastName;
-  var firstName = data.firstName;
+  var lastName = data.last_name;
+  var firstName = data.first_name;
 
   return (
     <div className={css.container}>

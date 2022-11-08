@@ -5,7 +5,6 @@ import Product from './Product/Product';
 import MyPage from './MyPage/MyPage';
 import CheckOut from './Checkout/CheckOut';
 import ProductDetail from './ProductDetail/ProductDetail';
-
 function Router() {
   return (
     <BrowserRouter>

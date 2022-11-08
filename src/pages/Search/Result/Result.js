@@ -1,11 +1,15 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import css from './Result.module.scss';
+
 function Result({ searchItem }) {
+  const navigate = useNavigate();
   function getItem(e) {
     const filtered = searchItem.filter(itemList => {
       return itemList.title.includes(e.target.innerHTML);
     });
     let id = filtered[0].id;
-    console.log(id);
+    navigate(`/detail/${id}`);
   }
   if (searchItem.length > 0) {
     return (

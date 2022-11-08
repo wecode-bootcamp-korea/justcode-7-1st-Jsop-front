@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import css from './CheckOut.module.scss';
+import css from './Checkout.module.scss';
 import Shipping from './miniPage/Shipping';
 import Pay from './miniPage/Pay';
 const CheckOut = () => {

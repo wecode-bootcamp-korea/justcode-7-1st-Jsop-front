@@ -4,7 +4,7 @@ import Cart from '../components/Cart/Cart';
 import Home from './Home/Home';
 import Product from './Product/Product';
 import MyPage from './MyPage/MyPage';
-import CheckOut from './CheckOut/CheckOut';
+import CheckOut from './Checkout/Checkout';
 function Router() {
   return (
     <BrowserRouter>

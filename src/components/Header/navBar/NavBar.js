@@ -3,10 +3,7 @@ import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
 import SearchPage from '../../../pages/Search/SearchPage';
 import Login from '../../../pages/Login/Login';
-
 import Cart from '../../Cart/Cart';
-
-
 import StoreSearch from '../storeSearch/StoreSearch';
 
 function NavBar({ setIsClick, isClick, setPageOpen }) {

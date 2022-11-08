@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import css from './FilterNav.module.scss';
 import Filter from '../../components/FilterNav/Filter';
 import { useNavigate } from 'react-router-dom';
+import SubCategory from './SubCategory';
 function FilterNav() {
   const [item, setItems] = useState([]);
   const [visible, setVisible] = useState(false);
@@ -12,10 +13,12 @@ function FilterNav() {
   };
 
   useEffect(() => {
-    fetch('/data/subCategory.json')
+    fetch(
+      'https://02ff9480-a7a4-4376-b578-279c9ba10257.mock.pstmn.io/categories'
+    )
       .then(res => res.json())
       .then(data => {
-        setItems(data.subCategory);
+        setItems(data);
       });
   }, []);
 
@@ -40,13 +43,19 @@ function FilterNav() {
                 <button className={css.allItem}>모든 스킨</button>
               </li>
               <li>|</li>
-              {item.map(({ id, title }) => (
-                <li key={id}>
-                  <button value={title} onClick={titleChange}>
-                    {title}
-                  </button>
-                </li>
-              ))}
+              <li>
+                {/* err 나고 있음 
+                {item.map(({ id, content }) => (
+                  <li key={id}>
+                    <button value={content} onClick={titleChange}>
+                      {content}
+                    </button>
+                  </li>
+                  // <div key={id}>
+                  //   <SubCategory key={id} category={category} />
+                  // </div>
+                ))} */}
+              </li>
             </ul>
             <div
               onClick={() => {

@@ -3,7 +3,11 @@ import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
 import SearchPage from '../../../pages/Search/SearchPage';
 import Login from '../../../pages/Login/Login';
+
 import Cart from '../../Cart/Cart';
+
+
+import StoreSearch from '../storeSearch/StoreSearch';
 
 function NavBar({ setIsClick, isClick, setPageOpen }) {
   const [category, setCategory] = useState([]);
@@ -83,7 +87,10 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
               onClick={e => handleClickButton(e.target.parentNode.value)}
               value="검색"
             >
-              <img src="images/search-b.png" alt="glass" />
+              <img
+                src={process.env.PUBLIC_URL + '/images/search-b.png'}
+                alt="glass"
+              />
             </button>
           </li>
           {isClick ? (
@@ -95,7 +102,7 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
                 닫기
                 <img
                   className={css.cancel}
-                  src="images/cancel.png"
+                  src={process.env.PUBLIC_URL + '/images/cancel.png'}
                   alt="cancel"
                 />
               </button>
@@ -143,7 +150,7 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
         ) : null
       )}
       {content === '검색' ? <SearchPage /> : null}
-      {content === '스토어' ? <storeSearch /> : null}
+      {content === '스토어' ? <StoreSearch /> : null}
     </div>
   );
 }

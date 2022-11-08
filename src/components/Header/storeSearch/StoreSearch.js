@@ -34,7 +34,7 @@ function StoreSearch() {
     <div className={css.container}>
       <div className={css.firstBox}>
         <div className={css.imgBox}>
-          <img src="./logo-black.png" alt="logo" />
+          <img src={process.env.PUBLIC_URL + '/logo-black.png'} alt="logo" />
         </div>
         <div className={css.inputBox}>
           <h3>이솝 신세계 백화점 본점</h3>
@@ -42,9 +42,6 @@ function StoreSearch() {
           <h4>서울특별시 중구 충무로1가 52-5</h4>
           <h4>TEL: 02-310-5118</h4>
           <h4>영업시간: 매일 10:30 - 20:00</h4>
-          <button>
-            <img src="./next.png" alt="arrow" />
-          </button>
         </div>
       </div>
       <div className={css.secondBox}>

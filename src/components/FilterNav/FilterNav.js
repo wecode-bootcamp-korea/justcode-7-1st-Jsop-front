@@ -44,6 +44,7 @@ function FilterNav() {
               </li>
               <li>|</li>
               <li>
+                {/* err 나고 있음 
                 {item.map(({ id, content }) => (
                   <li key={id}>
                     <button value={content} onClick={titleChange}>
@@ -53,7 +54,7 @@ function FilterNav() {
                   // <div key={id}>
                   //   <SubCategory key={id} category={category} />
                   // </div>
-                ))}
+                ))} */}
               </li>
             </ul>
             <div

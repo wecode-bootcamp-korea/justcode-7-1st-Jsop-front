@@ -23,5 +23,5 @@ function CategoryProductList(props) {
     </div>
   );
 }
-// 여기 있는 아이템은 몬스터즈 메인 페이지와 연결됨
+
 export default CategoryProductList;

@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import css from './Carousel.module.scss';
 
-function Carousel() {
+function Carousel(props) {
+  const { CarouselName } = props;
   const [item, setItems] = useState([]);
   const [moveButton, setMoveButton] = useState(false);
   const [carousel, setCarousel] = useState(0);
@@ -41,9 +42,9 @@ function Carousel() {
     fetch('/data/item.json')
       .then(res => res.json())
       .then(data => {
-        setItems(data.itemData);
+        setItems(data[CarouselName]);
       });
-  }, []);
+  }, [CarouselName]);
 
   return (
     <div

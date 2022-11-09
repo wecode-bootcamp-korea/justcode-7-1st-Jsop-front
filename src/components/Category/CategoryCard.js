@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import css from './CategoryCard.module.scss';
 
-function CategoryBox() {
+function CategoryBox(props) {
+  const { categoryName } = props;
   const [item, setItems] = useState([]);
 
   useEffect(() => {
     fetch('/data/categoryCard.json')
       .then(res => res.json())
       .then(data => {
-        setItems(data.card);
+        setItems(data[categoryName]);
       });
-  }, []);
+  }, [categoryName]);
 
   return (
     <div className={css.cardWrap}>

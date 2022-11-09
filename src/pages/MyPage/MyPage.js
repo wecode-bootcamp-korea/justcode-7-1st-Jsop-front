@@ -17,9 +17,10 @@ function MyPage() {
       <div className={css.logoContainer}>
         <img src="logo-black.png" alt="logo" />
         <div className={css.welcome}>
-          <span>환영합니다 땡땡님</span>
+          <span>환영합니다 님</span>
         </div>
       </div>
+
       <div className={css.myPageContent}>
         <div className={css.leftNav}>
           <ul>

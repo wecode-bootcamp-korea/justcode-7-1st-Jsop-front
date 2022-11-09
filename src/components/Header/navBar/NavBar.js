@@ -1,13 +1,17 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
 import SearchPage from '../../../pages/Search/SearchPage';
 import Login from '../../../pages/Login/Login';
+import Cart from '../../Cart/Cart';
+import StoreSearch from '../storeSearch/StoreSearch';
 
-function NavBar({ setIsClick, isClick }) {
+function NavBar({ setIsClick, isClick, setPageOpen }) {
   const [category, setCategory] = useState([]);
   const [content, setContent] = useState('');
   const [loginModal, setLoginModal] = useState(false);
+  const [cartModal, setCartModal] = useState(false);
+  const [userFirstName, setUserFirstName] = useState();
 
   useEffect(() => {
     fetch('/data/category.json')
@@ -16,11 +20,13 @@ function NavBar({ setIsClick, isClick }) {
   }, []);
 
   const handleClickButton = content => {
+    setPageOpen(false);
     setContent(content);
     setIsClick(true);
   };
 
   const handleCloseBtn = content => {
+    setPageOpen(true);
     setIsClick(false);
     setContent(content);
   };
@@ -32,6 +38,22 @@ function NavBar({ setIsClick, isClick }) {
   const closeBtn = () => {
     setLoginModal(false);
   };
+
+  const openCart = () => {
+    setCartModal(true);
+  };
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:8000/getme', {
+      method: 'GET',
+      headers: {
+        authorization: token,
+      },
+    })
+      .then(response => response.json())
+      .then(result => setUserFirstName(result.userInfo.first_name));
+  }, []);
 
   return (
     <div>
@@ -59,10 +81,15 @@ function NavBar({ setIsClick, isClick }) {
           </li>
           <li>
             <button
-              onClick={e => handleClickButton(e.target.parentNode.value)}
+              onClick={e => {
+                handleClickButton(e.target.parentNode.value);
+              }}
               value="검색"
             >
-              <img src="images/search-b.png" alt="glass" />
+              <img
+                src={process.env.PUBLIC_URL + '/images/search-b.png'}
+                alt="glass"
+              />
             </button>
           </li>
           {isClick ? (
@@ -74,7 +101,7 @@ function NavBar({ setIsClick, isClick }) {
                 닫기
                 <img
                   className={css.cancel}
-                  src="images/cancel.png"
+                  src={process.env.PUBLIC_URL + '/images/cancel.png'}
                   alt="cancel"
                 />
               </button>
@@ -82,22 +109,29 @@ function NavBar({ setIsClick, isClick }) {
           ) : null}
         </ul>
         <ul className={css.right}>
+          {userFirstName ? (
+            <span className={css.userFirstName}>{userFirstName}님</span>
+          ) : (
+            <li>
+              <button
+                onClick={() => {
+                  openLogin();
+                }}
+                value="로그인"
+              >
+                로그인
+              </button>
+              {loginModal ? <Login closeBtn={closeBtn} /> : null}
+            </li>
+          )}
           <li>
             <button
-              onClick={e => {
-                openLogin(e.target.value);
+              onClick={() => {
+                openCart();
               }}
-              value="로그인"
-            >
-              로그인
-            </button>
-            {loginModal ? <Login closeBtn={closeBtn} /> : null}
-          </li>
-          <li>
-            <button
-              onClick={e => handleClickButton(e.target.value)}
               value="카트"
             >
+              {cartModal ? <Cart openCart={openCart} /> : null}
               카트
             </button>
           </li>
@@ -115,7 +149,7 @@ function NavBar({ setIsClick, isClick }) {
         ) : null
       )}
       {content === '검색' ? <SearchPage /> : null}
-      {content === '스토어' ? <storeSearch /> : null}
+      {content === '스토어' ? <StoreSearch /> : null}
     </div>
   );
 }

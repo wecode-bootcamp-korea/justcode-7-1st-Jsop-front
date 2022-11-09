@@ -5,6 +5,7 @@ import Pay from './miniPage/Pay';
 
 const CheckOut = () => {
   const [data, setData] = useState({});
+  const [infoData, setInfoData] = useState({});
   const [address, setAddress] = useState('');
   const [subAddress, setSubAddress] = useState('');
   const [zip, setZip] = useState('우편번호를 입력하여 주세요.');
@@ -24,6 +25,25 @@ const CheckOut = () => {
       .then(result => setData(result.userInfo));
   }, []);
 
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:8000/orders/contract', {
+      method: 'GET',
+      headers: {
+        authorization: token,
+      },
+    })
+      .then(response => response.json())
+      .then(result => setInfoData(result));
+
+    if (infoData.zipcode) {
+      setZip(infoData.zipcode);
+      setAddress(infoData.street_address);
+      setSubAddress(infoData.supplimental_address);
+    } else {
+      setZip('우편번호를 입력하여 주세요');
+    }
+  }, []);
   const orderhandle = () => {};
 
   let email = data.email;

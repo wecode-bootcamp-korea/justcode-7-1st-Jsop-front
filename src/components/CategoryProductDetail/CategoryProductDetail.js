@@ -4,6 +4,21 @@ function CategoryProductDetail(props) {
   const { id, title, img_url, description, price, properties } = props;
   const navigate = useNavigate();
 
+  const handleAddItem = () => {
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:8000/cart', {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: token,
+      },
+      body: JSON.stringify({
+        item_size_id: id,
+        quantity: 1,
+      }),
+    });
+  };
+
   return (
     <div>
       <div className={css.ProductContentWrapper} key={id}>
@@ -61,7 +76,11 @@ function CategoryProductDetail(props) {
             <div className={css.ProductSizeSelect}>
               <h2>사이즈</h2>
               <p>{price[0][0]}</p>
-              <button className={css.AddToCartButton} type="button">
+              <button
+                className={css.AddToCartButton}
+                type="button"
+                onClick={handleAddItem}
+              >
                 <span className={css.AddToCartPrice}>
                   카트에 추가하기 − ₩ {price[0][1]}
                 </span>

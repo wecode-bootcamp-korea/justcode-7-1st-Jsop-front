@@ -5,6 +5,7 @@ import SearchPage from '../../../pages/Search/SearchPage';
 import Login from '../../../pages/Login/Login';
 import Cart from '../../Cart/Cart';
 import StoreSearch from '../storeSearch/StoreSearch';
+import { Link } from 'react-router-dom';
 
 function NavBar({ setIsClick, isClick, setPageOpen }) {
   const [category, setCategory] = useState([]);
@@ -12,6 +13,7 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
   const [loginModal, setLoginModal] = useState(false);
   const [cartModal, setCartModal] = useState(false);
   const [userFirstName, setUserFirstName] = useState();
+  const [userLastName, setUserLastName] = useState();
 
   useEffect(() => {
     fetch('/data/category.json')
@@ -45,6 +47,18 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
     })
       .then(response => response.json())
       .then(result => setUserFirstName(result.userInfo.first_name));
+  }, []);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:8000/getme', {
+      method: 'GET',
+      headers: {
+        authorization: token,
+      },
+    })
+      .then(response => response.json())
+      .then(result => setUserLastName(result.userInfo.last_name));
   }, []);
 
   return (
@@ -102,7 +116,12 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
         </ul>
         <ul className={css.right}>
           {userFirstName ? (
-            <span className={css.userFirstName}>{userFirstName}님</span>
+            <Link to="/mypage">
+              <span className={css.userFirstName}>
+                {userLastName}
+                {userFirstName}님
+              </span>
+            </Link>
           ) : (
             <li>
               <button

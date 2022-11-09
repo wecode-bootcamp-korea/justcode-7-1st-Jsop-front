@@ -41,12 +41,14 @@
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
   margin: 0 auto 0 auto !important;
   li {
     margin-left: 17px;
   }
   .userFirstName {
     margin-top: 30px;
+    color: #333;
   }
 }
 

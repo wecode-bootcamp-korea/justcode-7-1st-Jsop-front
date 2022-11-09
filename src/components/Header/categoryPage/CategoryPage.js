@@ -32,6 +32,7 @@ function CategoryPage({ content, img, color, subCategory }) {
                     <button
                       onClick={() => {
                         navigate('/product');
+                        window.location.replace(`/product`);
                       }}
                     >
                       {e.content}

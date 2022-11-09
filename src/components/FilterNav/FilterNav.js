@@ -9,9 +9,8 @@ function FilterNav() {
   const [content, setContent] = useState('');
   const [detail, setDetails] = useState([]);
   const [filterItem, setFilterItem] = useState([]);
-
   const navigate = useNavigate();
-
+  let c_id = 0;
   const contentChange = e => {
     e.preventDefault();
     setContent(e.target.value);
@@ -48,6 +47,27 @@ function FilterNav() {
         setItems(data);
       });
   }, []);
+
+  const handleAddItem = id => {
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:8000/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: token,
+      },
+      body: JSON.stringify({
+        item_id: id,
+        quantity: 1,
+      }),
+    })
+      .then(response => response.json())
+      .then(result =>
+        result.message === 'CREATE_SUCCESSFULLY'
+          ? alert('장바구니에 담겼습니다.')
+          : alert('에러!')
+      );
+  };
 
   return (
     <div className={css.filterNavWrap}>
@@ -145,12 +165,17 @@ function FilterNav() {
                     .filter(props => props.types === '사용감')
                     .map(({ types, values }) => (
                       <div className={css.productUse} key={types}>
-                        <h2>{types}</h2>
                         <p className={css.typeValue}>{values}</p>
                       </div>
                     ))}
                 </div>
-                <button className={css.addCartButton}>
+                <button
+                  className={css.addCartButton}
+                  onClick={() => {
+                    c_id = id;
+                    handleAddItem(c_id);
+                  }}
+                >
                   <span className={css.addCart}>카트에 추가하기 — ₩47,000</span>
                 </button>
               </div>

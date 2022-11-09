@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import css from './CheckOut.module.scss';
 import Shipping from './miniPage/Shipping';
 import Pay from './miniPage/Pay';
+
 const CheckOut = () => {
   const [data, setData] = useState({});
   const [address, setAddress] = useState('');
@@ -23,9 +24,11 @@ const CheckOut = () => {
       .then(result => setData(result.userInfo));
   }, []);
 
-  var email = data.email;
-  var lastName = data.last_name;
-  var firstName = data.first_name;
+  const orderhandle = () => {};
+
+  let email = data.email;
+  let lastName = data.last_name;
+  let firstName = data.first_name;
 
   return (
     <div className={css.container}>
@@ -79,11 +82,13 @@ const CheckOut = () => {
           </div>
         )}
 
-        {/* <h2>다음 페이지</h2>
-        <button>편집</button>
+        <h2>다음 페이지</h2>
         <div className={css.summary}>
           <h3>예정</h3>
-        </div> */}
+        </div>
+        <button onClick={orderhandle} className={css.finishBtn}>
+          주문 완료
+        </button>
       </div>
     </div>
   );

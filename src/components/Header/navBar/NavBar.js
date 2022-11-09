@@ -31,16 +31,8 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
     setContent(content);
   };
 
-  const openLogin = () => {
-    setLoginModal(!loginModal);
-  };
-
   const closeBtn = () => {
     setLoginModal(false);
-  };
-
-  const openCart = () => {
-    setCartModal(true);
   };
 
   useEffect(() => {
@@ -115,7 +107,7 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
             <li>
               <button
                 onClick={() => {
-                  openLogin();
+                  setLoginModal(true);
                 }}
                 value="로그인"
               >
@@ -127,11 +119,11 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
           <li>
             <button
               onClick={() => {
-                openCart();
+                setCartModal(true);
               }}
               value="카트"
             >
-              {cartModal ? <Cart openCart={openCart} /> : null}
+              {cartModal ? <Cart closeBtn={closeBtn} /> : null}
               카트
             </button>
           </li>

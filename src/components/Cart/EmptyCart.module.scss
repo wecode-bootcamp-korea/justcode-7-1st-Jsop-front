@@ -1,0 +1,17 @@
+.emptyCartComponent {
+  display: flex;
+  justify-content: flex-end;
+  left: 0;
+  align-items: center;
+  background-color: #252525;
+  color: #fffef2;
+  height: 80px;
+  position: absolute;
+  transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  width: 90%;
+  z-index: 200;
+
+  .emptyCartComment {
+    padding: 20px;
+  }
+}

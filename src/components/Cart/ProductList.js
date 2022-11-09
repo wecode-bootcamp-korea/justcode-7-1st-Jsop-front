@@ -3,30 +3,28 @@ import css from './ProductList.module.scss';
 
 const ProductList = ({
   id,
-  name,
+  title,
   size,
   quantity,
   price,
   deleteItem,
-  handleAdd,
-  cartItem,
-  setCartItem,
-  itemPrice,
+  handleQuantity,
 }) => {
   const count = [1, 2, 3, 4, 5];
-  const sumPrice = e => {
-    return e.price * e.count;
+
+  const changeQuantity = ({ target: { value } }) => {
+    handleQuantity(id, value);
   };
 
   return (
     <div className={css.productList}>
       <div className={css.cartProductsList}>
-        <span className={css.productName}>{name}</span>
+        <span className={css.productName}>{title}</span>
         <span className={css.productSize}>{size}</span>
         <select
           className={css.productCount}
           defaultValue={quantity}
-          onChange={handleAdd}
+          onChange={changeQuantity}
         >
           {count.map(number => (
             <option key={number} value={number}>
@@ -42,7 +40,12 @@ const ProductList = ({
         >
           삭제
         </button>
-        <span className={css.productPrice}>{price}</span>
+        <span className={css.productPrice}>
+          ₩{' '}
+          {(price * quantity)
+            .toString()
+            .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
+        </span>
       </div>
     </div>
   );

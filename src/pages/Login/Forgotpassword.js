@@ -35,7 +35,7 @@ const Forgotpassword = ({ closeBtn }) => {
                 <span className={css.inputSpan}>이메일 주소</span>
               </label>
             </div>
-            <button>보내기</button>
+            <button className={css.send}>보내기</button>
           </div>
         </div>
       </div>

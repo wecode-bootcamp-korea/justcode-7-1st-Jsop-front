@@ -3,13 +3,36 @@ import css from './ExistCart.module.scss';
 import ProductList from './ProductList';
 
 const ExistCart = ({
-  deleteItem,
   totalPrice,
   handleQuantity,
   refresh,
   cartItem,
+  setCartItem,
   goToCheckOut,
 }) => {
+  const deleteItem = id => {
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:8000/cart', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: token,
+      },
+      body: JSON.stringify({
+        item_id: id,
+      }),
+    })
+      .then(res => res.json())
+      .then(result => {
+        if (result.message === 'DELETE_SUCCESSFULLY') {
+          setCartItem(cartItem.filter(cart => cart.item_size_id !== id));
+          alert('삭제 완료!');
+        } else {
+          alert('문제있음');
+        }
+      });
+  };
+
   return (
     <div className={css.cartComponent}>
       <div className={css.cartProducts}>
@@ -25,11 +48,11 @@ const ExistCart = ({
           </button>
         </div>
         <div className={css.cartProductsList}>
-          {cartItem.map(product => {
+          {cartItem.map((product, idx) => {
             return (
               <ProductList
-                key={product.id}
-                id={product.id}
+                key={idx}
+                id={product.item_id}
                 title={product.title}
                 size={product.size}
                 quantity={product.quantity}

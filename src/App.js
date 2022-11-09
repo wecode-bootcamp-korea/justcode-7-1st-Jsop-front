@@ -1,14 +1,14 @@
 import React from 'react';
 
-import Header from '../src/components/Header/Header';
-import Footer from '../src/components/Footer/Footer';
+// import Header from '../src/components/Header/Header';
+// import Footer from '../src/components/Footer/Footer';
 import Router from './pages/Router';
 function App() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Router />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

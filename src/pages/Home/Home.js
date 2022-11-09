@@ -12,10 +12,10 @@ function Home() {
     <div className="mainWrap">
       <div className={css.mainContent}>
         <MainProduct />
-        <Carousel />
-        <Card />
-        <Carousel />
-        <Card />
+        <Carousel CarouselName="itemData1" />
+        <Card categoryName="card1" />
+        <Carousel CarouselName="itemData3" />
+        <Card categoryName="card2" />
         <AsideContent />
         <AsideLocator />
       </div>

@@ -7,16 +7,22 @@ function CategoryProductDetail(props) {
   const handleAddItem = () => {
     const token = localStorage.getItem('token');
     fetch('http://localhost:8000/cart', {
-      method: 'post',
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         authorization: token,
       },
       body: JSON.stringify({
-        item_size_id: id,
+        item_id: id,
         quantity: 1,
       }),
-    });
+    })
+      .then(response => response.json())
+      .then(result =>
+        result.message === 'CREATE_SUCCESSFULLY'
+          ? alert('장바구니에 담겼습니다.')
+          : alert('에러!')
+      );
   };
 
   return (

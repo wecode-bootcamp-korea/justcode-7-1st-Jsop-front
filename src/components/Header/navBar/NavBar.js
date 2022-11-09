@@ -142,9 +142,9 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
               }}
               value="카트"
             >
-              {cartModal ? <Cart closeBtn={closeBtn} /> : null}
               카트
             </button>
+            {cartModal ? <Cart closeBtn={closeBtn} /> : null}
           </li>
         </ul>
       </div>

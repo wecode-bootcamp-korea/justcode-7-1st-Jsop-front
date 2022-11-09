@@ -28,6 +28,7 @@
 .myPageContent {
   display: grid;
   grid-template-columns: 1fr 6fr;
+  min-height: 80vh;
   .leftNav {
     display: flex;
     margin-top: 50px;

@@ -56,4 +56,39 @@
       color: white;
     }
   }
+  .orderForm {
+    width: 670px;
+    border-top: #333333 2px solid;
+    border-bottom: #333333 2px solid;
+    p {
+      color: #494949;
+      padding-top: 10px;
+      font-size: 19px;
+    }
+    .priceSize {
+      width: 670px;
+      border-bottom: #d3d3d3 1px solid;
+      display: flex;
+      justify-content: space-between;
+      p {
+        display: inline-block;
+        color: #7d7d7d;
+        font-size: 15px;
+      }
+    }
+  }
+  .deliveryInfo {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    .d_right {
+      color: #7d7d7d;
+      font-size: 15px;
+    }
+  }
+  .totalPrice {
+    color: #5d5d5d;
+    font-size: 25px;
+    padding-top: 5px;
+  }
 }

@@ -16,9 +16,10 @@ function Home() {
       {pageOpen && (
         <div className={css.mainContent}>
           <MainProduct />
-          <Carousel />
-          <Card />
-          <Carousel />
+          <Carousel CarouselName="itemData1" />
+          <Card categoryName="card1" />
+          <Carousel CarouselName="itemData3" />
+          <Card categoryName="card2" />
           <AsideContent />
           <AsideLocator />
         </div>

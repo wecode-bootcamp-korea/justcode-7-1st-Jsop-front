@@ -1,39 +1,134 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import css from './MyPage.module.scss';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
+
+// cart 담으면 alert 뜨게 만들기
 
 function MyPage() {
-  return (
-    <div className={css.myPageWrap}>
-      <div className={css.logoContainer}>
-        <img src="logo-black.png" alt="logo" />
-        <div className={css.welcome}>
-          <span>환영합니다 님</span>
-        </div>
-      </div>
+  const [page, setPage] = useState('account');
 
-      <div className={css.myPageContent}>
-        <div className={css.leftNav}>
-          <ul>
-            <li>
-              <button className={css.account}>계정 정보</button>
-            </li>
-            <li>
-              <button className={css.orderList}>주문 내역</button>
-            </li>
-          </ul>
-        </div>
-        <div className={css.rightContent}>
-          <div className={css.accountPage}>
-            <div className={css.private}>
-              <li>땡땡님</li>
-              <li>naver@naver.com</li>
-              <input type="text" />
-            </div>
+  const handleButtonOnClick = (pageName, e) => {
+    e.preventDefault();
+    setPage(page => {
+      return pageName;
+    });
+  };
+
+  const [data, setData] = useState({});
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:8000/getme', {
+      method: 'GET',
+      headers: {
+        authorization: token,
+      },
+    })
+      .then(response => response.json())
+      .then(result => setData(result.userInfo));
+  }, []);
+  let email = data.email;
+  let lastName = data.last_name;
+  let firstName = data.first_name;
+
+  // const [userFirstName, setUserFirstName] = useState();
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   fetch('http://localhost:8000/getme', {
+  //     method: 'GET',
+  //     headers: {
+  //       authorization: token,
+  //     },
+  //   })
+  //     .then(response => response.json())
+  //     .then(result => setUserFirstName(result.userInfo.first_name));
+  // }, []);
+
+  // const [userLastName, setUserLastName] = useState();
+  // useEffect(() => {
+  //   const token = localStorage.getItem('token');
+  //   fetch('http://localhost:8000/getme', {
+  //     method: 'GET',
+  //     headers: {
+  //       authorization: token,
+  //     },
+  //   })
+  //     .then(response => response.json())
+  //     .then(result => setUserLastName(result.userInfo.last_name));
+  // }, []);
+
+  return (
+    <>
+      <Header />
+      <div className={css.myPageWrap}>
+        <div className={css.logoContainer}>
+          <Link to="/">
+            <img src="logo-black.png" alt="logo" />
+          </Link>
+          <div className={css.welcome}>
+            <span>
+              환영합니다 {lastName}
+              {firstName}님
+            </span>
           </div>
-          <div className={css.orderListPage}></div>
+        </div>
+
+        <div className={css.myPageContent}>
+          <div className={css.leftNav}>
+            <ul>
+              <li>
+                <button
+                  className={css.account}
+                  onClick={e => {
+                    handleButtonOnClick('account', e);
+                  }}
+                >
+                  계정 정보
+                </button>
+              </li>
+              <li>
+                <button
+                  className={css.orderList}
+                  onClick={e => {
+                    handleButtonOnClick('orderList', e);
+                  }}
+                >
+                  주문 내역
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div className={css.rightContent}>
+            {page === 'account' && (
+              <div className={css.accountPage}>
+                <div className={css.private}>
+                  <li className={css.info}>개인 정보</li>
+                  <li>
+                    {lastName}
+                    {firstName}님
+                  </li>
+                  <li className={css.mail}>{email}</li>
+                </div>
+                <div className={css.password}>
+                  <li className={css.info}>패스워드</li>
+                  <li className={css.input}>∙∙∙∙∙∙∙∙∙∙∙∙∙∙</li>
+                </div>
+              </div>
+            )}
+            {page === 'orderList' && (
+              <div className={css.orderListPage}>
+                <p>현재 주문한 내용이 없습니다.</p>
+                <Link to="/">
+                  <button>홈으로 이동</button>
+                </Link>
+              </div>
+            )}
+          </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }
 export default MyPage;

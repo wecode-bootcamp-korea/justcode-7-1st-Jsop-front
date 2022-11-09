@@ -2,17 +2,19 @@ import React, { useState, useEffect } from 'react';
 import css from './CheckOut.module.scss';
 import Shipping from './miniPage/Shipping';
 import Pay from './miniPage/Pay';
-
+import Order from './Order';
 const CheckOut = () => {
   const [data, setData] = useState({});
   const [infoData, setInfoData] = useState({});
+
   const [address, setAddress] = useState('');
   const [subAddress, setSubAddress] = useState('');
   const [zip, setZip] = useState('우편번호를 입력하여 주세요.');
+
   const [pay, setPay] = useState('결제 정보를 선택하여 주세요.');
   const [open, setOpen] = useState(false);
   const [payOpen, setPayOpen] = useState(false);
-  //유저 정보 fatch 해오기
+
   useEffect(() => {
     const token = localStorage.getItem('token');
     fetch('http://localhost:8000/getme', {
@@ -35,16 +37,23 @@ const CheckOut = () => {
     })
       .then(response => response.json())
       .then(result => setInfoData(result));
-
-    if (infoData.zipcode) {
-      setZip(infoData.zipcode);
-      setAddress(infoData.street_address);
-      setSubAddress(infoData.supplimental_address);
-    } else {
-      setZip('우편번호를 입력하여 주세요');
-    }
+    setZip(infoData.zipcode);
+    setAddress(infoData.street_address);
+    setSubAddress(infoData.supplimental_address);
   }, []);
-  const orderhandle = () => {};
+
+  const orderhandle = () => {
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:8000/orders', {
+      method: 'POST',
+      headers: {
+        authorization: token,
+      },
+    })
+      .then(response => response.json())
+      .then(result => setData(result.userInfo));
+    return <Order />;
+  };
 
   let email = data.email;
   let lastName = data.last_name;

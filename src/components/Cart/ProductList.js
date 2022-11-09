@@ -8,12 +8,12 @@ const ProductList = ({
   quantity,
   price,
   deleteItem,
-  handleAdd,
+  handleQuantity,
 }) => {
   const count = [1, 2, 3, 4, 5];
 
-  const changeCount = ({ target: { value } }) => {
-    handleAdd(id, parseInt(value));
+  const changeQuantity = ({ target: { value } }) => {
+    handleQuantity(id, value);
   };
 
   return (
@@ -24,7 +24,7 @@ const ProductList = ({
         <select
           className={css.productCount}
           defaultValue={quantity}
-          onChange={changeCount}
+          onChange={changeQuantity}
         >
           {count.map(number => (
             <option key={number} value={number}>

@@ -9,25 +9,10 @@
   }
 }
 .cartComponent {
-  background-color: #252525;
-  border-bottom: 1px solid #252525;
-  color: #fffef2;
-  left: 0;
-  max-height: 100vh;
-  height: 500px;
-  overflow-y: scroll;
-  padding-right: 40px;
-  position: fixed;
-  top: 0;
-  transform: none;
-  transition: cubic-bezier(0.215, 0.61, 0.355, 1) 0.5s;
-  width: calc(100vw + 40px);
-  z-index: 3333;
-  cursor: auto;
   .cartProducts {
     padding: 40px 60px 0 60px;
     transition: all 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
-    width: 100%;
+    width: 90%;
 
     .cartProductsHeader {
       display: flex;
@@ -55,12 +40,12 @@
     color: #bcbbb4;
     .cartcomment {
       border-bottom: none;
-      margin-left: 40%;
+      margin-left: 55%;
       padding-top: 26px;
     }
     .cartPrice {
       border-bottom: none;
-      margin-left: 40%;
+      margin-left: 55%;
       padding: 25px 0;
       display: flex;
       justify-content: space-between;
@@ -73,7 +58,7 @@
     }
     .payModule {
       .payButton {
-        margin-left: 40%;
+        margin-left: 55%;
         width: 600px;
         height: 60px;
         background-color: #eaeadf !important;

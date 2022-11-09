@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import css from './Login.module.scss';
 import Forgotpassword from './Forgotpassword';
 import Signup from '../Signup/Signup';
-import { useNavigate } from 'react-router-dom';
 
 const Login = ({ closeBtn }) => {
   const [pwShow, setPwShow] = useState({ type: 'password', text: '보기' });
@@ -11,7 +10,6 @@ const Login = ({ closeBtn }) => {
   const email = useRef();
   const pw = useRef();
   const [isValid, setIsValid] = useState(false);
-  const navigate = useNavigate();
 
   const pwShowBtn = () => {
     if (pwShow.text === '보기') {
@@ -32,9 +30,6 @@ const Login = ({ closeBtn }) => {
     setSignUpModal(!signUpModal);
   };
 
-  const goToProduct = () => {
-    navigate('/product');
-  };
   useEffect(() => {
     document.body.style.overflow = 'hidden';
     return () => {

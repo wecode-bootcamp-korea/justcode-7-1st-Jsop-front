@@ -12,6 +12,14 @@ function Carousel(props) {
 
   let currentCarousel = carousel;
 
+  useEffect(() => {
+    fetch('/data/item.json')
+      .then(res => res.json())
+      .then(data => {
+        setItems(data[CarouselName]);
+      });
+  }, [CarouselName]);
+
   const prevCarousel = () => {
     if (currentCarousel > 0) {
       currentCarousel = currentCarousel - 1;
@@ -38,14 +46,6 @@ function Carousel(props) {
     setMoveButton(boolean);
   };
 
-  useEffect(() => {
-    fetch('/data/item.json')
-      .then(res => res.json())
-      .then(data => {
-        setItems(data[CarouselName]);
-      });
-  }, [CarouselName]);
-
   return (
     <div
       className={css.mainCarousel}
@@ -57,7 +57,11 @@ function Carousel(props) {
           {item.map(({ itemId, itemName, itemImage, itemType }) => (
             <div key={itemId} className={css.carouselContainer}>
               <div className={css.imageContainer}>
-                <img className={css.carouselImage} src={itemImage} />
+                <img
+                  className={css.carouselImage}
+                  alt="캐러셀"
+                  src={itemImage}
+                />
               </div>
               <div className={css.carouselProductName}>{itemName}</div>
               <div className={css.carouselProductType}>{itemType}</div>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import css from './NavBar.module.scss';
 import CategoryPage from '../categoryPage/CategoryPage';
 import SearchPage from '../../../pages/Search/SearchPage';

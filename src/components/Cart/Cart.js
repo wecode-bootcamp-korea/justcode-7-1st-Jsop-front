@@ -55,7 +55,7 @@ const Cart = ({ closeCartModal }) => {
           closeCartModal={closeCartModal}
         />
       ) : (
-        <EmptyCart />
+        <EmptyCart closeCartModal={closeCartModal} />
       )}
     </div>
   );

@@ -46,7 +46,6 @@ function MyPage() {
               </span>
             </div>
           </div>
-
           <div className={css.myPageContent}>
             <div className={css.leftNav}>
               <ul>

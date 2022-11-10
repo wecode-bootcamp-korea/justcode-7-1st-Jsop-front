@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './ExistCart.module.scss';
 import ProductList from './ProductList';
 
@@ -10,6 +10,8 @@ const ExistCart = ({
   goToCheckOut,
   closeCartModal,
 }) => {
+  const [data, setData] = useState({});
+  let allPrice = 0;
   const deleteItem = id => {
     const token = localStorage.getItem('token');
     fetch('http://localhost:8000/cart', {
@@ -33,9 +35,21 @@ const ExistCart = ({
       });
   };
 
+  useEffect(() => {
+    fetch('http://localhost:8000/cart', {
+      method: 'GET',
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
+    })
+      .then(res => res.json())
+      .then(res => setData(res.data));
+    console.log(data);
+  }, []);
+  console.log(cartItem);
   return (
-    <div className={css.cartComponent}>
-      <div className={css.cartProducts}>
+    <div className={css.cartComponent} onClick={closeCartModal}>
+      <div className={css.cartProducts} onClick={e => e.stopPropagation()}>
         <div className={css.cartProductsHeader}>
           <div>카트</div>
           <div>사이즈</div>

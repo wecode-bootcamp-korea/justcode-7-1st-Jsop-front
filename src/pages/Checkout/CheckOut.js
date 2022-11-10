@@ -3,7 +3,6 @@ import css from './CheckOut.module.scss';
 import Shipping from './miniPage/Shipping';
 import Pay from './miniPage/Pay';
 import { useNavigate } from 'react-router-dom';
-
 const CheckOut = () => {
   const [data, setData] = useState({});
   const [cartData, setCartData] = useState({});

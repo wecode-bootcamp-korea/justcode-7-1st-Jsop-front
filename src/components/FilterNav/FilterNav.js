@@ -7,10 +7,16 @@ function FilterNav() {
   const [item, setItems] = useState([]);
   const [visible, setVisible] = useState(false);
   const [content, setContent] = useState('');
-  const [detail, setDetails] = useState([]);
   const [filterItem, setFilterItem] = useState([]);
-
   const navigate = useNavigate();
+  let m_id = '';
+  useEffect(() => {
+    fetch('http://localhost:8000/categories')
+      .then(res => res.json())
+      .then(data => {
+        setItems(data);
+      });
+  }, []);
 
   const contentChange = e => {
     e.preventDefault();
@@ -20,8 +26,6 @@ function FilterNav() {
     )
       .then(res => res.json())
       .then(res => {
-        setDetails(detail => (detail = res));
-
         const filterItems = res.filter(detail => {
           return detail.category.level_2_category === e.target.value;
         });
@@ -41,13 +45,26 @@ function FilterNav() {
       });
   };
 
-  useEffect(() => {
-    fetch('http://localhost:8000/categories')
-      .then(res => res.json())
-      .then(data => {
-        setItems(data);
-      });
-  }, []);
+  const handleAddItem = id => {
+    const token = localStorage.getItem('token');
+    fetch('http://localhost:8000/cart', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: token,
+      },
+      body: JSON.stringify({
+        item_id: id,
+        quantity: 1,
+      }),
+    })
+      .then(response => response.json())
+      .then(result =>
+        result.message === 'CREATE_SUCCESSFULLY'
+          ? alert('장바구니에 담겼습니다.')
+          : alert('에러!')
+      );
+  };
 
   return (
     <div className={css.filterNavWrap}>
@@ -150,8 +167,16 @@ function FilterNav() {
                       </div>
                     ))}
                 </div>
-                <button className={css.addCartButton}>
-                  <span className={css.addCart}>카트에 추가하기 — ₩47,000</span>
+                <button
+                  className={css.addCartButton}
+                  onClick={() => {
+                    m_id = id;
+                    handleAddItem(m_id);
+                  }}
+                >
+                  <span className={css.addCart}>
+                    카트에 추가하기 — ₩ {price[0][1]}
+                  </span>
                 </button>
               </div>
             </div>

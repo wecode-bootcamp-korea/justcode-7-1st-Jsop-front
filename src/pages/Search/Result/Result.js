@@ -11,6 +11,7 @@ function Result({ searchItem }) {
     });
     let id = filtered[0].id;
     navigate(`/detail/${id}`);
+    window.location.replace(`/detail/${id}`);
   }
   if (searchItem.length > 0) {
     return (

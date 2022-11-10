@@ -16,6 +16,15 @@
     height: 400px;
     color: white;
 
+    button {
+      color: white;
+
+      &:hover {
+        background-color: white;
+        color: #373737;
+      }
+    }
+
     .logo {
       position: absolute;
       transform: translate(60%, 155%);

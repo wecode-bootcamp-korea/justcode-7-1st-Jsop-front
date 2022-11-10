@@ -13,14 +13,21 @@ function Recall() {
     <div className={css.Container}>
       <Header setPageOpen={setOpen} />
       <div className={css.title}>
-        <div className="logo" onClick={goMain}>
+        <div className={css.logo} onClick={goMain}>
           <img src="/logo-black.png" alt="로고이미지" />
         </div>
-        <div className="write">
+        <div className={css.write}>
           <h1>포스트-푸 드롭스와 오일 버너 블렌드 제품 자진 회수 안내</h1>
         </div>
       </div>
       <div className={css.recallTitle}>
+        <div className={css.notice}>
+          <p>
+            제이솝은 한국소비자원과 협력하여 포스트-푸 드롭스와 오일 버너 블렌드
+            제품에 대해 아래와 같이 자진 회수를 진행합니다.
+          </p>
+        </div>
+        <p>1. 회수 제품 :</p>
         <p>• 포스트-푸 드롭스 100mL</p>
         <p>• 캐서린 오일 버너 블렌드 25mL</p>
         <p>• 이사벨 오일 버너 블렌드 25mL</p>

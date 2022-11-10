@@ -1,16 +1,4 @@
-@keyframes cartPopup {
-  0% {
-    transform: translateY(0%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 .cartComponent {
-  background-color: #252525;
-  border-bottom: 1px solid #252525;
   color: #fffef2;
   left: 0;
   max-height: 100vh;

@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './MainProduct.module.scss';
-import MainAside from '../../components/Aside/MainAside';
+import Aside from '../../components/Aside/Aside';
 
 function MainProduct() {
   return (
@@ -9,7 +9,7 @@ function MainProduct() {
       <div className={css.product}>
         <img className={css.logo} src="/images/logo-white.png" alt="" />
         <div className={css.aside}>
-          <MainAside />
+          <Aside asideName="mainAside" />
         </div>
       </div>
     </div>

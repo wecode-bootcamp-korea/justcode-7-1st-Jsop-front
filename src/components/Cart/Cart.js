@@ -4,7 +4,7 @@ import css from './Cart.module.scss';
 import EmptyCart from './EmptyCart';
 import ExistCart from './ExistCart';
 
-const Cart = ({ closeBtn }) => {
+const Cart = ({ closeCartModal }) => {
   const [cartItem, setCartItem] = useState([]);
   const navigate = useNavigate();
 
@@ -39,10 +39,6 @@ const Cart = ({ closeBtn }) => {
     });
   };
 
-  const refresh = () => {
-    document.location.href = '/';
-  };
-
   const goToCheckOut = () => {
     navigate('/checkout');
   };
@@ -53,10 +49,10 @@ const Cart = ({ closeBtn }) => {
         <ExistCart
           totalPrice={totalPrice}
           handleQuantity={handleQuantity}
-          refresh={refresh}
           cartItem={cartItem}
           setCartItem={setCartItem}
           goToCheckOut={goToCheckOut}
+          closeCartModal={closeCartModal}
         />
       ) : (
         <EmptyCart />

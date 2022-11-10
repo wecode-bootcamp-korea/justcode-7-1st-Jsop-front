@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import css from './ProductList.module.scss';
 
 const ProductList = ({
@@ -12,23 +12,25 @@ const ProductList = ({
 }) => {
   const count = [1, 2, 3, 4, 5];
   const OnChangeQuantity = ({ target: { value } }) => {
-    fetch('http://localhost:8000/cart', {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-        authorization: localStorage.getItem('token'),
-      },
-      body: JSON.stringify({
-        item_id: id,
-        quantity: value,
-      }),
-    })
-      .then(response => response.json())
-      .then(result =>
-        result.message === 'UPDATE_SUCCESSFULLY'
-          ? (alert('수량이 변경되었습니다.'), handleQuantity(id, value))
-          : alert('다시 시도해주세요.')
-      );
+    useEffect(() => {
+      fetch('http://localhost:8000/cart', {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: localStorage.getItem('token'),
+        },
+        body: JSON.stringify({
+          item_id: id,
+          quantity: value,
+        }),
+      })
+        .then(response => response.json())
+        .then(result =>
+          result.message === 'UPDATE_SUCCESSFULLY'
+            ? (alert('수량이 변경되었습니다.'), handleQuantity(id, value))
+            : alert('다시 시도해주세요.')
+        );
+    });
   };
 
   return (
@@ -38,11 +40,11 @@ const ProductList = ({
         <span className={css.productSize}>{size}</span>
         <select
           className={css.productCount}
-          defaulValue={quantity}
+          value={quantity}
           onChange={OnChangeQuantity}
         >
           {count.map(number => (
-            <option key={number} value={quantity}>
+            <option key={number} value={number}>
               {number}
             </option>
           ))}

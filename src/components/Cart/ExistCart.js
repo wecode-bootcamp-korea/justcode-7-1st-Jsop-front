@@ -5,10 +5,10 @@ import ProductList from './ProductList';
 const ExistCart = ({
   totalPrice,
   handleQuantity,
-  refresh,
   cartItem,
   setCartItem,
   goToCheckOut,
+  closeCartModal,
 }) => {
   const deleteItem = id => {
     const token = localStorage.getItem('token');
@@ -25,7 +25,7 @@ const ExistCart = ({
       .then(res => res.json())
       .then(result => {
         if (result.message === 'DELETE_SUCCESSFULLY') {
-          setCartItem(cartItem.filter(cart => cart.item_size_id !== id));
+          setCartItem(cartItem.filter(cart => cart.item_id !== id));
           alert('삭제 완료!');
         } else {
           alert('문제있음');
@@ -40,7 +40,7 @@ const ExistCart = ({
           <div>카트</div>
           <div>사이즈</div>
           <div>수량</div>
-          <button className={css.exitButton} onClick={refresh}>
+          <button className={css.exitButton} onClick={closeCartModal}>
             <img
               src="https://cdn-icons-png.flaticon.com/512/61/61155.png"
               alt="exitBtn"

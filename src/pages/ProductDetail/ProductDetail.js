@@ -24,7 +24,7 @@ function ProductDetail() {
         return <CategoryProductDetail key={props.id} {...props} />;
       })}
       <UseDetail />
-      <Carousel />
+      <Carousel CarouselName="itemData1" />
       <Footer />
     </>
   );

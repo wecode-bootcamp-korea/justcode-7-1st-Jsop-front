@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import css from './Aside.module.scss';
 
-function Aside() {
+function Aside(props) {
+  const { asideName } = props;
   const [item, setItems] = useState([]);
 
   useEffect(() => {
     fetch('/data/asideContent.json')
       .then(res => res.json())
       .then(data => {
-        setItems(data.content);
+        setItems(data[asideName]);
       });
-  }, []);
+  }, [asideName]);
 
   return (
     <div className={css.asideWrap}>

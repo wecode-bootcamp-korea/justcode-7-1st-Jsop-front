@@ -4,6 +4,7 @@ import css from './Result.module.scss';
 
 function Result({ searchItem }) {
   const navigate = useNavigate();
+
   function getItem(e) {
     const filtered = searchItem.filter(itemList => {
       return itemList.title.includes(e.target.innerHTML);

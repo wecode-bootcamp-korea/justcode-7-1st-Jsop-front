@@ -25,15 +25,16 @@
     }
   }
 }
-
 .myPageContent {
   display: grid;
   grid-template-columns: 1fr 6fr;
-
+  min-height: 80vh;
   .leftNav {
     display: flex;
     margin-top: 50px;
     margin-left: 30px;
+    font-size: 14px;
+    color: #333;
     li {
       padding: 10px;
       &:hover {
@@ -45,10 +46,56 @@
   }
   .rightContent {
     display: flex;
-    margin-top: 50px;
-    display: flex;
-
+    margin-top: 70px;
+    margin-left: 380px;
+    font-size: 24px;
+    width: 740px;
     .private {
+      height: auto;
+      width: 740px;
+      .info {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+      .mail {
+        padding-bottom: 50px;
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+    .password {
+      margin-top: 20px;
+      width: 740px;
+      height: auto;
+      .info {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 20px;
+      }
+      .input {
+        font-size: 30px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #ccc;
+      }
+    }
+    .orderListPage {
+      p {
+        color: #666;
+        margin-bottom: 50px;
+      }
+      button {
+        width: 210px;
+        height: 60px;
+        background-color: #373737;
+        color: #f6f5e8;
+        font-size: 14px;
+        text-align: center;
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
     }
   }
 }

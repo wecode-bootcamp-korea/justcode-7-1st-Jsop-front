@@ -10,13 +10,11 @@
   width: 100vw;
   transition: all 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   z-index: 2000;
-  width: 100%;
 
-  .emptyCartComment {
-    padding: 20px;
+  .cartComponent {
+    padding: 50px;
     width: 100vw;
-    span {
-      padding: 50px;
-    }
+    display: flex;
+    justify-content: flex-end;
   }
 }

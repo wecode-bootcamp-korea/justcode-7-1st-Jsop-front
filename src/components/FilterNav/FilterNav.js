@@ -174,7 +174,8 @@ function FilterNav() {
                     handleAddItem(m_id);
                   }}
                 >
-                  <span className={css.addCart}>카트에 추가하기 — ₩47,000</span>
+                  <span className={css.addCart}>카트에 추가하기 — ₩ {price[0][1]}</span>
+
                 </button>
               </div>
             </div>

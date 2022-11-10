@@ -23,7 +23,6 @@ function MyPage() {
       .then(res => res.json())
       .then(res => setOrderList(res.result));
   }, []);
-  console.log(orderList);
 
   const [data, setData] = useState({});
   useEffect(() => {

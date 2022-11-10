@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import css from './ExistCart.module.scss';
 import ProductList from './ProductList';
@@ -46,6 +45,7 @@ const ExistCart = ({
       .then(res => setData(res.data));
     console.log(data);
   }, []);
+
   return (
     <div className={css.cartComponent} onClick={closeCartModal}>
       <div className={css.cartProducts} onClick={e => e.stopPropagation()}>
@@ -86,7 +86,7 @@ const ExistCart = ({
           <span>소계(세금 포함)</span>
           <span className={css.totalPrice}>
             {' '}
-            ₩
+            ₩{' '}
             {totalPrice
               .toString()
               .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}

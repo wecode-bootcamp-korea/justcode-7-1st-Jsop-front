@@ -1,7 +1,13 @@
 import css from './CategoryProductDetail.module.scss';
 import { useNavigate } from 'react-router-dom';
-function CategoryProductDetail(props) {
-  const { id, title, img_url, description, price, properties } = props;
+function CategoryProductDetail({
+  id,
+  title,
+  img_url,
+  description,
+  price,
+  properties,
+}) {
   const navigate = useNavigate();
 
   const handleAddItem = () => {

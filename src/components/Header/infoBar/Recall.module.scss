@@ -1,0 +1,41 @@
+.title {
+  height: 300px;
+  background-color: rgb(246, 245, 231);
+  display: flex;
+  justify-content: space-between;
+  img {
+    height: 70px;
+    width: 120px;
+    cursor: pointer;
+  }
+  .logo {
+    display: inline-block;
+  }
+  h1 {
+    display: inline-block;
+  }
+  padding: 100px 400px 0px 100px;
+}
+.recallTitle {
+  padding-top: 50px;
+
+  p {
+    width: 545px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+  margin-bottom: 100px;
+}
+
+.content {
+  padding-top: 50px;
+  p {
+    width: 545px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+  }
+}

@@ -7,11 +7,23 @@ import Footer from '../../components/Footer/Footer';
 function MyPage() {
   const [page, setPage] = useState('account');
   const [pageOpen, setPageOpen] = useState(true);
-
+  const [orderList, setOrderList] = useState({});
   const handleButtonOnClick = (pageName, e) => {
     e.preventDefault();
     setPage(pageName);
   };
+
+  useEffect(() => {
+    fetch('http://localhost:8000/orders', {
+      method: 'GET',
+      headers: {
+        authorization: localStorage.getItem('token'),
+      },
+    })
+      .then(res => res.json())
+      .then(res => setOrderList(res.result));
+  }, []);
+  console.log(orderList);
 
   const [data, setData] = useState({});
   useEffect(() => {
@@ -90,7 +102,18 @@ function MyPage() {
               )}
               {page === 'orderList' && (
                 <div className={css.orderListPage}>
-                  <p>현재 주문한 내용이 없습니다.</p>
+                  {orderList.length < 1 ? (
+                    <p>현재 주문한 내용이 없습니다.</p>
+                  ) : (
+                    orderList.map((prop, idx) => (
+                      <div className={css.card}>
+                        <span key={idx}>주문 #{idx + 1}</span>
+                        <p key={idx}>가격: {prop.total_price}</p>
+                        <p key={idx}>주소: {prop.address}</p>
+                        <p key={idx}>주문 시각: {prop.created_at}</p>
+                      </div>
+                    ))
+                  )}
                   <Link to="/">
                     <button>홈으로 이동</button>
                   </Link>

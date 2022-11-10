@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import css from './ExistCart.module.scss';
 import ProductList from './ProductList';
@@ -11,7 +12,6 @@ const ExistCart = ({
   closeCartModal,
 }) => {
   const [data, setData] = useState({});
-  let allPrice = 0;
   const deleteItem = id => {
     const token = localStorage.getItem('token');
     fetch('http://localhost:8000/cart', {
@@ -46,7 +46,6 @@ const ExistCart = ({
       .then(res => setData(res.data));
     console.log(data);
   }, []);
-  console.log(cartItem);
   return (
     <div className={css.cartComponent} onClick={closeCartModal}>
       <div className={css.cartProducts} onClick={e => e.stopPropagation()}>
@@ -87,7 +86,7 @@ const ExistCart = ({
           <span>소계(세금 포함)</span>
           <span className={css.totalPrice}>
             {' '}
-            ₩{' '}
+            ₩
             {totalPrice
               .toString()
               .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}

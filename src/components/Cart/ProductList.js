@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import css from './ProductList.module.scss';
 
 const ProductList = ({
@@ -39,6 +39,7 @@ const ProductList = ({
       <div className={css.cartProductsList}>
         <span className={css.productName}>{title}</span>
         <span className={css.productSize}>{size}</span>
+
         <select
           className={css.productCount}
           value={m_quantity}
@@ -50,6 +51,7 @@ const ProductList = ({
             </option>
           ))}
         </select>
+
         <button
           className={css.deleteButton}
           onClick={() => {

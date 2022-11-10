@@ -2,7 +2,7 @@
   "itemData1": [
     {
       "itemId": 1,
-      "itemImage": "https://images.ctfassets.net/u1nb1km7t5q7/3SCXvldc9HEEWCzyg44wPK/993a270f9be982665519dfd794f638ef/Aesop_Fragrance_Eidesis_Eau_de_Parfum_50mL_Web_Large_684x668px.png",
+      "itemImage": "http://localhost:8000/1.png",
       "itemName": "이더시스 오 드 퍼퓸",
       "itemType": "시트러스를 함유한 제품 3종"
     },

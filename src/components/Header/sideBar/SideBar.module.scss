@@ -1,5 +1,15 @@
+@keyframes sideBar {
+  0% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
 .container {
-  z-index: 9;
+  z-index: 20;
+  animation: 0.5s ease-out sideBar;
   color: #333333 !important;
   width: 50%;
   height: 100%;

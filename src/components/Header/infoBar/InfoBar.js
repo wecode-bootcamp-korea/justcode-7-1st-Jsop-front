@@ -20,7 +20,7 @@ function InfoBar({ content, type, url }) {
       <div className={css.slideContainer}>
         <button onClick={handleOpen}>
           <p>{content}</p>
-          <img src="./images/plus.png" alt="plus" />
+          <img src={process.env.PUBLIC_URL + '/images/plus.png'} alt="plus" />
         </button>
         {open && <SideBar open={open} setOpen={setOpen} />}
       </div>

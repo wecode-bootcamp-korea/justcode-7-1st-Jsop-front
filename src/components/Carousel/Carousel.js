@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import css from './Carousel.module.scss';
 
-function Carousel() {
+function Carousel(props) {
+  const { CarouselName } = props;
   const [item, setItems] = useState([]);
   const [moveButton, setMoveButton] = useState(false);
   const [carousel, setCarousel] = useState(0);
@@ -10,6 +11,14 @@ function Carousel() {
   const pageRef = useRef();
 
   let currentCarousel = carousel;
+
+  useEffect(() => {
+    fetch('/data/item.json')
+      .then(res => res.json())
+      .then(data => {
+        setItems(data[CarouselName]);
+      });
+  }, [CarouselName]);
 
   const prevCarousel = () => {
     if (currentCarousel > 0) {
@@ -37,14 +46,6 @@ function Carousel() {
     setMoveButton(boolean);
   };
 
-  useEffect(() => {
-    fetch('/data/item.json')
-      .then(res => res.json())
-      .then(data => {
-        setItems(data.itemData);
-      });
-  }, []);
-
   return (
     <div
       className={css.mainCarousel}
@@ -56,7 +57,11 @@ function Carousel() {
           {item.map(({ itemId, itemName, itemImage, itemType }) => (
             <div key={itemId} className={css.carouselContainer}>
               <div className={css.imageContainer}>
-                <img className={css.carouselImage} src={itemImage} />
+                <img
+                  className={css.carouselImage}
+                  alt="캐러셀"
+                  src={itemImage}
+                />
               </div>
               <div className={css.carouselProductName}>{itemName}</div>
               <div className={css.carouselProductType}>{itemType}</div>

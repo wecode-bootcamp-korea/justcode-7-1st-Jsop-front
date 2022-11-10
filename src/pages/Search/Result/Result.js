@@ -1,12 +1,28 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import css from './Result.module.scss';
+
 function Result({ searchItem }) {
-  console.log(searchItem);
+  const navigate = useNavigate();
+
+  function getItem(e) {
+    const filtered = searchItem.filter(itemList => {
+      return itemList.title.includes(e.target.innerHTML);
+    });
+    let id = filtered[0].id;
+    navigate(`/detail/${id}`);
+    window.location.replace(`/detail/${id}`);
+  }
   if (searchItem.length > 0) {
     return (
       <div className={css.container}>
-        {searchItem.map(eachItem => (
-          <h1 key={eachItem.id}>{eachItem.title}</h1>
-        ))}
+        <div className={css.result}>
+          {searchItem.map(eachItem => (
+            <h1 onClick={e => getItem(e)} key={eachItem.id}>
+              {eachItem.title}
+            </h1>
+          ))}
+        </div>
       </div>
     );
   } else {

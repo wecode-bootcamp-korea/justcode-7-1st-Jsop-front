@@ -1,15 +1,22 @@
 .productList {
   .cartProductsList {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     padding: 15px 0;
     border-bottom: 1px solid rgba(255, 254, 242, 0.1);
     font-size: 16px;
     flex-basis: 0;
+    width: 100%;
+
+    .testBtn {
+      color: white;
+    }
 
     .productName {
-      width: 400px;
+      flex: 1.8;
+    }
+    .productSize {
+      flex: 1.8;
     }
     .productCount {
       width: 70px;
@@ -19,6 +26,7 @@
       background-color: inherit;
       font-size: 18px;
       color: #bcbbb4;
+      margin-right: 30px;
       cursor: pointer;
     }
     .deleteButton {
@@ -29,7 +37,9 @@
       }
     }
     .productPrice {
+      flex: 1.4;
       margin-right: 10px;
+      text-align: end;
     }
   }
 }

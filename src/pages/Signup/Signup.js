@@ -5,6 +5,25 @@ import Info from './Info';
 const Signup = ({ closeBtn }) => {
   const [infoData, setInfoData] = useState([]);
   const [pwShow, setPwShow] = useState({ type: 'password', text: '보기' });
+  const [email, setEmail] = useState('');
+  const [first_name, setFirst_name] = useState('');
+  const [last_name, setLast_name] = useState('');
+  const [password, setPassword] = useState('');
+
+  const onFirstNameHandler = event => {
+    setFirst_name(event.currentTarget.value);
+  };
+  const onLastNameHandler = event => {
+    setLast_name(event.currentTarget.value);
+  };
+  const onEmailHandler = event => {
+    setEmail(event.currentTarget.value);
+  };
+
+  const onPasswordHandler = event => {
+    setPassword(event.currentTarget.value);
+  };
+
   const pwShowBtn = e => {
     if (pwShow.text === '보기') {
       setPwShow(prevState => ({
@@ -29,6 +48,27 @@ const Signup = ({ closeBtn }) => {
       document.body.style.overflow = 'visible';
     };
   }, []);
+
+  const signUp = () => {
+    fetch('http://localhost:8000/signup', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        first_name: first_name,
+        last_name: last_name,
+        email: email,
+        password: password,
+      }),
+    })
+      .then(response => response.json())
+      .then(result =>
+        result.message === 'USER_CREATED'
+          ? (alert('회원가입 성공'), closeBtn(true))
+          : alert('회원가입 실패')
+      );
+  };
 
   return (
     <div className={css.container}>
@@ -59,6 +99,8 @@ const Signup = ({ closeBtn }) => {
                 className={css.lastNameInput}
                 type="text"
                 placeholder="성"
+                value={last_name}
+                onChange={onLastNameHandler}
               />
               <span className={css.inputSpan}>성</span>
             </label>
@@ -67,6 +109,8 @@ const Signup = ({ closeBtn }) => {
                 className={css.firstNameInput}
                 type="text"
                 placeholder="이름"
+                value={first_name}
+                onChange={onFirstNameHandler}
               />
               <span className={css.inputSpan}>이름</span>
             </label>
@@ -76,6 +120,8 @@ const Signup = ({ closeBtn }) => {
               className={css.emailInput}
               type="text"
               placeholder="이메일 주소"
+              value={email}
+              onChange={onEmailHandler}
             />
             <span className={css.inputSpan}>이메일 주소</span>
           </label>
@@ -86,6 +132,8 @@ const Signup = ({ closeBtn }) => {
                 className={css.passwordInput}
                 placeholder="비밀번호"
                 type={pwShow.type}
+                value={password}
+                onChange={onPasswordHandler}
               />
               <span className={css.inputSpan}>비밀번호</span>
             </label>
@@ -102,7 +150,9 @@ const Signup = ({ closeBtn }) => {
               <Info key={info.id} title={info.title} content={info.content} />
             );
           })}
-          <button className={css.signupButton}>회원가입</button>
+          <button className={css.signupButton} onClick={signUp}>
+            회원가입
+          </button>
           <button className={css.haveIdButton}>
             이미 이솝 계정을 가지고 계십니까?
           </button>

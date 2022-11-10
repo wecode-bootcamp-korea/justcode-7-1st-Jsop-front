@@ -1,8 +1,8 @@
 {
-  "itemData": [
+  "itemData1": [
     {
       "itemId": 1,
-      "itemImage": "https://images.ctfassets.net/u1nb1km7t5q7/3SCXvldc9HEEWCzyg44wPK/993a270f9be982665519dfd794f638ef/Aesop_Fragrance_Eidesis_Eau_de_Parfum_50mL_Web_Large_684x668px.png",
+      "itemImage": "http://localhost:8000/1.png",
       "itemName": "이더시스 오 드 퍼퓸",
       "itemType": "시트러스를 함유한 제품 3종"
     },
@@ -35,6 +35,82 @@
       "itemImage": "https://images.ctfassets.net/u1nb1km7t5q7/3GGxqNtcnVfyzLw5OETc7z/b8c4b400861ede1d9cd8ad2d3b9191ce/Aesop_Fragrance_Eremia_Eau_de_Parfum_50mL_Web_Large_684x668px.png",
       "itemName": "에레미아 오 드 퍼퓸",
       "itemType": "상쾌한 바디 케어 듀오"
+    }
+  ],
+  "itemData2": [
+    {
+      "itemId": 1,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/4xXOgeQVuFVapVYBmptx63/46a6b7dc6c5c990ae77b926de5f8e249/Aesop-Hair-Equalising-Shampoo-500mL-medium.png",
+      "itemName": "이퀄라이징 샴푸",
+      "itemType": "두피의 밸런스를 도와주는 샴푸"
+    },
+    {
+      "itemId": 2,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/3eGwM9ZiGIeBbmstYQwy2a/0bf1001b31118664a0616f34659c7151/Aesop_Hair_Conditioner_100mL_Medium_653x752px.png",
+      "itemName": "컨디셔너",
+      "itemType": "부드럽고 촉촉하게 가꿔주며 머릿결을 향기롭고 상쾌하게"
+    },
+    {
+      "itemId": 3,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/5Xbn49uFOqIjl3VwNU148w/499b5db4dac6832b11adf99310bde408/Aesop-Hair-Sage-and-Cedar-Scalp-Treatment-15mL-5-Medium-535x522px.png",
+      "itemName": "세이지 앤 시더 스칼프 트리트먼트",
+      "itemType": "보태니컬 오일과 수분을 공급해주는 식물 추출물 함유"
+    },
+    {
+      "itemId": 4,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/6jtpto4ypB99JtMWUOTo0g/381b2d5f90d2d46b5f283e04480e367f/Aesop-Hair-Violet-Leaf-Hair-Balm-60mL-large.png",
+      "itemName": "바이올렛 리프 헤어 밤",
+      "itemType": "풍부한 하이드레이팅 너트 오일 추출물이 모발에 영양을 주는 밤"
+    },
+    {
+      "itemId": 5,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/4Fw8hjdd50ZCctgIXu9jwz/ce49726db32a5858a45b219a7dbcf306/Aesop-Hair-Shine-Hair-Beard-Oil-25mL-Hybris-Large-684x668px.png",
+      "itemName": "샤인 헤어 앤 비어드 오일",
+      "itemType": "잔여물이나 유분기를 남기지 않고 부드러운 광택을 주는 하이드레이팅 오일"
+    },
+    {
+      "itemId": 6,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/6etyCVMPSmYzT0pNZpzC50/42aef086f298f1a178393753088a2185/Aesop-Hair-Sculpt-Hair-Polish-100mL-Hybris-Large-843x1000px.png",
+      "itemName": "스컬프 헤어 폴리시",
+      "itemType": "모든 모발 타입, 특히 젖은 모발 연출과 강력한 고정이 필요한 스타일링에 효과적"
+    }
+  ],
+  "itemData3": [
+    {
+      "itemId": 1,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/bQ1x5fJAgkqs2zOybK7OP/c89650fa01d1e84798f2edf9c0de1668/Aesop_Hand_Resurrection_Aromatique_Hand_Wash_Refill_500mL_B500BT13RFS_Web_Medium_694x860px.png",
+      "itemName": "레저렉션 아로마틱 핸드 워시",
+      "itemType": "오렌지, 로즈마리, 라벤더 오일을 함유한 부드러운 핸드 워시"
+    },
+    {
+      "itemId": 2,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/1btCo7KAkwfrPEwqoEo81O/3bc2b301641ea817e6bb3767ba6ee3ed/Aesop-Body-Resurrection-Aromatique-Hand-Balm-75mL-medium.png",
+      "itemName": "레저렉션 아로마틱 핸드 밤",
+      "itemType": "지친 손과 큐티클에 풍부한 수분을 공급해주는 향긋한 보태니컬 핸드 밤"
+    },
+    {
+      "itemId": 3,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/4pviH5sN6VtcFNWH6uy6xJ/9b1d0e1c1ed3ce6d367542c989b8579d/Aesop-Body-Geranium-Leaf-Body-Balm-100mL-Hybris-Large-843x1000px.png",
+      "itemName": "제라늄 리프 바디 밤",
+      "itemType": "향기로운 시트러스 추출물을 함유한 바디 밤"
+    },
+    {
+      "itemId": 4,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/2Cskr0yrDfnSe9SXBIVwFn/11d5ac76eecc83d47cd4a9245f48af60/Aesop-Body-A-Rose-By-Any-Other-Name-Body-Cleanser-100mL-Hybris-Medium-653x752px.png",
+      "itemName": "에이 로즈 바이 애니 아더 네임 바디 클렌저",
+      "itemType": "부드러우면서 꼼꼼한 세정을 전하는 향기로운 클렌징 젤"
+    },
+    {
+      "itemId": 5,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/5YfIiP4m06sFvUuixkot3k/6884fdedf26ca8a17d341ba0769c7fcf/Aesop_Body_Protective_Body_Lotion_SPF50_Asia_EU_150mL_Web_Large_835x962px.png",
+      "itemName": "프로텍티브 바디 로션 SPF 50",
+      "itemType": "상쾌한 아로마로 피부에 가볍게 흡수되는 바디 전용 자외선 차단제"
+    },
+    {
+      "itemId": 6,
+      "itemImage": "https://www.aesop.com/u1nb1km7t5q7/2uJrcHNJgy7avz2ZDPfDgE/68fa08bbf2ccea2a16c67b7b1cc46d11/Aesop-Body-Geranium-Leaf-Body-Scrub-180mL-large.png",
+      "itemName": "제라늄 리프 바디 스크럽",
+      "itemType": "피부를 깨끗하게 클렌징하고 빈틈없이 매끄럽게 관리해서 수분 공급"
     }
   ]
 }

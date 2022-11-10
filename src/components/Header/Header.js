@@ -8,7 +8,7 @@ const data = [
     id: 1,
     content: '포스트-푸 드롭스와 오일 버너 블렌드 제품 자진 회수 안내',
     type: 'page',
-    url: 'none',
+    url: '/recall',
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const data = [
   },
 ];
 
-function Header() {
+function Header({ setPageOpen }) {
   const [isClick, setIsClick] = useState(false);
 
   return (
@@ -32,7 +32,11 @@ function Header() {
             url={data.url}
           />
         ))}
-      <NavBar isClick={isClick} setIsClick={setIsClick} />
+      <NavBar
+        isClick={isClick}
+        setPageOpen={setPageOpen}
+        setIsClick={setIsClick}
+      />
     </div>
   );
 }

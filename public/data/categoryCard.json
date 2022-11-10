@@ -1,5 +1,5 @@
 {
-  "card": [
+  "card1": [
     {
       "id": 1,
       "cardImage": "https://images.pexels.com/photos/5938255/pexels-photo-5938255.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
@@ -11,6 +11,20 @@
       "cardImage": "https://images.pexels.com/photos/4239013/pexels-photo-4239013.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       "cardTitle": "바디 & 핸드",
       "cardBody": "섬세하고 은은하게 퍼지는 향기가 평온한 안식을 선사합니다."
+    }
+  ],
+  "card2": [
+    {
+      "id": 1,
+      "cardImage": "https://images.pexels.com/photos/3992874/pexels-photo-3992874.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "cardTitle": "헤어",
+      "cardBody": "건강한 두피는 건강한 모발을 유지합니다. 매일 사용하는 것보다는 필요한 순간에 도움을 줄 수 있는 샴푸를 선택하세요."
+    },
+    {
+      "id": 2,
+      "cardImage": "https://images.pexels.com/photos/207518/pexels-photo-207518.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "cardTitle": "향수",
+      "cardBody": "휠, 테싯, 마라케시 인텐스, 로즈—우디에서 플로럴에 이르기까지 밤과 낮에 모두 어울리는 현대적인 작품들입니다."
     }
   ]
 }

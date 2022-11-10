@@ -34,7 +34,11 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
   };
 
   const closeBtn = () => {
-    setLoginModal(false);
+    setLoginModal(!loginModal);
+  };
+
+  const closeCartModal = () => {
+    setCartModal(!cartModal);
   };
 
   useEffect(() => {
@@ -144,7 +148,7 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
             >
               카트
             </button>
-            {cartModal ? <Cart closeBtn={closeBtn} /> : null}
+            {cartModal ? <Cart closeCartModal={closeCartModal} /> : null}
           </li>
         </ul>
       </div>

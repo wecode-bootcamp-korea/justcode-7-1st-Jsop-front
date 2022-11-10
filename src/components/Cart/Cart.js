@@ -17,7 +17,7 @@ const Cart = ({ closeCartModal }) => {
     })
       .then(res => res.json())
       .then(data => setCartItem(data.data));
-  }, []);
+  }, [cartItem]);
 
   useEffect(() => {
     document.body.style.overflow = 'hidden';

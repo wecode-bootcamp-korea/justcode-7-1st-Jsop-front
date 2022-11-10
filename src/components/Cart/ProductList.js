@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState } from 'react';
 import css from './ProductList.module.scss';
 
 const ProductList = ({
@@ -11,26 +11,27 @@ const ProductList = ({
   deleteItem,
 }) => {
   const count = [1, 2, 3, 4, 5];
+  const [m_quantity, setQuantity] = useState(quantity);
+
   const OnChangeQuantity = ({ target: { value } }) => {
-    useEffect(() => {
-      fetch('http://localhost:8000/cart', {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          authorization: localStorage.getItem('token'),
-        },
-        body: JSON.stringify({
-          item_id: id,
-          quantity: value,
-        }),
-      })
-        .then(response => response.json())
-        .then(result =>
-          result.message === 'UPDATE_SUCCESSFULLY'
-            ? (alert('수량이 변경되었습니다.'), handleQuantity(id, value))
-            : alert('다시 시도해주세요.')
-        );
-    });
+    fetch('http://localhost:8000/cart', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        authorization: localStorage.getItem('token'),
+      },
+      body: JSON.stringify({
+        item_id: id,
+        quantity: value,
+      }),
+    })
+      .then(response => response.json())
+      .then(result =>
+        result.message === 'UPDATE_SUCCESSFULLY'
+          ? (alert('수량이 변경되었습니다.'), handleQuantity(id, value))
+          : alert('다시 시도해주세요.')
+      );
+    setQuantity(value);
   };
 
   return (
@@ -38,9 +39,10 @@ const ProductList = ({
       <div className={css.cartProductsList}>
         <span className={css.productName}>{title}</span>
         <span className={css.productSize}>{size}</span>
+
         <select
           className={css.productCount}
-          value={quantity}
+          value={m_quantity}
           onChange={OnChangeQuantity}
         >
           {count.map(number => (
@@ -49,6 +51,7 @@ const ProductList = ({
             </option>
           ))}
         </select>
+
         <button
           className={css.deleteButton}
           onClick={() => {
@@ -59,7 +62,7 @@ const ProductList = ({
         </button>
         <span className={css.productPrice}>
           ₩{' '}
-          {(price * quantity)
+          {(price * m_quantity)
             .toString()
             .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ',')}
         </span>

@@ -91,11 +91,25 @@
         color: #f6f5e8;
         font-size: 14px;
         text-align: center;
+        margin-bottom: 100px;
         &:hover {
           background-color: black;
           color: white;
         }
       }
     }
+  }
+}
+.card {
+  background-color: #f1f1df;
+  padding: 7px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  span {
+    padding-bottom: 30px;
+    color: #666;
+  }
+  p {
+    margin-bottom: 30px !important;
   }
 }

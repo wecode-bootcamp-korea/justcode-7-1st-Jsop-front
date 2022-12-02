@@ -14,7 +14,7 @@ function MyPage() {
   };
 
   useEffect(() => {
-    fetch('http://localhost:8000/orders', {
+    fetch(`${process.env.REACT_APP_API_URL}/orders`, {
       method: 'GET',
       headers: {
         authorization: localStorage.getItem('token'),
@@ -27,7 +27,7 @@ function MyPage() {
   const [data, setData] = useState({});
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/getme', {
+    fetch(`${process.env.REACT_APP_API_URL}/getme`, {
       method: 'GET',
       headers: {
         authorization: token,

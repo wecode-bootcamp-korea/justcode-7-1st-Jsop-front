@@ -12,7 +12,7 @@ function ProductDetail() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    fetch(`http://localhost:8000/products/${params.id}`)
+    fetch(`${process.env.REACT_APP_API_URL}/products/${params.id}`)
       .then(res => res.json())
       .then(res => setProduct(res));
   }, []);

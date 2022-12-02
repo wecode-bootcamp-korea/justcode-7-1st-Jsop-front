@@ -14,7 +14,7 @@ const ProductList = ({
   const [m_quantity, setQuantity] = useState(quantity);
 
   const OnChangeQuantity = ({ target: { value } }) => {
-    fetch('http://localhost:8000/cart', {
+    fetch(`${process.env.REACT_APP_API_URL}/cart`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

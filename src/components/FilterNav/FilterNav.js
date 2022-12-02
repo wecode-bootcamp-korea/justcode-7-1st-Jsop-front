@@ -11,7 +11,7 @@ function FilterNav() {
   const navigate = useNavigate();
   let m_id = '';
   useEffect(() => {
-    fetch('http://localhost:8000/categories')
+    fetch(`${process.env.REACT_APP_API_URL}/categories`)
       .then(res => res.json())
       .then(data => {
         setItems(data);
@@ -22,7 +22,7 @@ function FilterNav() {
     e.preventDefault();
     setContent(e.target.value);
     fetch(
-      'http://localhost:8000/products?level-1-cate=%EC%8A%A4%ED%82%A8%20%EC%BC%80%EC%96%B4&level-2-cate='
+      `${process.env.REACT_APP_API_URL}/products?level-1-cate=%EC%8A%A4%ED%82%A8%20%EC%BC%80%EC%96%B4&level-2-cate=`
     )
       .then(res => res.json())
       .then(res => {
@@ -37,7 +37,7 @@ function FilterNav() {
     e.preventDefault();
     setContent(e.target.value);
     fetch(
-      'http://localhost:8000/products?level-1-cate=%EC%8A%A4%ED%82%A8%20%EC%BC%80%EC%96%B4&level-2-cate='
+      `${process.env.REACT_APP_API_URL}/products?level-1-cate=%EC%8A%A4%ED%82%A8%20%EC%BC%80%EC%96%B4&level-2-cate=`
     )
       .then(res => res.json())
       .then(data => {
@@ -47,7 +47,7 @@ function FilterNav() {
 
   const handleAddItem = id => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/cart', {
+    fetch(`${process.env.REACT_APP_API_URL}/cart`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

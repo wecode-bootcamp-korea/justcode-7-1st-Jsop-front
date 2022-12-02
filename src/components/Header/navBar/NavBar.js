@@ -43,7 +43,7 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/getme', {
+    fetch(`${process.env.REACT_APP_API_URL}/getme`, {
       method: 'GET',
       headers: {
         authorization: token,
@@ -55,7 +55,7 @@ function NavBar({ setIsClick, isClick, setPageOpen }) {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/getme', {
+    fetch(`${process.env.REACT_APP_API_URL}/getme`, {
       method: 'GET',
       headers: {
         authorization: token,

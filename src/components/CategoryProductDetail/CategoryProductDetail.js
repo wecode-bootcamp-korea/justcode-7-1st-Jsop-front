@@ -12,7 +12,7 @@ function CategoryProductDetail({
 
   const handleAddItem = () => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/cart', {
+    fetch(`${process.env.REACT_APP_API_URL}/cart`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

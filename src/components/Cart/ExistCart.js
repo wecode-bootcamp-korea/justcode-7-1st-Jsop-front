@@ -13,7 +13,7 @@ const ExistCart = ({
   const [data, setData] = useState({});
   const deleteItem = id => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/cart', {
+    fetch(`${process.env.REACT_APP_API_URL}/cart`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const ExistCart = ({
   };
 
   useEffect(() => {
-    fetch('http://localhost:8000/cart', {
+    fetch(`${process.env.REACT_APP_API_URL}/cart`, {
       method: 'GET',
       headers: {
         authorization: localStorage.getItem('token'),

@@ -7,7 +7,7 @@ function SearchPage() {
   const [itemInput, setItemInput] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:8000/products')
+    fetch(`${process.env.REACT_APP_API_URL}/products`)
       .then(res => res.json())
       .then(res => setData(res));
   }, []);

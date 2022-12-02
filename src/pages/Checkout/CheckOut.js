@@ -17,7 +17,7 @@ const CheckOut = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/getme', {
+    fetch(`${process.env.REACT_APP_API_URL}/getme`, {
       method: 'GET',
       headers: {
         authorization: token,
@@ -29,7 +29,7 @@ const CheckOut = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/orders/contract', {
+    fetch(`${process.env.REACT_APP_API_URL}/orders/contract`, {
       method: 'GET',
       headers: {
         authorization: token,
@@ -49,7 +49,7 @@ const CheckOut = () => {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/cart', {
+    fetch(`${process.env.REACT_APP_API_URL}/cart`, {
       method: 'GET',
       headers: {
         authorization: token,
@@ -63,7 +63,7 @@ const CheckOut = () => {
 
   const orderhandle = () => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/orders', {
+    fetch(`${process.env.REACT_APP_API_URL}/orders`, {
       method: 'POST',
       headers: {
         authorization: token,

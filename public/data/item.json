@@ -2,7 +2,7 @@
   "itemData1": [
     {
       "itemId": 1,
-      "itemImage": "http://localhost:8000/1.png",
+      "itemImage": "http://ec2-3-38-108-151.ap-northeast-2.compute.amazonaws.com:8000/1.png",
       "itemName": "이더시스 오 드 퍼퓸",
       "itemType": "시트러스를 함유한 제품 3종"
     },

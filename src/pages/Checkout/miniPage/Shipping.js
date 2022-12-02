@@ -14,7 +14,7 @@ const Shipping = ({
 }) => {
   const postInfo = () => {
     const token = localStorage.getItem('token');
-    fetch('http://localhost:8000/orders/contract', {
+    fetch(`${process.env.REACT_APP_API_URL}/orders/contract`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

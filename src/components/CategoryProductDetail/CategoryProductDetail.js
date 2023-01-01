@@ -57,30 +57,43 @@ function CategoryProductDetail({
               <div className={css.type}>
                 {properties
                   .filter(props => props.types === '피부 타입')
-                  .map(({ types, values }) => (
+                  .map(({ types, values }, idx, array) => (
                     <div className={css.productUse} key={types}>
                       <h2>{types}</h2>
-                      <p className={css.typeValue}>{values}</p>
+                      <p key={idx} className={css.typeValue}>
+                        {values.map((prop, idx, array) => {
+                          return prop + (array.length - 1 === idx ? '' : ', ');
+                        })}
+                      </p>
                     </div>
                   ))}
               </div>
               <div className={css.use}>
                 {properties
                   .filter(props => props.types === '사용감')
-                  .map(({ types, values }) => (
+                  .map(({ types, values }, idx, array) => (
                     <div className={css.productUse} key={types}>
                       <h2>{types}</h2>
-                      <p className={css.typeValue}>{values}</p>
+
+                      <p key={idx} className={css.typeValue}>
+                        {values.map((prop, idx, array) => {
+                          return prop + (array.length - 1 === idx ? '' : ', ');
+                        })}
+                      </p>
                     </div>
                   ))}
               </div>
               <div className={css.ingredient}>
                 {properties
                   .filter(props => props.types === '주요 성분')
-                  .map(({ types, values }) => (
+                  .map(({ types, values }, idx, array) => (
                     <div className={css.productUse} key={types}>
                       <h2>{types}</h2>
-                      <p className={css.typeValue}>{values}</p>
+                      <p key={idx} className={css.typeValue}>
+                        {values.map((prop, idx, array) => {
+                          return prop + (array.length - 1 === idx ? '' : ', ');
+                        })}
+                      </p>
                     </div>
                   ))}
               </div>
